@@ -128,7 +128,6 @@ public class Mastermind extends JFrame {
 	 * @param args
 	 */
 	class NewGameListener implements ActionListener {
-
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			afficher(tbleJeu.getNom());
