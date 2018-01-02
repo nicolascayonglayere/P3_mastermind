@@ -2,7 +2,7 @@ package moteur_de_jeu;
 
 import javax.swing.JPanel;
 /**
- * La classe définissant un clavier numérique utilisé pour 
+ * La classe définissant un clavier numérique 
  * @author nicolas
  *
  */

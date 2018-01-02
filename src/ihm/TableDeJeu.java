@@ -6,14 +6,19 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Properties;
 import java.util.Random;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.text.MaskFormatter;
+
+import Propriete.GestionFichierProperties;
 
 
 public class TableDeJeu extends JPanel {
@@ -23,19 +28,20 @@ public class TableDeJeu extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String nom = "Table De Jeu";
-	private int nbCoupsConfig = 10;//--Ici je recup la donnée du fichier properties 
-	private int lgueurCombo = 4;//--Ici je recup la donnée du fichier properties
+	private Properties propriete;
+	private int nbCoupsConfig; 
+	private int lgueurCombo;
 	//private String[][] coupsJoues = new String[nbCoupsConfig][nbCoupsConfig];
 	//private PlusMoins regle ;
 	
 	private int tourDeJeu = 0;
-	private JLabel[] listResult = new JLabel[this.nbCoupsConfig];//--Une liste d'étiquette qui accueille le résultat de l'essai
-	private JFormattedTextField[] listProp = new JFormattedTextField[this.nbCoupsConfig];//--Une liste de champs de saisie pour saisir son coup
-	
+	private JLabel[] listResult;//--Une liste d'étiquette qui accueille le résultat de l'essai
+	private JFormattedTextField[] listProp;//--Une liste de champs de saisie pour saisir son coup
+		
 	private int combiSecret = 0;
-	private Integer[] constrCombiSecret = new Integer[this.lgueurCombo];
+	private Integer[] constrCombiSecret;
 	private String coupJoue ;
-	private Integer[] listPropJoueur = new Integer[this.lgueurCombo];
+	private Integer[] listPropJoueur ;
 	private String resultCompa;
 	
 	private JPanel panTbleJeu = new JPanel();
@@ -44,29 +50,54 @@ public class TableDeJeu extends JPanel {
 	 * Constructeur sans paramètres
 	 */
 	public TableDeJeu() {
+		//--on récupère les proprietes
+		GestionFichierProperties gfp = new GestionFichierProperties();
+		this.propriete = gfp.lireProp();
+		this.nbCoupsConfig = Integer.valueOf(this.propriete.getProperty("nombres d'essai"));
+		System.out.println("Ctrl nb coup :"+this.nbCoupsConfig);//--Controle
+		this.lgueurCombo = Integer.valueOf(this.propriete.getProperty("longueur combinaison"));
+		System.out.println("Ctrl lgueur :"+this.lgueurCombo);//--Controle
+		
 		//--Le joueur
 		
 		//--Les composants graphiques
 		this.setLayout(new BorderLayout());
-		initTable();
+		try {
+			initTable();
+		}catch(ParseException e) {
+			e.printStackTrace();
+		}
 		
 		//--Le clavier pas utile pour l'instant
 		
-		this.add(panTbleJeu);
+		this.add(panTbleJeu, BorderLayout.CENTER);
+	}
+	
+	/**
+	 * Constructeur avec parametre
+	 * @param pEssai
+	 * @param pCombo
+	 */
+	public TableDeJeu(int pEssai, int pCombo) {
+		//--on récupère les proprietes
+		GestionFichierProperties gfp = new GestionFichierProperties();
+		this.propriete = gfp.lireProp();
 		
-		//--Le type de jeu
-		//this.regle = new PlusMoins(coupJoue);
-		
-		//--La combinaison gagnante
-		this.initCombiSecret();
-
+		//--Les composants graphiques
+		this.setLayout(new BorderLayout());
+		try {
+			initTable();
+		}catch(ParseException e) {
+			e.printStackTrace();
+		}
+		this.add(panTbleJeu, BorderLayout.CENTER);
 	}
 	
 	/**
 	 * La méthode créant la table de jeu
 	 * @return
 	 */
-	public void initTable() {
+	public void initTable() throws ParseException{
 		//--Le panneau qui accueille la table de jeu
 		
 		panTbleJeu.setPreferredSize(new Dimension (400, 500));
@@ -79,31 +110,45 @@ public class TableDeJeu extends JPanel {
 
 		JPanel[] panRef = new JPanel[this.nbCoupsConfig];//--Une liste de JPanel qui accueille les 3 comp précédents
 		
+		//--On applique un maskFormatter au JFormattedTextField pour s'assurer de la validité de la saisie
+		String[] listDiese = new String[this.lgueurCombo];
+		String str = "";
+		for (int k = 0; k<this.lgueurCombo; k++) {
+			listDiese[k] = "#";
+			str += listDiese[k];
+		}
+		MaskFormatter mask = new MaskFormatter(str);
+
+		this.listProp = new JFormattedTextField[this.nbCoupsConfig];
+		this.listResult = new JLabel[this.nbCoupsConfig];
+		
 		for(int i = 0; i<nbCoupsConfig; i++) {
+			//--L'etiquette essai n°
 			listEssai[i] = new JLabel(String.valueOf(i+1));
 			listEssai[i].setFont(police);
 			listEssai[i].setBackground(Color.white);
 			
-			listProp[i] = new JFormattedTextField(NumberFormat.getNumberInstance());
+			//--La zone de texte ou s'effectue la saisie
+			listProp[i] = new JFormattedTextField(mask);
 			listProp[i].setFont(police);
 			listProp[i].setBackground(Color.white);
 			listProp[i].setPreferredSize(new Dimension (200, 50));
+			listProp[i].setEditable(false);
 			listProp[i].setHorizontalAlignment(JFormattedTextField.CENTER);
 			listProp[i].addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					jeu();
-					//listProp[i-1].setEditable(false);
 				}
 			});
 			
-			
+			//--L'étiquette qui affiche le résultat de la comparaison entre la saisie et la combinaison gagnante
 			listResult[i] = new JLabel("");
 			listResult[i].setFont(police);
 			listResult[i].setBackground(Color.white);
 			listResult[i].setPreferredSize(new Dimension (200, 50));
 			
-			
+			//--Le panneau qui accueille les 3 composants précédents
 			panRef[i] = new JPanel();
 			panRef[i].setBorder(BorderFactory.createEtchedBorder());
 			panRef[i].setBackground(Color.WHITE);
@@ -114,60 +159,51 @@ public class TableDeJeu extends JPanel {
 			
 			panTbleJeu.add(panRef[i]);
 		}
-		
-		//--Le panneau de ref
-		//JPanel[] panRef = new JPanel[this.nbCoupsConfig];
-		//JLabel[] listLabel = new JLabel[this.lgueurCombo];
-
-		//for (int j = 0; j <nbCoupsConfig; j++) {
-		//	for (int i = 0; i<lgueurCombo; i++) {
-		//		listLabel[i] = new JLabel();
-		//		listLabel[i].setBorder(BorderFactory.createEtchedBorder());
-		//		listLabel[i].setBackground(Color.white);
-		//		
-		//		panRef[j] = new JPanel();
-		//		panRef[j].setPreferredSize(new Dimension (100, 500));
-		//		panRef[j].setBorder(BorderFactory.createLoweredBevelBorder());
-		//		panRef[j].setLayout(new BoxLayout(panRef[j], BoxLayout.LINE_AXIS));
-		//		panRef[j].setBackground(Color.LIGHT_GRAY);
-		//		panRef[j].add(listLabel[i]);
-		//	}
-		//	panTbleJeu.add(panRef[j]);
-		//}
-		
 	}
-	
+	/**
+	 * méthode qui prépare la comparaison et qui retourne le résultat de cette comparaison
+	 */
 	public void jeu() {
-		//while(tourDeJeu != nbCoupsConfig + 1) {
-			resultCompa = "";
-			coupJoue = listProp[tourDeJeu].getText();
-			System.out.println("la proposition du joueur : "+coupJoue);
-			char[] tabint = coupJoue.toCharArray();
-			
-			for (int i = 0; i<lgueurCombo; i++) {
-				this.listPropJoueur[i] = (int)tabint[i];
-				System.out.println("la liste de prop du joueur : "+listPropJoueur[i]);
-			}
-			
-			this.compare();
-			listResult[tourDeJeu].setText(resultCompa);
-			tourDeJeu ++;
-		//}
+		this.listPropJoueur = new Integer[this.lgueurCombo];
+		resultCompa = "";
+		coupJoue = listProp[tourDeJeu].getText();
+		System.out.println("la proposition du joueur : "+coupJoue);
+		char[] tabint = coupJoue.toCharArray();
+		
+		for (int i = 0; i<lgueurCombo; i++) {
+			this.listPropJoueur[i] = Character.getNumericValue(tabint[i]);
+			System.out.println("la liste de prop du joueur : "+listPropJoueur[i]);
+		}
+		
+		this.compare();
+		listResult[tourDeJeu].setText(resultCompa);
+		listProp[tourDeJeu + 1].setEditable(true);
+		tourDeJeu ++;
+		
+
 	}
 	
 	/**
 	 * Méthode générant la combinaison secrete
 	 */
 	public void initCombiSecret() {
+		this.constrCombiSecret = new Integer[this.lgueurCombo];
 		Random alea = new Random();
 		String str = "";
 				
 		for (int i = 0; i<lgueurCombo; i++) {
+			//--on tire 1 chiffre au hasard
 			constrCombiSecret[i] = alea.nextInt(10);
-			str += String.valueOf(constrCombiSecret[i]);
+			str += String.valueOf(constrCombiSecret[i]);//--on concatene les différents chiffres 
 		}
 		this.combiSecret = Integer.valueOf(str);
 		System.out.println("la combo gagnante : "+this.combiSecret);//--Controle
+		
+		JOptionPane jop = new JOptionPane();
+		String message = "La combinaison secrète est prête \n";
+		message += "A vous de jouer";
+		jop.showMessageDialog(null, message, "Combinaison secrète prête !", JOptionPane.INFORMATION_MESSAGE);
+		listProp[0].setEditable(true);
 	}
 	
 	/**
@@ -183,22 +219,67 @@ public class TableDeJeu extends JPanel {
 			System.out.println(difference);
 			
 			if (difference == 0) {
-				System.out.println("decompo du coup joue "+Integer.valueOf(coupJoue.charAt(i)));
 				resultCompa += "=";
-				System.out.println("TRACE =");
 			}
 			else if (difference < 0 ) {
-				System.out.println("decompo du coup joue "+Integer.valueOf(coupJoue.charAt(i)));
 				resultCompa += "-";
-				System.out.println("TRACE -");
 			}
 			else if(difference > 0) {
-				System.out.println("decompo du coup joue "+Integer.valueOf(coupJoue.charAt(i)));
 				resultCompa += "+";
-				System.out.println("TRACE +");
+			}
+		}
+		
+		int diff2 = (Integer.valueOf(coupJoue)) - combiSecret;
+		//--Victoire
+		if(diff2 == 0) {
+			JOptionPane jop = new JOptionPane();
+			int option = jop.showConfirmDialog(null, "Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?",
+							"Victoire", 
+							JOptionPane.YES_NO_CANCEL_OPTION,
+							JOptionPane.QUESTION_MESSAGE);
+			if (option == JOptionPane.OK_OPTION) {
+				nouvellePartie();
+			}				
+		}
+		
+		System.out.println(tourDeJeu);
+		//--Defaite
+		if(tourDeJeu+1 == nbCoupsConfig && diff2 !=0) {
+			JOptionPane jop = new JOptionPane();
+			int option = jop.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+combiSecret+"\n Voulez-vous rejouer ?",
+							"Défaite", 
+							JOptionPane.YES_NO_CANCEL_OPTION,
+							JOptionPane.QUESTION_MESSAGE);
+			if (option == JOptionPane.OK_OPTION) {
+				nouvellePartie();
 			}
 		}
 	}
+	
+	/**
+	 * Methode générant une nouvelle partie
+	 * 
+	 */
+	public void nouvellePartie() {
+		
+		panTbleJeu.removeAll();
+		try {
+			initTable();
+		}catch(ParseException e) {
+			e.printStackTrace();
+		}
+		
+		panTbleJeu.revalidate();
+		panTbleJeu.repaint();
+		this.setLayout(new BorderLayout());
+		this.add(panTbleJeu, BorderLayout.CENTER);
+		initCombiSecret();
+		tourDeJeu = 0;
+		
+		
+	}
+	
+	
 	
 	/**
 	 * Methode retournant le nom de la classe pour l'affichage

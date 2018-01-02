@@ -15,8 +15,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
+import Propriete.BoiteDialogue;
 import ihm.Accueil;
 import ihm.TableDeJeu;
+import pattern_observer.Observateur;
 /**
  * La classe Mastermind hérite de JFrame et contient le Main
  * @author nicolas
@@ -36,7 +38,8 @@ public class Mastermind extends JFrame {
 	private JMenuItem contAPropos = new JMenuItem("?");
 	
 	private Accueil accueil = new Accueil();
-	private TableDeJeu tbleJeu = new TableDeJeu();
+	private TableDeJeu tbleJeu ;
+	
 	
 	/**
 	 * Constructeur sans parametre
@@ -56,6 +59,7 @@ public class Mastermind extends JFrame {
 		//--Les menus de la fenetre
 		this.initMenu();
 		
+				
 		//--Le panneau d'accueil
 		this.afficher(accueil.getNom());
 	}
@@ -128,20 +132,35 @@ public class Mastermind extends JFrame {
 	 * @param args
 	 */
 	class NewGameListener implements ActionListener {
+		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			afficher(tbleJeu.getNom());
+			tbleJeu = new TableDeJeu();
+			BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);
+			bDialog.addObservateur(new Observateur() {
+
+				@Override
+				public void update(String value) {
+					afficher(tbleJeu.getNom());
+					
+				}
+				
+			});
+		//tbleJeu = new TableDeJeu();
+		//afficher(tbleJeu.getNom());
+		//tbleJeu.nouvellePartie();
 			
 		}
 		
 	}
 	
-	
+
 	
 	public static void main(String[] args) {
 		Mastermind f = new Mastermind();
 		f.setVisible(true);
 
 	}
+
 
 }
