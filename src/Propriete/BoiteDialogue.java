@@ -8,7 +8,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Properties;
 
 import javax.swing.BorderFactory;
@@ -24,15 +23,12 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.text.MaskFormatter;
 
-import ihm.TableDeJeu;
-import pattern_observer.Observable;
-import pattern_observer.Observateur;
 /**
  * La classe qui définit la boite de dialogue permettant la selection des proprietes du jeu
  * @author nicolas
  *
  */
-public class BoiteDialogue extends JDialog implements Observable{
+public class BoiteDialogue extends JDialog {
 
 	/**
 	 * variable d'instance
@@ -43,7 +39,7 @@ public class BoiteDialogue extends JDialog implements Observable{
 	private JFormattedTextField saisiEssai;
 	private JComboBox<String> saisiLgueurCombi;
 	private Properties listProp = new Properties();
-	private ArrayList<Observateur> listObs = new ArrayList<Observateur>();
+	
 	
 	
 	
@@ -207,7 +203,7 @@ public class BoiteDialogue extends JDialog implements Observable{
 			else if(defBton.isSelected())
 				listProp.setProperty("mode", ModeJeu.DEFENSEUR.toString());
 			else if (duelBton.isSelected())
-				listProp.setProperty("mode", ModeJeu.DEFENSEUR.toString());
+				listProp.setProperty("mode", ModeJeu.DUEL.toString());
 			
 			listProp.setProperty("nombres d'essai", saisiEssai.getText());
 			
@@ -217,32 +213,15 @@ public class BoiteDialogue extends JDialog implements Observable{
 			GestionFichierProperties gfp = new GestionFichierProperties();
 			gfp.ecrireProp(listProp);
 			
-			//--On lance le jeu
-			TableDeJeu tble = new TableDeJeu();
-			tble.nouvellePartie();
+		////--On lance le jeu
+		//TableDeJeu tble = new TableDeJeu();
+		//tble.nouvellePartie();
 			
-			//--On affiche le jeu
-			updateObservateur();
+			
 			
 			setVisible(false);
 		}
 		
 	}
 
-	@Override
-	public void addObservateur(Observateur o) {
-		this.listObs.add(o);
-		
-	}
-	@Override
-	public void updateObservateur() {
-		for(Observateur o : listObs)
-			o.update("Refresh");
-		
-	}
-	@Override
-	public void delObservateur() {
-		this.listObs = new ArrayList<Observateur>();
-		
-	}
 }

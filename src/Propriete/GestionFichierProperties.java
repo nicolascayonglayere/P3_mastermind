@@ -10,7 +10,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Properties;
-import java.util.concurrent.CopyOnWriteArrayList;
+
+import org.apache.log4j.Logger;
+
+import test_unitaire_table_jeu.TableDeJeu_Test;
 
 
 
@@ -20,6 +23,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *
  */
 public class GestionFichierProperties {
+	static Logger logger = Logger.getLogger(GestionFichierProperties.class);
+	
 	private File configFile;
 	private File defautConfigFile;
 	private Properties prop;
@@ -51,7 +56,8 @@ public class GestionFichierProperties {
 								new FileOutputStream(defautConfigFile)));
 				prop.store(oos, null);
 
-				System.out.println("Taille du fichier = " + defautConfigFile.length()); //Controle
+				//System.out.println("Taille du fichier = " + defautConfigFile.length()); //Controle
+				logger.info("Taille du fichier = " + defautConfigFile.length());
 
 			}catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -72,7 +78,8 @@ public class GestionFichierProperties {
 										new FileOutputStream(configFile)));
 						prop.store(oos, null);
 						
-						System.out.println("Taille du fichier = " + configFile.length()); //Controle
+						//System.out.println("Taille du fichier = " + configFile.length()); //Controle
+						logger.info("Taille du fichier = " + configFile.length());
 					}catch (FileNotFoundException e) {
 						e.printStackTrace();
 					}catch (IOException e) {
@@ -86,7 +93,8 @@ public class GestionFichierProperties {
 							new BufferedOutputStream(
 									new FileOutputStream(configFile)));
 					prop.store(oos, null);
-					System.out.println("Taille du fichier = " + configFile.length()); //Controle
+					//System.out.println("Taille du fichier = " + configFile.length()); //Controle
+					logger.info("Taille du fichier = " + configFile.length());
 					
 					oos.close();
 				}
@@ -107,7 +115,8 @@ public class GestionFichierProperties {
 								new BufferedInputStream(
 										new FileInputStream(configFile)));
 					this.prop.load(ois);
-					System.out.println("list proprietes recup sur le fichier lors de lecture : \n"+this.prop.toString());//Controle
+					//System.out.println("list proprietes recup sur le fichier lors de lecture : \n"+this.prop.toString());//Controle
+					logger.info("list proprietes recup sur le fichier lors de lecture : \n"+this.prop.toString());
 					ois.close();
 				}
 			}
@@ -117,7 +126,8 @@ public class GestionFichierProperties {
 						new BufferedInputStream(
 								new FileInputStream(defautConfigFile)));
 				this.prop.load(ois);
-				System.out.println("list proprietes recup sur le fichier lors de lecture : \n"+this.prop.toString());//Controle
+				//System.out.println("list proprietes recup sur le fichier lors de lecture : \n"+this.prop.toString());//Controle
+				logger.info("list proprietes recup sur le fichier lors de lecture : \n"+this.prop.toString());
 				ois.close();
 			}
 		}catch (FileNotFoundException e) {
