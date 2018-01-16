@@ -15,18 +15,36 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
+/**
+ * Table de jeu pour 1 joueur, hérite de la classe abstraite TableDeJeu
+ * @author nicolas
+ *
+ */
 public class TableDeJeu_1 extends TableDeJeu {
 
 private static final long serialVersionUID = 1L;
 	
+	/**
+	 * Constructeur sans parametre
+	 */
 	public TableDeJeu_1() {
 		super();
 	}
 	
-	public TableDeJeu_1(String pJeu, String pMode, int pEssai, int pCombo) {
-		super(pJeu, pMode, pEssai, pCombo);
+	/**
+	 * Constructeur avec parametres
+	 * @param pJeu
+	 * @param pMode
+	 * @param pEssai
+	 * @param pCombo
+	 */
+	public TableDeJeu_1(String pJeu, String pMode, int pEssai, int pCombo, int pModeDev) {
+		super(pJeu, pMode, pEssai, pCombo, pModeDev);
 	}
 	
+	/**
+	 * Methode initialisant les composants graphiques de la table
+	 */
 	public void initTable() throws ParseException{
 		//--Le panneau qui accueille la table de jeu
 		
@@ -90,6 +108,9 @@ private static final long serialVersionUID = 1L;
 			panTbleJeu.add(panRef[i]);
 		}
 	}
+	/**
+	 * Méthode initialisant une nouvelle partie
+	 */
 	public void nouvellePartie() {
 		panTbleJeu.removeAll();
 		resultCompa ="";
@@ -99,15 +120,30 @@ private static final long serialVersionUID = 1L;
 		}catch(ParseException e) {
 			e.printStackTrace();
 		}
+		logger.debug("Ctrl modeDev : "+modeDev);
+		if (modeDev == 1) {
+			modeDevLbl = new JLabel("Combinaison secrète : ");
+			Font police = new Font("Arial", Font.BOLD, 14);
+			modeDevLbl.setFont(police);
+			modeDevLbl.setPreferredSize(new Dimension(800,100));
+			modeDevLbl.setBackground(Color.LIGHT_GRAY);
+			modeDevLbl.setHorizontalTextPosition(JLabel.CENTER);
+			modeDevLbl.setVisible(true);
+			panTbleJeu.add(modeDevLbl);
+		}
+		else {
+			modeDevLbl = new JLabel("");
+			modeDevLbl.setVisible(false);
+		}
 		
 		panTbleJeu.revalidate();
 		panTbleJeu.repaint();
+		
 		listProp[0].setEditable(true);
 		this.setLayout(new BorderLayout());
 		this.add(panTbleJeu, BorderLayout.CENTER);
 		this.joueur.initCombiSecret();
-		//this.constrCombiSecret = this.joueur.getConstrCombiSecret();
-		//this.combiSecret = this.joueur.getCombiSecret();
+		modeDevLbl.setText("Combinaison secrete : "+String.valueOf(this.joueur.getCombiSecret()));
 		this.joueur.setTourDeJeu(0);
 		this.joueur.setVictoire(false);
 	}

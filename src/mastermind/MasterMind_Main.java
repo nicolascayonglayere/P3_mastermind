@@ -26,7 +26,11 @@ import ihm.TableDeJeu;
 import ihm.TableDeJeu_1;
 import ihm.TableDeJeu_2;
 
-
+/**
+ * La classe MasterMind Main hérite de JFrame et affiche les menus l'écran d'accueil et la table de jeu
+ * @author nicolas
+ *
+ */
 public class MasterMind_Main extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -48,6 +52,7 @@ public class MasterMind_Main extends JFrame {
 	private String typeJeu, modeJeu;
 	private int nbCoupsConfig; 
 	private int lgueurCombo;
+	private int modeDev;
 	
 	private TableDeJeu tbleJeu ;
 
@@ -173,14 +178,17 @@ public class MasterMind_Main extends JFrame {
 			lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
 			//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
 			logger.info("Ctrl lgueur :"+lgueurCombo);
+			modeDev = Integer.valueOf(propriete.getProperty("developpement"));
+			logger.info("Ctrl mode dev : "+modeDev);
 			
 			if((modeJeu.equals(ModeJeu.DUEL.toString()))){
-				tbleJeu = new TableDeJeu_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo);
+				tbleJeu = new TableDeJeu_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
+
 			}
 			else {
-				tbleJeu = new TableDeJeu_1(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo);
+				tbleJeu = new TableDeJeu_1(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
 			}

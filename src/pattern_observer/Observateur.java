@@ -4,7 +4,7 @@ package pattern_observer;
 
 /**
  * Interface Observateur du pattern Observer
- * avec la methode qui met l'affichage de la fenetre
+ * avec la methode qui met a jour l'affichage de la fenetre
  * @author nicolas
  *
  */

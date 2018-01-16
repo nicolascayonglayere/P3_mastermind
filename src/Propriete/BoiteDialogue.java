@@ -13,6 +13,7 @@ import java.util.Properties;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
@@ -38,6 +39,7 @@ public class BoiteDialogue extends JDialog {
 	private JRadioButton plusMoinsBton, masterBton, challBton, defBton, duelBton;
 	private JFormattedTextField saisiEssai;
 	private JComboBox<String> saisiLgueurCombi;
+	private JCheckBox modeDevBox;
 	private Properties listProp = new Properties();
 	
 	
@@ -51,7 +53,7 @@ public class BoiteDialogue extends JDialog {
 	 */
 	public BoiteDialogue(JFrame parent, String ptitre, boolean modal) {
 		super(parent, ptitre, modal);
-		this.setSize(800,300);
+		this.setSize(800,400);
 		this.setLocationRelativeTo(null);
 		this.setUndecorated(true);
 				
@@ -166,10 +168,18 @@ public class BoiteDialogue extends JDialog {
 		saisiLgueurCombi.addItem("8");
 		saisiLgueurCombi.addItem("9");
 		saisiLgueurCombi.addItem("10");		
-		//for (int i = 4; i == 10; i++)
-		//	saisiLgueurCombi.addItem(String.valueOf(i));
+
 		panCombi.add(lblCombi);
 		panCombi.add(saisiLgueurCombi);
+
+		//--Le mode développement
+		JPanel panDev = new JPanel();
+		panDev.setBackground(Color.WHITE);
+		panDev.setBorder(BorderFactory.createTitledBorder("MODE DEVELOPPEMENT"));
+		modeDevBox = new JCheckBox("Mode Developpement");
+		modeDevBox.setBackground(Color.WHITE);
+		panDev.add(modeDevBox);
+		
 		
 		//--Le panel qui accueille les composants précédents
 		this.panContent = new JPanel();
@@ -180,6 +190,7 @@ public class BoiteDialogue extends JDialog {
 		panContent.add(panMode);
 		panContent.add(panEssai);
 		panContent.add(panCombi);
+		panContent.add(panDev);
 		
 	}
 	
@@ -209,16 +220,15 @@ public class BoiteDialogue extends JDialog {
 			
 			listProp.setProperty("longueur combinaison", saisiLgueurCombi.getSelectedItem().toString());
 			
+			if(modeDevBox.isSelected())
+				listProp.setProperty("developpement", "1");
+			else
+				listProp.setProperty("developpement", "0");
+			
 			//--On écrit dans le fichier
 			GestionFichierProperties gfp = new GestionFichierProperties();
 			gfp.ecrireProp(listProp);
-			
-		////--On lance le jeu
-		//TableDeJeu tble = new TableDeJeu();
-		//tble.nouvellePartie();
-			
-			
-			
+
 			setVisible(false);
 		}
 		

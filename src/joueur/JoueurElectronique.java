@@ -8,13 +8,16 @@ import javax.swing.JOptionPane;
 
 import Propriete.TypeJeu;
 
+/**
+ * Classe définissant le comportement du joueur electronique
+ * @author nicolas
+ *
+ */
 public class JoueurElectronique extends Joueur {
-	//private Random alea = new Random();
 	private String str = "";
 	
 	private String combiJoueur;
 	private char[] tabConstrCombiSecret;
-	//private Integer[] constrCombiSecret;
 	private Integer[] constrPropOrdi;
 	private Integer[] constrRepOrdi;
 	
@@ -23,16 +26,27 @@ public class JoueurElectronique extends Joueur {
 	private HashMap<Integer, ArrayList<Integer>> tabPool;
 	private ArrayList<Integer> tabIntPool;
 	
+	/**
+	 * Constructeur sans parametre
+	 */
 	public JoueurElectronique() {
 		super();
 		this.nom = "mon PC";
 	}
 	
+	/**
+	 * Constructeur avec parametres
+	 * @param pCombo
+	 * @param pJeu
+	 */
 	public JoueurElectronique(int pCombo, String pJeu) {
 		super(pCombo, pJeu);
 		this.nom = "mon PC";
 	}
 	
+	/**
+	 * Méthode initialisant la combinaison que l'ordinateur doit découvrir
+	 */
 	public void initCombiSecret() {
 		//Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau
 		JOptionPane jop0 = new JOptionPane();
@@ -55,6 +69,9 @@ public class JoueurElectronique extends Joueur {
 		System.out.println("la combo gagnante : "+this.combiSecret);//--Controle
 	}
 	
+	/**
+	 * Méthode récupérant la proposition de l'ordi et qui la compare à la combinaison
+	 */
 	public void jeu(String pCoupJoue) {
 		if(tourDeJeu == 0) {
 			this.constrPropOrdi = new Integer[this.lgueurCombo];
@@ -112,12 +129,16 @@ public class JoueurElectronique extends Joueur {
 		tourDeJeu ++;
 	}
 	
+	/**
+	 * Méthode comparant la proposition de l'ordi à la combinaison secrete
+	 */
 	public void compare() {
 		int difference = 0;
 		int compteurOK = 0;
 		int compteurPresent = 0;
 		Boolean boolPresent = false;
-
+		
+		//--Selon le jeu, le résultat de la comparaison diffère
 		if(jeu.equals(TypeJeu.RECHERCHE_NUM.toString())) {
 			for(int i = 0; i<lgueurCombo; i++) {
 				//System.out.println("decompo de combo : "+constrCombiSecret[i]);//--Controle

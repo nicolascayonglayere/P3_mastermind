@@ -6,8 +6,16 @@ import javax.swing.JOptionPane;
 
 import Propriete.TypeJeu;
 
+/**
+ * Classe définissant le je d'un joueur humain
+ * @author nicolas
+ *
+ */
 public class JoueurHumain extends Joueur {
-
+	
+	/**
+	 * Constructeur sans parametre
+	 */
 	public JoueurHumain() {
 		super();
 		//--Initialisation du joueur via une boite de dialogue
@@ -17,6 +25,11 @@ public class JoueurHumain extends Joueur {
 		jopBonjour.showMessageDialog(null, "Bonjour "+this.nom, "Bonjour", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
+	/**
+	 * Constructeur avec parametres
+	 * @param pCombo
+	 * @param pJeu
+	 */
 	public JoueurHumain(int pCombo, String pJeu) {
 		super(pCombo, pJeu);
 		//--Initialisation du joueur via une boite de dialogue
@@ -26,6 +39,9 @@ public class JoueurHumain extends Joueur {
 		jopBonjour.showMessageDialog(null, "Bonjour "+this.nom, "Bonjour", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
+	/**
+	 * Méthode pour initialiser la combinaison que le joueur devra trouver
+	 */
 	public void initCombiSecret() {
 		this.constrCombiSecret = new Integer[this.lgueurCombo];
 		Random alea = new Random();
@@ -47,6 +63,9 @@ public class JoueurHumain extends Joueur {
 	
 	}
 	
+	/**
+	 * Méthode jeu qui récupere la proposition du joueur et la compare
+	 */
 	public void jeu(String pCoupJoue) {
 		this.listPropJoueur = new Integer[this.lgueurCombo];
 		resultCompa = "";
@@ -65,11 +84,15 @@ public class JoueurHumain extends Joueur {
 		tourDeJeu++;
 	}
 	
+	/**
+	 * Méthode pour comparer la proposition du joueur avec la combinaison secrete
+	 */
 	public void compare() {
 		int difference = 0;
 		int compteurOK = 0;
 		int compteurPresent = 0;
 		
+		//--Selon le jeu, on renvoie différents résultats
 		if(jeu.equals(TypeJeu.RECHERCHE_NUM.toString())) {
 			for(int i = 0; i<lgueurCombo; i++) {
 				//System.out.println("decompo du coup joue "+Integer.valueOf(coupJoue.charAt(i)));
@@ -120,13 +143,5 @@ public class JoueurHumain extends Joueur {
 		if(diff2 == 0) {
 			fin = true;
 		}
-	}
-	
-
-	
-	
-		
-		
-	
-	
+	}	
 }
