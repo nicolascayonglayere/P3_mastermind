@@ -36,7 +36,8 @@ public class BoiteDialogue extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel panContent;
-	private JRadioButton plusMoinsBton, masterBton, challBton, defBton, duelBton;
+	private JPanel panCouleur = new JPanel();
+	private JRadioButton plusMoinsBton, masterBton, challBton, defBton, duelBton, chiffreBton, couleurBton;
 	private JFormattedTextField saisiEssai;
 	private JComboBox<String> saisiLgueurCombi;
 	private JCheckBox modeDevBox;
@@ -107,6 +108,30 @@ public class BoiteDialogue extends JDialog {
 		plusMoinsBton.setBackground(Color.WHITE);
 		masterBton = new JRadioButton(TypeJeu.MASTERMIND.toString());
 		masterBton.setBackground(Color.WHITE);
+		masterBton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				//--Choix entre chiffre et couleur
+
+				panCouleur.setBackground(Color.WHITE);
+				panCouleur.setPreferredSize(new Dimension(350,100));
+				panCouleur.setBorder(BorderFactory.createTitledBorder("CHOIX DE LA NATURE DE LA COMBINAISON"));
+				
+				chiffreBton = new JRadioButton("CHIFFRES");
+				chiffreBton.setBackground(Color.WHITE);
+				couleurBton = new JRadioButton("COULEURS");
+				couleurBton.setBackground(Color.WHITE);
+				
+				ButtonGroup bgCouleur = new ButtonGroup();
+				bgCouleur.add(chiffreBton);
+				bgCouleur.add(couleurBton);
+				panCouleur.add(chiffreBton);
+				panCouleur.add(couleurBton);
+				
+				panContent.add(panCouleur);				
+			}
+			
+		});
 		ButtonGroup bgJeu = new ButtonGroup();
 		bgJeu.add(plusMoinsBton);
 		bgJeu.add(masterBton);
@@ -149,8 +174,7 @@ public class BoiteDialogue extends JDialog {
 			panEssai.add(saisiEssai);
 		}catch(ParseException e) {
 			e.printStackTrace();
-			JOptionPane jop = new JOptionPane();
-			jop.showMessageDialog(null, "Veuillez saisir un nombre","Attention",JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Veuillez saisir un nombre","Attention",JOptionPane.WARNING_MESSAGE);
 		}
 		
 		//--La longueur de la combinaison secrete
@@ -190,6 +214,7 @@ public class BoiteDialogue extends JDialog {
 		panContent.add(panMode);
 		panContent.add(panEssai);
 		panContent.add(panCombi);
+		panContent.add(panCouleur);	
 		panContent.add(panDev);
 		
 	}
@@ -206,8 +231,14 @@ public class BoiteDialogue extends JDialog {
 			//--On définit les propriétés
 			if(plusMoinsBton.isSelected())
 				listProp.setProperty("jeu", TypeJeu.RECHERCHE_NUM.toString());
-			else if (masterBton.isSelected())
+			else if (masterBton.isSelected()) {
 				listProp.setProperty("jeu", TypeJeu.MASTERMIND.toString());
+				
+				if(chiffreBton.isSelected())
+					listProp.setProperty("couleur", "0");
+				else if(couleurBton.isSelected())
+					listProp.setProperty("couleur", "1");				
+			}
 			
 			if(challBton.isSelected())
 				listProp.setProperty("mode", ModeJeu.CHALLENGER.toString());
@@ -224,6 +255,8 @@ public class BoiteDialogue extends JDialog {
 				listProp.setProperty("developpement", "1");
 			else
 				listProp.setProperty("developpement", "0");
+			
+
 			
 			//--On écrit dans le fichier
 			GestionFichierProperties gfp = new GestionFichierProperties();

@@ -1,11 +1,14 @@
 package ihm;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import Propriete.ModeJeu;
+import Propriete.TypeJeu;
 
 /**
  * La classe Accueil hérite de JPanel
@@ -18,21 +21,86 @@ public class Accueil extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	private String nom = "Accueil";
+	private String jeu, modeJeu ;
+	private int nbEssai, lgueurCombo, couleur;
+	private String message;
 	
 	/**
 	 * Constructeur sans parametre
 	 */
 	public Accueil() {
+		this.setLayout(new BorderLayout());
 		//--Zone de texte
-		JTextArea message = new JTextArea();
+		JTextArea accueil = new JTextArea();
 		Font police = new Font("Arial", Font.BOLD, 18);
-		message.setFont(police);
-		message.setPreferredSize(new Dimension(760,75));
-		message.setForeground(Color.BLACK);
-		message.setEditable(false);
-		message.setText("EN CONSTRUCTION");
+		accueil.setFont(police);
+		//accueil.setPreferredSize(new Dimension(760,75));
+		accueil.setForeground(Color.BLACK);
+		accueil.setEditable(false);
+		accueil.setText("\n\t BIENVENUE DANS LE JEU DU MASTERMIND \n\n\n\n\n\n"
+				+ " Dans ce jeu vous pouvez choisir de découvrir entre une recherche +/- d'une combinaison\n cachée de chiffre.\n\n"
+				+ " Ou vous pouvez choisir le je du Mastermind avec des chiffres ou des couleurs ! \n\n"
+				+ " Paramétrez une nouvelle partie ou lancez une partie");
 
-		this.add(message);
+		this.add(accueil, BorderLayout.CENTER);
+	}
+	
+	public Accueil(String pJeu, String pMode, int pEssai, int pCombo, int pCouleur) {
+		this.jeu = pJeu;
+		this.modeJeu = pMode;
+		this.nbEssai = pEssai;
+		this.lgueurCombo = pCombo;
+		this.couleur = pCouleur;
+		String str = "";
+		if(couleur == 0)
+			str = "chiffres";
+		else if (couleur == 1)
+			str = "couleurs";
+		this.setLayout(new BorderLayout());
+		//--Zone de texte
+		JTextArea accueil = new JTextArea();
+		Font police = new Font("Arial", Font.BOLD, 18);
+		accueil.setFont(police);
+		//accueil.setPreferredSize(new Dimension(760,75));
+		accueil.setForeground(Color.BLACK);
+		accueil.setEditable(false);
+		if (jeu.equals(TypeJeu.RECHERCHE_NUM.toString())) {
+			message = "\n\t Vous avez choisi le jeu de recherche +/- \n\n\n\n\n";
+			message += " La combinaison cachée contient "+lgueurCombo+" chiffres et vous avez "+nbEssai+" essais pour la trouver.\n\n";
+			if(modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
+				message += " Tapez votre proposition sur les touches à l'écran ou sur votre clavier numérique\n puis cliquez sur le bouton Tour suivant.\n\n";
+				message += " L'ordinateur vous retourne le résultat de la comparaison et vous pouvez entrer\n votre proposition suivante.\n\n";
+				message += " Bonne chance ! ";
+			}
+			else if (modeJeu.equals(ModeJeu.DEFENSEUR.toString())) {
+				message += " Saississez une combinaison que votre ordinateur doit découvrir. \n\n";
+				message += " Cliquez sur le bouton Tour suivant pour obtenir sa proposition\n et le résultat de la comparaison.";
+			}
+			else if (modeJeu.equals(ModeJeu.DUEL.toString())) {
+				
+			}
+			
+		}
+		else if (jeu.equals(TypeJeu.MASTERMIND.toString())) {
+			message = "\n\t Vous avez choisi le jeu du Mastermind \n\n\n\n\n";
+			message += " La combinaison cachée contient "+lgueurCombo+" "+str+" et vous avez "+nbEssai+" essais pour la trouver.\n\n";
+			
+			if(modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
+				message += " Tapez votre proposition sur les touches à l'écran ou sur votre clavier numérique\n puis cliquez sur le bouton Tour suivant.\n\n";
+				message += " L'ordinateur vous retourne le résultat de la comparaison et vous pouvez entrer\n votre proposition suivante.\n\n";
+				message += " Bonne chance ! ";
+			}
+			else if (modeJeu.equals(ModeJeu.DEFENSEUR.toString())) {
+				message += " Saississez une combinaison que votre ordinateur doit découvrir. \n\n";
+				message += " Cliquez sur le bouton Tour suivant pour obtenir sa proposition\n et le résultat de la comparaison.";
+			}
+			else if (modeJeu.equals(ModeJeu.DUEL.toString())) {
+				
+			}
+		}
+		accueil.setText(message);
+
+		this.add(accueil, BorderLayout.CENTER);
 	}
 	
 	/**

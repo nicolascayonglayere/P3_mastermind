@@ -38,8 +38,8 @@ public class TableDeJeu_2 extends TableDeJeu {
 	 * @param pEssai
 	 * @param pCombo
 	 */
-	public TableDeJeu_2(String pJeu, String pMode, int pEssai, int pCombo, int pModeDev) {
-		super(pJeu, pMode, pEssai, pCombo, pModeDev);
+	public TableDeJeu_2(String pJeu, String pMode, int pEssai, int pCombo, int pModeDev, int pCouleur) {
+		super(pJeu, pMode, pEssai, pCombo, pModeDev, pCouleur);
 	}
 	
 	/**

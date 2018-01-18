@@ -15,16 +15,21 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import org.apache.log4j.Logger;
 
 import Propriete.BoiteDialogue;
 import Propriete.GestionFichierProperties;
 import Propriete.ModeJeu;
+import Propriete.TypeJeu;
 import ihm.Accueil;
 import ihm.TableDeJeu;
 import ihm.TableDeJeu_1;
 import ihm.TableDeJeu_2;
+import ihm.TableDeJeu_3;
 
 /**
  * La classe MasterMind Main hérite de JFrame et affiche les menus l'écran d'accueil et la table de jeu
@@ -34,13 +39,13 @@ import ihm.TableDeJeu_2;
 public class MasterMind_Main extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	static Logger logger = Logger.getLogger(MasterMind_Main.class);
+	static Logger logger = Logger.getLogger("ihm");
 	
 	private JMenuBar barre = new JMenuBar();
 	
 	private JMenu menuJeu = new JMenu("Jeu");
 	private JMenuItem nvelle = new JMenuItem("nouvelle partie");
-	private JMenuItem play = new JMenuItem("jeu");
+	private JMenuItem play = new JMenuItem("jouer");
 	private JMenuItem quit = new JMenuItem("quitter");
 	
 	private JMenu aPropos = new JMenu("A propos");
@@ -53,6 +58,7 @@ public class MasterMind_Main extends JFrame {
 	private int nbCoupsConfig; 
 	private int lgueurCombo;
 	private int modeDev;
+	private int couleur;
 	
 	private TableDeJeu tbleJeu ;
 
@@ -67,12 +73,24 @@ public class MasterMind_Main extends JFrame {
 		this.setTitle("LE MASTERMIND");
 		this.setForeground(Color.BLACK);
 		this.setBackground(Color.WHITE);
-		this.setSize(new Dimension (800,650));
+		this.setSize(new Dimension (800,900));
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				quit.doClick();
 			}
 		});
+		//--Essai Look&Feel
+		try {
+			  //On force à utiliser le « look and feel » du système
+			  UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			  //Ici on force tous les composants de notre fenêtre (this) à se redessiner avec le « look and feel » du système
+			  SwingUtilities.updateComponentTreeUI(this);
+			}
+		catch (InstantiationException e) {}
+		catch (ClassNotFoundException e) {}
+		catch (UnsupportedLookAndFeelException e) {}
+		catch (IllegalAccessException e) {}
+		
 		
 		//--Les menus de la fenetre
 		this.initMenu();
@@ -96,7 +114,32 @@ public class MasterMind_Main extends JFrame {
 		nvelle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);				
+				BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);
+				//--on récupère les proprietes du fichier 
+				GestionFichierProperties gfp = new GestionFichierProperties();
+				propriete = gfp.lireProp();
+				typeJeu = String.valueOf(propriete.getProperty("jeu"));
+				//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
+				logger.info("Ctrl jeu :"+typeJeu);
+				modeJeu = String.valueOf(propriete.getProperty("mode"));
+				//System.out.println("Ctrl mode : "+modeJeu);//--Controle
+				logger.info("Ctrl mode : "+modeJeu);
+				nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
+				//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
+				logger.info("Ctrl nb coup :"+nbCoupsConfig);
+				lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
+				//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
+				logger.info("Ctrl lgueur :"+lgueurCombo);
+				modeDev = Integer.valueOf(propriete.getProperty("developpement"));
+				logger.info("Ctrl mode dev : "+modeDev);
+				if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
+					couleur = Integer.valueOf(propriete.getProperty("couleur"));
+				else 
+					couleur = 0;
+				logger.info("Ctrl chiffre/couleur : "+couleur);
+				
+				accueil = new Accueil(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
+				afficher(accueil.getNom());
 			}
 			
 		});
@@ -111,8 +154,7 @@ public class MasterMind_Main extends JFrame {
 		quit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane jop = new JOptionPane();
-				int option = jop.showConfirmDialog(null, "Voulez-vous quitter ?",
+				int option = JOptionPane.showConfirmDialog(null, "Voulez-vous quitter ?",
 								"Quitter", 
 								JOptionPane.YES_NO_CANCEL_OPTION,
 								JOptionPane.QUESTION_MESSAGE);
@@ -127,10 +169,9 @@ public class MasterMind_Main extends JFrame {
 		contAPropos.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane jop = new JOptionPane();
 				String message = "Appli du Mastermind. Pas de copyright !\n";
 				message += "2017 - Version 1";
-				jop.showMessageDialog(null, message, "A propos", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, message, "A propos", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		
@@ -180,21 +221,26 @@ public class MasterMind_Main extends JFrame {
 			logger.info("Ctrl lgueur :"+lgueurCombo);
 			modeDev = Integer.valueOf(propriete.getProperty("developpement"));
 			logger.info("Ctrl mode dev : "+modeDev);
+			if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
+				couleur = Integer.valueOf(propriete.getProperty("couleur"));
+			else 
+				couleur = 0;
+			logger.info("Ctrl chiffre/couleur : "+couleur);
 			
 			if((modeJeu.equals(ModeJeu.DUEL.toString()))){
-				tbleJeu = new TableDeJeu_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev);
+				tbleJeu = new TableDeJeu_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
 
 			}
 			else {
-				tbleJeu = new TableDeJeu_1(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev);
+				tbleJeu = new TableDeJeu_3(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
 			}
 			
-			}
 		}
+	}
 		
 	
 

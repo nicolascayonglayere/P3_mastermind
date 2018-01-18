@@ -1,0 +1,264 @@
+2018-01-18 16:35:08.476 [AWT-EventQueue-0] INFO  ihm - list proprietes recup sur le fichier lors de lecture : 
+{mode=mode DEFENSEUR, longueur combinaison=4, developpement=0, nombres d'essai=05, couleur=1, jeu=Jeu du MasterMind}
+2018-01-18 16:35:08.478 [AWT-EventQueue-0] INFO  ihm - Ctrl jeu :Jeu du MasterMind
+2018-01-18 16:35:08.478 [AWT-EventQueue-0] INFO  ihm - Ctrl mode : mode DEFENSEUR
+2018-01-18 16:35:08.478 [AWT-EventQueue-0] INFO  ihm - Ctrl nb coup :5
+2018-01-18 16:35:08.478 [AWT-EventQueue-0] INFO  ihm - Ctrl lgueur :4
+2018-01-18 16:35:08.478 [AWT-EventQueue-0] INFO  ihm - Ctrl mode dev : 0
+2018-01-18 16:35:08.479 [AWT-EventQueue-0] INFO  ihm - Ctrl chiffre/couleur : 1
+2018-01-18 16:35:08.493 [AWT-EventQueue-0] DEBUG ihm - Ctrl modeDev : 0
+2018-01-18 16:35:10.670 [AWT-EventQueue-0] WARN  ihm - Combinaison secrète non saisie
+2018-01-18 16:35:17.155 [AWT-EventQueue-0] INFO  ihm - list proprietes recup sur le fichier lors de lecture : 
+{mode=mode DEFENSEUR, longueur combinaison=4, developpement=0, nombres d'essai=05, couleur=1, jeu=Jeu du MasterMind}
+2018-01-18 16:35:17.155 [AWT-EventQueue-0] INFO  ihm - Ctrl jeu :Jeu du MasterMind
+2018-01-18 16:35:17.155 [AWT-EventQueue-0] INFO  ihm - Ctrl mode : mode DEFENSEUR
+2018-01-18 16:35:17.155 [AWT-EventQueue-0] INFO  ihm - Ctrl nb coup :5
+2018-01-18 16:35:17.155 [AWT-EventQueue-0] INFO  ihm - Ctrl lgueur :4
+2018-01-18 16:35:17.155 [AWT-EventQueue-0] INFO  ihm - Ctrl mode dev : 0
+2018-01-18 16:35:17.155 [AWT-EventQueue-0] INFO  ihm - Ctrl chiffre/couleur : 1
+2018-01-18 16:35:17.161 [AWT-EventQueue-0] DEBUG ihm - Ctrl modeDev : 0
+2018-01-18 16:35:20.133 [AWT-EventQueue-0] DEBUG ihm - ctrl saisie : 1234 - 1234
+2018-01-18 16:35:20.133 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :1
+2018-01-18 16:35:20.133 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :2
+2018-01-18 16:35:20.133 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :3
+2018-01-18 16:35:20.134 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :4
+2018-01-18 16:35:23.439 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 0
+2018-01-18 16:35:23.439 [AWT-EventQueue-0] INFO  ihm - la proposition de l'odinateur : 123
+2018-01-18 16:35:23.439 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-18 16:35:23.439 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 1
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:23.440 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 2
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :true
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 1
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:23.441 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[1, 2, 3, 4, 5, 6, 7, 8, 9], 1=[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
+2018-01-18 16:35:23.442 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :true
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 1
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:23.443 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[1, 2, 3, 4, 5, 6, 7, 8, 9], 1=[1, 2, 3, 4, 5, 6, 7, 8, 9], 2=[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:23.444 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
+2018-01-18 16:35:23.444 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
+2018-01-18 16:35:23.444 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :true
+2018-01-18 16:35:23.444 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 1
+2018-01-18 16:35:23.444 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
+2018-01-18 16:35:23.444 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:23.444 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:23.445 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:23.445 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:23.445 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:23.445 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:23.445 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:23.445 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[1, 2, 3, 4, 5, 6, 7, 8, 9], 1=[1, 2, 3, 4, 5, 6, 7, 8, 9], 2=[1, 2, 3, 4, 5, 6, 7, 8, 9], 3=[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 1
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - taille pool : 9
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 1
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:24.608 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - taille pool : 9
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 1
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:24.609 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - taille pool : 9
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 1
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:24.610 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - taille pool : 9
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 1
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:24.611 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] INFO  ihm - la proposition de l'odinateur : 1111
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 2
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:24.612 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[2, 3, 4, 5, 6, 7, 8, 9], 1=[2, 3, 4, 5, 6, 7, 8, 9], 2=[2, 3, 4, 5, 6, 7, 8, 9], 3=[2, 3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 2
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:24.613 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[2, 3, 4, 5, 6, 7, 8, 9], 1=[2, 3, 4, 5, 6, 7, 8, 9], 2=[2, 3, 4, 5, 6, 7, 8, 9], 3=[2, 3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 3
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:24.614 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[2, 3, 4, 5, 6, 7, 8, 9], 1=[2, 3, 4, 5, 6, 7, 8, 9], 2=[2, 3, 4, 5, 6, 7, 8, 9], 3=[2, 3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:25.261 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 2
+2018-01-18 16:35:25.261 [AWT-EventQueue-0] DEBUG ihm - taille pool : 8
+2018-01-18 16:35:25.261 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - taille pool : 8
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:25.262 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - taille pool : 8
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] INFO  ihm - la proposition de l'odinateur : 1222
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.263 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 2
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[3, 4, 5, 6, 7, 8, 9], 1=[3, 4, 5, 6, 7, 8, 9], 2=[3, 4, 5, 6, 7, 8, 9], 3=[3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
+2018-01-18 16:35:25.264 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 2
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:25.265 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[3, 4, 5, 6, 7, 8, 9], 1=[3, 4, 5, 6, 7, 8, 9], 2=[3, 4, 5, 6, 7, 8, 9], 3=[3, 4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:25.591 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 3
+2018-01-18 16:35:25.591 [AWT-EventQueue-0] DEBUG ihm - taille pool : 7
+2018-01-18 16:35:25.591 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:25.591 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:25.591 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:25.591 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - taille pool : 7
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 3
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] INFO  ihm - la proposition de l'odinateur : 1233
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-18 16:35:25.592 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 2
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
+2018-01-18 16:35:25.593 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
+2018-01-18 16:35:25.594 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[4, 5, 6, 7, 8, 9], 1=[4, 5, 6, 7, 8, 9], 2=[4, 5, 6, 7, 8, 9], 3=[4, 5, 6, 7, 8, 9]}
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 4
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - taille pool : 6
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
+2018-01-18 16:35:25.941 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] INFO  ihm - la proposition de l'odinateur : 1234
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 2
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
+2018-01-18 16:35:25.942 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0

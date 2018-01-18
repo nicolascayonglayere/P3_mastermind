@@ -52,6 +52,7 @@ public class Main_Pattern_Obs extends JFrame {
 	private String typeJeu, modeJeu;
 	private int nbCoupsConfig; 
 	private int lgueurCombo;
+	private int couleur;
 	
 	private TableDeJeu_Pattern_Obs tbleJeu ;
 
@@ -177,14 +178,19 @@ public class Main_Pattern_Obs extends JFrame {
 			lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
 			//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
 			logger.info("Ctrl lgueur :"+lgueurCombo);
+			if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
+				couleur = Integer.valueOf(propriete.getProperty("couleur"));
+			else 
+				couleur = 0;
+			logger.info("Ctrl chiffre/couleur : "+couleur);
 			
 			if((modeJeu.equals(ModeJeu.DUEL.toString()))){
-				tbleJeu = new TableDeJeu_Pattern_Obs_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo);
+				tbleJeu = new TableDeJeu_Pattern_Obs_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
 			}
 			else {
-				tbleJeu = new TableDeJeu_Pattern_Obs_1(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo);
+				tbleJeu = new TableDeJeu_Pattern_Obs_3(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
 			}

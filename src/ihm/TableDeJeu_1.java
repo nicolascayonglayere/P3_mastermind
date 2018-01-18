@@ -38,8 +38,8 @@ private static final long serialVersionUID = 1L;
 	 * @param pEssai
 	 * @param pCombo
 	 */
-	public TableDeJeu_1(String pJeu, String pMode, int pEssai, int pCombo, int pModeDev) {
-		super(pJeu, pMode, pEssai, pCombo, pModeDev);
+	public TableDeJeu_1(String pJeu, String pMode, int pEssai, int pCombo, int pModeDev, int pCouleur) {
+		super(pJeu, pMode, pEssai, pCombo, pModeDev, pCouleur);
 	}
 	
 	/**
@@ -95,6 +95,7 @@ private static final long serialVersionUID = 1L;
 			listResult[i].setFont(police);
 			listResult[i].setBackground(Color.white);
 			listResult[i].setPreferredSize(new Dimension (300, 50));
+			listResult[i].setHorizontalAlignment(JLabel.CENTER);
 			
 			//--Le panneau qui accueille les 3 composants précédents
 			panRef[i] = new JPanel();

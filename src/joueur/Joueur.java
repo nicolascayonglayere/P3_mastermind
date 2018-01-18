@@ -13,7 +13,7 @@ import pattern_observer.Observateur;
  *
  */
 public abstract class Joueur implements Observable {
-	static Logger logger = Logger.getLogger(Joueur.class);
+	static Logger logger = Logger.getLogger("ihm");
 	
 	protected String nom, jeu;
 	protected int tourDeJeu;

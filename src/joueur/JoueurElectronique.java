@@ -2,7 +2,6 @@ package joueur;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 import javax.swing.JOptionPane;
 
@@ -49,10 +48,15 @@ public class JoueurElectronique extends Joueur {
 	 */
 	public void initCombiSecret() {
 		//Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau
-		JOptionPane jop0 = new JOptionPane();
-		this.combiJoueur = jop0.showInputDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Combinaison secrète", JOptionPane.QUESTION_MESSAGE);
-		this.combiSecret = Integer.valueOf(combiJoueur);
-		logger.debug("ctrl saisie : "+combiJoueur+" - "+combiSecret);
+		try {
+			this.combiJoueur = JOptionPane.showInputDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Combinaison secrète", JOptionPane.QUESTION_MESSAGE);
+			this.combiSecret = Integer.valueOf(combiJoueur);
+			logger.debug("ctrl saisie : "+combiJoueur+" - "+combiSecret);
+		}catch (NumberFormatException e) {
+			logger.warn("Combinaison secrète non saisie");
+			JOptionPane.showMessageDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Attention Combinaison secrète", JOptionPane.WARNING_MESSAGE);
+		}
+
 		this.tabConstrCombiSecret = this.combiJoueur.toCharArray();
 		this.constrCombiSecret = new Integer[this.lgueurCombo];
 		for (int i = 0; i<lgueurCombo; i++) {
@@ -61,10 +65,9 @@ public class JoueurElectronique extends Joueur {
 		}
 		
 		// Une boite de dialogue pour informer la partie lancee
-		JOptionPane jop1 = new JOptionPane();
 		String message = "Vous avez choisi une combinaison secrète. \n";
 		message += "Votre adversaire joue.";
-		jop1.showMessageDialog(null, message, "Combinaison secrète prête !", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, message, "Combinaison secrète prête !", JOptionPane.INFORMATION_MESSAGE);
 		
 		System.out.println("la combo gagnante : "+this.combiSecret);//--Controle
 	}

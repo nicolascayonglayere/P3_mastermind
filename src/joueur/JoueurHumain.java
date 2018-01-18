@@ -19,10 +19,8 @@ public class JoueurHumain extends Joueur {
 	public JoueurHumain() {
 		super();
 		//--Initialisation du joueur via une boite de dialogue
-		JOptionPane jopNom = new JOptionPane();
-		this.nom = jopNom.showInputDialog(null, "Quel est votre nom ?", "Identification", JOptionPane.QUESTION_MESSAGE);
-		JOptionPane jopBonjour = new JOptionPane();
-		jopBonjour.showMessageDialog(null, "Bonjour "+this.nom, "Bonjour", JOptionPane.INFORMATION_MESSAGE);
+		this.nom = JOptionPane.showInputDialog(null, "Quel est votre nom ?", "Identification", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Bonjour "+this.nom, "Bonjour", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/**
@@ -33,10 +31,8 @@ public class JoueurHumain extends Joueur {
 	public JoueurHumain(int pCombo, String pJeu) {
 		super(pCombo, pJeu);
 		//--Initialisation du joueur via une boite de dialogue
-		JOptionPane jopNom = new JOptionPane();
-		this.nom = jopNom.showInputDialog(null, "Quel est votre nom ?", "Identification", JOptionPane.QUESTION_MESSAGE);
-		JOptionPane jopBonjour = new JOptionPane();
-		jopBonjour.showMessageDialog(null, "Bonjour "+this.nom, "Bonjour", JOptionPane.INFORMATION_MESSAGE);
+		this.nom = JOptionPane.showInputDialog(null, "Quel est votre nom ?", "Identification", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Bonjour "+this.nom, "Bonjour", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/**
@@ -56,11 +52,9 @@ public class JoueurHumain extends Joueur {
 		//System.out.println("la combo gagnante : "+this.combiSecret);//--Controle
 		logger.warn("la combo gagnante : "+this.combiSecret);
 		
-		JOptionPane jop = new JOptionPane();
 		String message = "La combinaison secrète est prête \n";
 		message += "A vous de jouer";
-		jop.showMessageDialog(null, message, "Combinaison secrète prête !", JOptionPane.INFORMATION_MESSAGE);
-	
+		JOptionPane.showMessageDialog(null, message, "Combinaison secrète prête !", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/**

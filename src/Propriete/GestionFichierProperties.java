@@ -13,8 +13,6 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-import test_unitaire_table_jeu.TableDeJeu_Test;
-
 
 
 /**
@@ -23,7 +21,7 @@ import test_unitaire_table_jeu.TableDeJeu_Test;
  *
  */
 public class GestionFichierProperties {
-	static Logger logger = Logger.getLogger(GestionFichierProperties.class);
+	static Logger logger = Logger.getLogger("ihm");
 	
 	private File configFile;
 	private File defautConfigFile;

@@ -30,8 +30,8 @@ public class TableDeJeu_Pattern_Obs_2 extends TableDeJeu_Pattern_Obs {
 		super();
 	}
 	
-	public TableDeJeu_Pattern_Obs_2(String pJeu, String pMode, int pEssai, int pCombo) {
-		super(pJeu, pMode, pEssai, pCombo);
+	public TableDeJeu_Pattern_Obs_2(String pJeu, String pMode, int pEssai, int pCombo, int pCouleur) {
+		super(pJeu, pMode, pEssai, pCombo, pCouleur);
 	}
 	
 	public void initTable() throws ParseException{
