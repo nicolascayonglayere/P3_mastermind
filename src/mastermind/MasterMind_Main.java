@@ -30,6 +30,7 @@ import ihm.TableDeJeu;
 import ihm.TableDeJeu_1;
 import ihm.TableDeJeu_2;
 import ihm.TableDeJeu_3;
+import ihm.TableDeJeu_4;
 
 /**
  * La classe MasterMind Main hérite de JFrame et affiche les menus l'écran d'accueil et la table de jeu
@@ -114,7 +115,9 @@ public class MasterMind_Main extends JFrame {
 		nvelle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
 				BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);
+				
 				//--on récupère les proprietes du fichier 
 				GestionFichierProperties gfp = new GestionFichierProperties();
 				propriete = gfp.lireProp();
@@ -228,7 +231,7 @@ public class MasterMind_Main extends JFrame {
 			logger.info("Ctrl chiffre/couleur : "+couleur);
 			
 			if((modeJeu.equals(ModeJeu.DUEL.toString()))){
-				tbleJeu = new TableDeJeu_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
+				tbleJeu = new TableDeJeu_4(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
 

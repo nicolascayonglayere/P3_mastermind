@@ -48,6 +48,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 	protected JLabel[] listResultJH, listResultJE;
 	protected JLabel[][] listLblProp;
 	protected JLabel[] lblProp;
+	protected JLabel[][] listLblPropJH, listLblPropJE;
 	protected HashMap<Integer, JLabel[]> listPropLbl;
 	protected JFormattedTextField[] listProp;//--Une liste de champs de saisie pour saisir son coup
 	protected JFormattedTextField[] propJH, propJE;
@@ -232,17 +233,27 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
-					coupJoue = propJH[tourDeJeu].getText();
-					joueur.jeu(coupJoue);
-					resultCompa = joueur.getResultCompa();
-					listResultJH[tourDeJeu].setText(resultCompa);
+				//coupJoue = propJH[tourDeJeu].getText();
+				//
+				//joueur.jeu(coupJoue);
+				//resultCompa = joueur.getResultCompa();
+				//listResultJH[tourDeJeu].setText(resultCompa);
 					
 					
 					if(joueur.getVictoire() == false && tourDeJeu+1 < nbCoupsConfig) {
-						propJH[tourDeJeu + 1].setEditable(true);
+						for(int i = 0; i<lgueurCombo; i++) {
+							coupJoue += listLblPropJH[tourDeJeu][i].getText();
+						}
+						//coupJoue = listProp[tourDeJeu].getText();//--table de jeu 1
+						joueur.jeu(coupJoue);
+						resultCompa = joueur.getResultCompa();
+						listResultJH[tourDeJeu].setText(resultCompa);
+						//propJH[tourDeJeu + 1].setEditable(true);
 						//joueur.setTourDeJeu(tourDeJeu++);
 					}
 					else if (joueur.getVictoire() == true) {
+						resultCompa = joueur.getResultCompa();
+						listResultJH[tourDeJeu].setText(resultCompa);
 						JOptionPane jop = new JOptionPane();
 						int option = jop.showConfirmDialog(null, "Félicitation, "+joueur.getNom()+" a trouvé la combinaison secrète ! \n "
 								+ "La combinaison de votre adversaire était : "+joueur1.getCombiSecret()+" \n Voulez-vous rejouer ?",
@@ -254,6 +265,8 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 						}
 					}
 					else if(joueur.getVictoire() == false && tourDeJeu+1 == nbCoupsConfig) {
+						resultCompa = joueur.getResultCompa();
+						listResultJH[tourDeJeu].setText(resultCompa);
 						JOptionPane jop = new JOptionPane();
 						int option = jop.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur.getCombiSecret()+"\n Voulez-vous rejouer ?",
 										"Défaite", 
@@ -271,15 +284,42 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 					tourDeJeu = joueur1.getTourDeJeu();	
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
 					joueur1.jeu(coupJoue);
-					propJE[tourDeJeu].setText(joueur1.getPropOrdi());
-					resultCompa = joueur1.getResultCompa();
-					listResultJE[tourDeJeu].setText(resultCompa);
+				//propJE[tourDeJeu].setText(joueur1.getPropOrdi());
+				//resultCompa = joueur1.getResultCompa();
+				//listResultJE[tourDeJeu].setText(resultCompa);
+					
+					if(pCouleur == 0) {
+						for (int k = 0; k<joueur.getPropOrdi().toCharArray().length; k++) {
+							listLblPropJE[tourDeJeu][k].setText(String.valueOf(joueur1.getPropOrdi().charAt(k)));
+						}
+					}
+					else if (pCouleur == 1) {
+						//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
+						Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
+						ImageIcon[] listImageColor = {new ImageIcon("Ressources/Images/blanc0.JPG"),
+											       	new ImageIcon ("Ressources/Images/noir1.JPG"), 
+											       	new ImageIcon("Ressources/Images/rouge2.JPG"),
+											       	new ImageIcon("Ressources/Images/jaune3.JPG"), 
+											       	new ImageIcon("Ressources/Images/vert4.JPG"),
+											       	new ImageIcon("Ressources/Images/bleu5.JPG"),
+											       	new ImageIcon("Ressources/Images/orange6.JPG"),
+											       	new ImageIcon("Ressources/Images/rose8.JPG")};
+						for (int k = 0; k<joueur.getPropOrdi().toCharArray().length; k++) {
+							listLblPropJE[tourDeJeu][k].setIcon(listImageColor[Character.getNumericValue(joueur1.getPropOrdi().charAt(k))]);
+							listLblPropJE[tourDeJeu][k].setForeground(listColor[Character.getNumericValue(joueur1.getPropOrdi().charAt(k))]);
+							listLblPropJE[tourDeJeu][k].setText(String.valueOf(joueur.getPropOrdi().charAt(k)));
+						}
+					}
 					
 					if(joueur1.getVictoire() == false && tourDeJeu+1 != nbCoupsConfig) {
-						propJE[tourDeJeu + 1].setEditable(true);
+						resultCompa = joueur.getResultCompa();
+						listResultJE[tourDeJeu].setText(resultCompa);
+						//propJE[tourDeJeu + 1].setEditable(true);
 						//joueur.setTourDeJeu(tourDeJeu++);
 					}
 					else if (joueur1.getVictoire() == true) {
+						resultCompa = joueur.getResultCompa();
+						listResultJE[tourDeJeu].setText(resultCompa);
 						JOptionPane jop = new JOptionPane();
 						int option = jop.showConfirmDialog(null, "Félicitation, "+joueur1.getNom()+" a trouvé la combinaison secrète ! \n "
 								+ "La combinaison de votre adversaire était : "+joueur.getCombiSecret()+" \n Voulez-vous rejouer ?",
@@ -291,6 +331,8 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 						}
 					}
 					else if(joueur1.getVictoire() == false && tourDeJeu+1 == nbCoupsConfig) {
+						resultCompa = joueur.getResultCompa();
+						listResultJE[tourDeJeu].setText(resultCompa);
 						JOptionPane jop = new JOptionPane();
 						int option = jop.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur1.getCombiSecret()+"\n Voulez-vous rejouer ?",
 										"Défaite", 

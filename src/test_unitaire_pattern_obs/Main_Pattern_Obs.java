@@ -185,7 +185,7 @@ public class Main_Pattern_Obs extends JFrame {
 			logger.info("Ctrl chiffre/couleur : "+couleur);
 			
 			if((modeJeu.equals(ModeJeu.DUEL.toString()))){
-				tbleJeu = new TableDeJeu_Pattern_Obs_2(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
+				tbleJeu = new TableDeJeu_Pattern_Obs_4(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
 				afficher(tbleJeu.getNom());
 				tbleJeu.nouvellePartie();
 			}

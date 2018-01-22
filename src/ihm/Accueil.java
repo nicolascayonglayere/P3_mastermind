@@ -45,6 +45,14 @@ public class Accueil extends JPanel{
 		this.add(accueil, BorderLayout.CENTER);
 	}
 	
+	/**
+	 * Constructeur avec parametre
+	 * @param pJeu
+	 * @param pMode
+	 * @param pEssai
+	 * @param pCombo
+	 * @param pCouleur
+	 */
 	public Accueil(String pJeu, String pMode, int pEssai, int pCombo, int pCouleur) {
 		this.jeu = pJeu;
 		this.modeJeu = pMode;
@@ -61,9 +69,9 @@ public class Accueil extends JPanel{
 		JTextArea accueil = new JTextArea();
 		Font police = new Font("Arial", Font.BOLD, 18);
 		accueil.setFont(police);
-		//accueil.setPreferredSize(new Dimension(760,75));
 		accueil.setForeground(Color.BLACK);
 		accueil.setEditable(false);
+		//--Selon le jeu et le mode on affiche un message
 		if (jeu.equals(TypeJeu.RECHERCHE_NUM.toString())) {
 			message = "\n\t Vous avez choisi le jeu de recherche +/- \n\n\n\n\n";
 			message += " La combinaison cachée contient "+lgueurCombo+" chiffres et vous avez "+nbEssai+" essais pour la trouver.\n\n";
@@ -77,7 +85,10 @@ public class Accueil extends JPanel{
 				message += " Cliquez sur le bouton Tour suivant pour obtenir sa proposition\n et le résultat de la comparaison.";
 			}
 			else if (modeJeu.equals(ModeJeu.DUEL.toString())) {
-				
+				message += " Saississez une combinaison que votre ordinateur doit découvrir. \n\n";
+				message += " Tapez votre proposition sur les touches à l'écran ou sur votre clavier numérique\n puis cliquez sur le bouton Tour suivant.\n\n";
+				message += " L'ordinateur vous retourne le résultat de la comparaison ainsi que sa proposition et\n le résultat.\n\n";
+				message += " Bonne chance !";
 			}
 			
 		}
@@ -95,7 +106,10 @@ public class Accueil extends JPanel{
 				message += " Cliquez sur le bouton Tour suivant pour obtenir sa proposition\n et le résultat de la comparaison.";
 			}
 			else if (modeJeu.equals(ModeJeu.DUEL.toString())) {
-				
+				message += " Saississez une combinaison que votre ordinateur doit découvrir. \n\n";
+				message += " Tapez votre proposition sur les touches à l'écran ou sur votre clavier numérique\n puis cliquez sur le bouton Tour suivant.\n\n";
+				message += " L'ordinateur vous retourne le résultat de la comparaison ainsi que sa proposition et\n le résultat.\n\n";
+				message += " Bonne chance !";
 			}
 		}
 		accueil.setText(message);

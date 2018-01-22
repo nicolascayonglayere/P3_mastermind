@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
+import javax.swing.ImageIcon;
 import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -36,8 +37,6 @@ public class Clavier extends JPanel implements Observable_Clavier {
 	private JPanel panBouton = new JPanel();
 	private GridLayout gl = new GridLayout(2,5);
 	private String lettre  ;
-	//private Color couleur;
-		//private char charLettre;
 	private int couleurMode = -1;
 	private ArrayList<Observateur_Clavier> listObs = new ArrayList<Observateur_Clavier>();
 
@@ -72,9 +71,24 @@ public class Clavier extends JPanel implements Observable_Clavier {
 			this.add(panBouton);
 		}
 		
+		/**
+		 * Constructeur avec parametre
+		 * @param pCouleur
+		 */
 		public Clavier(int pCouleur) {
+			ImageIcon[] listImageColor = {new ImageIcon("Ressources/Images/blanc0.JPG"),
+			       	new ImageIcon ("Ressources/Images/noir1.JPG"), 
+			       	new ImageIcon("Ressources/Images/rouge2.JPG"),
+			       	new ImageIcon("Ressources/Images/jaune3.JPG"), 
+			       	new ImageIcon("Ressources/Images/vert4.JPG"),
+			       	new ImageIcon("Ressources/Images/bleu5.JPG"),
+			       	new ImageIcon("Ressources/Images/orange6.JPG"),
+			       	new ImageIcon("Ressources/Images/rose8.JPG")};
+			
 			this.setBackground(Color.WHITE);
+			//--on récupére le choix du joueur quant a la couleur
 			this.couleurMode = pCouleur;
+			//--chiffre selectionne
 			if (pCouleur == 0) {
 				listBouton = new JButton[this.listChar.length];
 				//--Le panel qui accueillera les boutons selon un rangement sur grille gl
@@ -100,6 +114,7 @@ public class Clavier extends JPanel implements Observable_Clavier {
 				//--On ajoute le panel à l'objet
 				this.add(panBouton);
 			}
+			//--couleur selectionnee
 			else if(pCouleur == 1) {
 				//this.listCouleur = new HashMap<Integer, File>();
 				//--Le panel qui accueillera les boutons selon un rangement sur grille gl
@@ -112,8 +127,8 @@ public class Clavier extends JPanel implements Observable_Clavier {
 				for(int i = 0; i <listColor.length; i++) {
 					//--on cree nos boutons avec des ecouteurs clavier integres
 					listBouton[i] = new JButton();
+					listBouton[i].setIcon(listImageColor[i]);
 					listBouton[i].setBackground(listColor[i]);
-					//listBouton[i]=(createBouton(this.listChar[i], 96+i));
 					listBouton[i].setFont(police);
 					listBouton[i].setPreferredSize(new Dimension(55,55));
 					//--On ajoute les ecouteurs souris sur les boutons, les ecouteurs claviers sont inclus ds les boutons
@@ -128,27 +143,28 @@ public class Clavier extends JPanel implements Observable_Clavier {
 				
 			}
 		}
+		
 		/**
-		 * Encapsulation de la lettre
-		 * @return un char = lettre tapee
+		 * Methode d'encapsulation de la variable lettre
+		 * @return
 		 */
-	//public char getLettre() {
-	//	return this.charLettre;
-	//}
 		public String getLettre() {
 			return this.lettre;
 		}
 		
-		
+		/**
+		 * Méthode d'encapsulation de la listCouleur
+		 * @return
+		 */
 		public HashMap<Color, Integer> getListCouleur(){
 			return this.listCouleur;
 		}
+		
 		/**
 		 * Pattern Observer; methode d'ajout des abonnes
 		 */
 		public void addObservateur(Observateur_Clavier o) {
-			this.listObs.add(o);
-			
+			this.listObs.add(o);			
 		}
 
 		/**
@@ -156,19 +172,17 @@ public class Clavier extends JPanel implements Observable_Clavier {
 		 */
 		public void updateObservateur() {
 			for (Observateur_Clavier o : listObs) {
-				//o.update(this.charLettre);
 				o.update(this.lettre);
 			}
-			
 		}
 
 		/**
 		 * Pattern Observer; suppression d'abonnes
 		 */
 		public void delObservateur() {
-			this.listObs = new ArrayList<Observateur_Clavier>();
-			
+			this.listObs = new ArrayList<Observateur_Clavier>();			
 		}
+		
 		/**
 		 * Méthode générant un bouton qui bind une touche du clavier
 		 * @param name
@@ -203,33 +217,22 @@ public class Clavier extends JPanel implements Observable_Clavier {
 		 */
 		class ClavierListener implements ActionListener {
 			/**
-			 * methode retournant la lettre lorsqu'on click dessus
+			 * methode retournant le chiffre ou la couleur lorsqu'on click dessus
 			 */
 			public void actionPerformed(ActionEvent e) {
+				//--Mode chiffre : on recupere le chiffre
 				if (couleurMode == 0) {
 					lettre = ((JButton)e.getSource()).getText();
-					//System.out.println("lettre transmis : "+lettre);
 				}
 				
+				//--Mode couleur : on recupere le chiffre lie a la couleur
 				else if (couleurMode == 1) {
-					//if(e.getSource() == listBouton[0])
-						//lettre = "0";
-					//couleur = (Color)e.getSource();
 					for (int i = 0 ; i<listColor.length; i++) {
 						if (e.getSource() == listBouton[i])
 							lettre = String.valueOf((i));
-						
-						//if(couleur.toString().equals(listCouleur.get(i).toString()))
-							//lettre = String.valueOf(i);
 					}
 				}
-			//couleur = (Color)(e.getSource());
-			//
-			//lettre = String.valueOf(i)
-				//charLettre = lettre.charAt(0);
 				updateObservateur();
-				//((JButton)e.getSource()).setEnabled(false);
 			}
-
 		}
 }

@@ -19,6 +19,11 @@ import Propriete.ModeJeu;
 import clavier.Clavier;
 import clavier.Observateur_Clavier;
 
+/**
+ * Table de jeu pour 1 joueur, hérite de la classe abstraite TableDeJeu
+ * @author nicolas
+ *
+ */
 public class TableDeJeu_3 extends TableDeJeu {
 
 	/**
@@ -27,19 +32,32 @@ public class TableDeJeu_3 extends TableDeJeu {
 	private static final long serialVersionUID = 1L;
 	private int cpteurLettre = 0;
 		
+	/**
+	 * Constructeur sans parametre
+	 */
 	public TableDeJeu_3() {
 		super();
 	}
 	
+	/**
+	 * Constructeur avec parametre
+	 * @param pJeu
+	 * @param pMode
+	 * @param pEssai
+	 * @param pCombo
+	 * @param pDev
+	 * @param pCouleur
+	 */
 	public TableDeJeu_3(String pJeu, String pMode, int pEssai, int pCombo, int pDev, int pCouleur) {
 		super(pJeu, pMode, pEssai, pCombo, pDev, pCouleur);
 	}
 	
+	/**
+	 * Methode initialisant les composants graphiques de la table
+	 */
 	public void initTable() {
 		
 		//--Le panneau qui accueille la table de jeu
-		
-		//panTbleJeu.setPreferredSize(new Dimension (400, 500));
 		panTbleJeu.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		panTbleJeu.setLayout(new BoxLayout(panTbleJeu, BoxLayout.PAGE_AXIS));
 		panTbleJeu.setBackground(Color.WHITE);
@@ -116,6 +134,7 @@ public class TableDeJeu_3 extends TableDeJeu {
 			
 			panTbleJeu.add(panRef[i]);
 		}
+		//--Si le mode de jeu est defenseur, on ajoute un bouton
 		if (this.modeJeu.equals(ModeJeu.DEFENSEUR.toString())){
 			
 			//--Un bouton fin de tour
@@ -124,29 +143,29 @@ public class TableDeJeu_3 extends TableDeJeu {
 			finDeTour.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 			finDeTour.setPreferredSize(new Dimension (300, 100));
 			finDeTour.addActionListener(new ActionListener() {
-	
-				@Override
+					@Override
 				public void actionPerformed(ActionEvent arg0) {
 					joueur.updateObservateur();					
 				}
-				
 			});
 			panTbleJeu.add(finDeTour);
 		}
+		//--Si le mode de jeu est challenger, on ajoute un clavier de chiffre ou de couleur et un bouton
 		else if (this.modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
-			//--Un clavier de chiffre
+			//--Un clavier de chiffre/couleur
 			Clavier clavier = new Clavier(couleur);
 			clavier.addObservateur(new Observateur_Clavier() {
 				
 				@Override
 				public void update(String pLettre) {
-
+					//--clavier numerique
 					if (couleur == 0) {
 						logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
 						logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));
 						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
 						cpteurLettre ++;	
 					}
+					//--Clavier de couleur
 					else if (couleur == 1) {
 						//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
 						Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
@@ -176,19 +195,20 @@ public class TableDeJeu_3 extends TableDeJeu {
 			finDeTour.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 			finDeTour.setPreferredSize(new Dimension (300, 100));
 			finDeTour.addActionListener(new ActionListener() {
-	
-				@Override
+					@Override
 				public void actionPerformed(ActionEvent arg0) {
 					joueur.updateObservateur();
 					cpteurLettre = 0;
 				}
-				
 			});
 			clavier.add(finDeTour);
 			panTbleJeu.add(clavier);
 		}
 	}
 	
+	/**
+	 * Methode initialisant une nouvelle partie
+	 */
 	public void nouvellePartie() {
 		panTbleJeu.removeAll();
 		resultCompa ="";
@@ -212,6 +232,7 @@ public class TableDeJeu_3 extends TableDeJeu {
 		}
 		panTbleJeu.revalidate();
 		panTbleJeu.repaint();
+		
 		this.setLayout(new BorderLayout());
 		this.add(panTbleJeu, BorderLayout.CENTER);
 		this.joueur.initCombiSecret();

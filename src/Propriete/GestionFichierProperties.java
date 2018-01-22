@@ -118,7 +118,7 @@ public class GestionFichierProperties {
 					ois.close();
 				}
 			}
-			//--Sinon, on le cree on recupere les prop par defaut
+			//--Sinon, on recupere les prop par defaut
 			else {
 				ois = new ObjectInputStream(
 						new BufferedInputStream(
