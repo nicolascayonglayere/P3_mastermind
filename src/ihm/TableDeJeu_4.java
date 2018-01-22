@@ -7,6 +7,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -211,6 +213,27 @@ public class TableDeJeu_4 extends TableDeJeu {
 			}
 			
 		});
+		finDeTour.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent arg0) {
+				if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
+					finDeTour.doClick();				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		clavier.add(finDeTour);
 		panTbleJeu.add(clavier);
 	}
@@ -251,5 +274,6 @@ public class TableDeJeu_4 extends TableDeJeu {
 		this.joueur1.setTourDeJeu(0);
 		this.joueur.setVictoire(false);
 		this.joueur1.setVictoire(false);
+		this.inGame = true;
 	}
 }

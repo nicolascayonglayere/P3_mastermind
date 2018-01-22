@@ -28,8 +28,8 @@ public class JoueurHumain extends Joueur {
 	 * @param pCombo
 	 * @param pJeu
 	 */
-	public JoueurHumain(int pCombo, String pJeu) {
-		super(pCombo, pJeu);
+	public JoueurHumain(int pCombo, String pJeu, int pCouleur) {
+		super(pCombo, pJeu, pCouleur);
 		//--Initialisation du joueur via une boite de dialogue
 		this.nom = JOptionPane.showInputDialog(null, "Quel est votre nom ?", "Identification", JOptionPane.QUESTION_MESSAGE);
 		JOptionPane.showMessageDialog(null, "Bonjour "+this.nom, "Bonjour", JOptionPane.INFORMATION_MESSAGE);
@@ -44,13 +44,20 @@ public class JoueurHumain extends Joueur {
 		String str = "";
 				
 		for (int i = 0; i<lgueurCombo; i++) {
-			//--on tire 1 chiffre au hasard
-			constrCombiSecret[i] = alea.nextInt(10);
+			if(couleur == 0) {
+				//--on tire 1 chiffre au hasard
+				constrCombiSecret[i] = alea.nextInt(10);
+			}
+			else {
+				//--on tire 1 chiffre au hasard
+				constrCombiSecret[i] = alea.nextInt(8);
+			}
+
 			str += String.valueOf(constrCombiSecret[i]);//--on concatene les différents chiffres 
 		}
 		this.combiSecret = Integer.valueOf(str);
 		//System.out.println("la combo gagnante : "+this.combiSecret);//--Controle
-		logger.warn("la combo gagnante : "+this.combiSecret);
+		logger.info("la combo gagnante : "+this.combiSecret);
 		
 		String message = "La combinaison secrète est prête \n";
 		message += "A vous de jouer";

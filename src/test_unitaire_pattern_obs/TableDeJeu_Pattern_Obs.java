@@ -102,7 +102,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 		//this.add(panTbleJeu, BorderLayout.CENTER);
 		
 		if (pMode.equals(ModeJeu.CHALLENGER.toString())) {
-			this.joueur = new JoueurHumain(lgueurCombo, jeu);
+			this.joueur = new JoueurHumain(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();
@@ -152,7 +152,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 			});
 		}
 		else if (pMode.equals(ModeJeu.DEFENSEUR.toString())) {
-			this.joueur = new JoueurElectronique(lgueurCombo, jeu);
+			this.joueur = new JoueurElectronique(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();	
@@ -228,7 +228,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 		}
 		
 		else if(pMode.equals(ModeJeu.DUEL.toString())) {
-			this.joueur = new JoueurHumain(lgueurCombo, jeu);
+			this.joueur = new JoueurHumain(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();
@@ -278,7 +278,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 					}
 				}				
 			});
-			this.joueur1 = new JoueurElectronique(lgueurCombo, jeu);
+			this.joueur1 = new JoueurElectronique(lgueurCombo, jeu, pCouleur);
 			this.joueur1.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur1.getTourDeJeu();	

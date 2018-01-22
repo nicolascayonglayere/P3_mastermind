@@ -1,202 +1,101 @@
-2018-01-19 17:09:08.965 [AWT-EventQueue-0] INFO  ihm - list proprietes recup sur le fichier lors de lecture : 
-{mode=mode DUEL, longueur combinaison=4, developpement=0, nombres d'essai=05, couleur=1, jeu=Jeu du MasterMind}
-2018-01-19 17:09:08.967 [AWT-EventQueue-0] INFO  ihm - Ctrl jeu :Jeu du MasterMind
-2018-01-19 17:09:08.967 [AWT-EventQueue-0] INFO  ihm - Ctrl mode : mode DUEL
-2018-01-19 17:09:08.968 [AWT-EventQueue-0] INFO  ihm - Ctrl nb coup :5
-2018-01-19 17:09:08.968 [AWT-EventQueue-0] INFO  ihm - Ctrl lgueur :4
-2018-01-19 17:09:08.968 [AWT-EventQueue-0] INFO  ihm - Ctrl mode dev : 0
-2018-01-19 17:09:08.969 [AWT-EventQueue-0] INFO  ihm - Ctrl chiffre/couleur : 1
-2018-01-19 17:09:11.338 [AWT-EventQueue-0] DEBUG ihm - Ctrl modeDev : 0
-2018-01-19 17:09:11.340 [AWT-EventQueue-0] WARN  ihm - la combo gagnante : 1337
-2018-01-19 17:09:49.067 [AWT-EventQueue-0] DEBUG ihm - ctrl saisie : 8524 - 8524
-2018-01-19 17:09:49.067 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :8
-2018-01-19 17:09:49.067 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :5
-2018-01-19 17:09:49.067 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :2
-2018-01-19 17:09:49.067 [AWT-EventQueue-0] DEBUG ihm - Ctrl combo :4
-2018-01-19 17:09:51.637 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
-2018-01-19 17:09:51.637 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 2 - 2
-2018-01-19 17:09:52.003 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
-2018-01-19 17:09:52.003 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 6 - 6
-2018-01-19 17:09:52.439 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
-2018-01-19 17:09:52.439 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 5 - 5
-2018-01-19 17:09:52.768 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
-2018-01-19 17:09:52.768 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 1 - 1
-2018-01-19 17:09:53.500 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 0
-2018-01-19 17:09:53.500 [AWT-EventQueue-0] DEBUG ihm - la proposition du joueur : 2651
-2018-01-19 17:09:53.501 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 2
-2018-01-19 17:09:53.501 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 6
-2018-01-19 17:09:53.501 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 5
-2018-01-19 17:09:53.501 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 1
-2018-01-19 17:09:53.501 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
-2018-01-19 17:09:53.501 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -1
-2018-01-19 17:09:53.501 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
-2018-01-19 17:09:53.502 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -3
-2018-01-19 17:09:53.502 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
-2018-01-19 17:09:53.502 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -2
-2018-01-19 17:09:53.502 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 7
-2018-01-19 17:09:53.502 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 6
-2018-01-19 17:09:53.502 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 0
-2018-01-19 17:09:53.502 [AWT-EventQueue-0] INFO  ihm - la proposition de l'odinateur : 123
-2018-01-19 17:09:53.503 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 8
-2018-01-19 17:09:53.503 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 8
-2018-01-19 17:09:53.503 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
-2018-01-19 17:09:53.503 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 1
-2018-01-19 17:09:53.503 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[1, 2, 3, 4, 5, 6, 7, 8, 9]}
-2018-01-19 17:09:53.504 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 5
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 4
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 3
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
-2018-01-19 17:09:53.505 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[2, 3, 4, 5, 6, 7, 8, 9], 1=[2, 3, 4, 5, 6, 7, 8, 9]}
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 2
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 1
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 2
-2018-01-19 17:09:53.506 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
-2018-01-19 17:09:53.507 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
-2018-01-19 17:09:53.507 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
-2018-01-19 17:09:53.507 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
-2018-01-19 17:09:53.507 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
-2018-01-19 17:09:53.507 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
-2018-01-19 17:09:53.507 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[2, 4, 5, 6, 7, 8, 9], 1=[2, 4, 5, 6, 7, 8, 9], 3=[2, 4, 5, 6, 7, 8, 9]}
-2018-01-19 17:09:54.612 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
-2018-01-19 17:09:54.612 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 3 - 3
-2018-01-19 17:09:55.526 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
-2018-01-19 17:09:55.526 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 6 - 6
-2018-01-19 17:09:56.121 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
-2018-01-19 17:09:56.121 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 1 - 1
-2018-01-19 17:09:56.472 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
-2018-01-19 17:09:56.473 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 4 - 4
-2018-01-19 17:09:57.142 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 1
-2018-01-19 17:09:57.142 [AWT-EventQueue-0] DEBUG ihm - la proposition du joueur : 3614
-2018-01-19 17:09:57.142 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 3
-2018-01-19 17:09:57.142 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 6
-2018-01-19 17:09:57.142 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 1
-2018-01-19 17:09:57.142 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 4
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -2
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -3
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 2
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 7
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 3
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 1
-2018-01-19 17:09:57.143 [AWT-EventQueue-0] DEBUG ihm - taille pool : 7
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - taille pool : 7
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
-2018-01-19 17:09:57.144 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - taille pool : 7
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 2
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
-2018-01-19 17:09:57.145 [AWT-EventQueue-0] INFO  ihm - la proposition de l'odinateur : 2222
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 8
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 6
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
-2018-01-19 17:09:57.146 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[4, 5, 6, 7, 8, 9], 1=[4, 5, 6, 7, 8, 9], 3=[4, 5, 6, 7, 8, 9]}
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 5
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 3
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[4, 5, 6, 7, 8, 9], 1=[4, 5, 6, 7, 8, 9], 3=[4, 5, 6, 7, 8, 9]}
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 2
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 0
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
-2018-01-19 17:09:57.147 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 2
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - mon booleen Present :false
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 4
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 5
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 6
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 7
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 8
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - ma var qui transporte le pool 9
-2018-01-19 17:09:57.148 [AWT-EventQueue-0] DEBUG ihm - un autre ctrl : {0=[4, 5, 6, 7, 8, 9], 1=[4, 5, 6, 7, 8, 9], 3=[4, 5, 6, 7, 8, 9]}
-2018-01-19 17:09:58.287 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
-2018-01-19 17:09:58.287 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 7 - 7
-2018-01-19 17:09:58.692 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
-2018-01-19 17:09:58.692 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 6 - 6
-2018-01-19 17:09:59.051 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
-2018-01-19 17:09:59.051 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 4 - 4
-2018-01-19 17:10:00.431 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
-2018-01-19 17:10:00.431 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
-2018-01-19 17:10:01.072 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 2
-2018-01-19 17:10:01.072 [AWT-EventQueue-0] DEBUG ihm - la proposition du joueur : 7640
-2018-01-19 17:10:01.072 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 7
-2018-01-19 17:10:01.072 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 6
-2018-01-19 17:10:01.072 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 4
-2018-01-19 17:10:01.072 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 0
-2018-01-19 17:10:01.072 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -6
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -3
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 3
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : -1
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 7
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - Ctrl difference : 7
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 2
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - taille pool : 6
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
-2018-01-19 17:10:01.073 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - taille pool : 6
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - taille pool : 6
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 4
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 5
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 6
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 7
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 8
-2018-01-19 17:10:01.074 [AWT-EventQueue-0] DEBUG ihm - ctrl1 pool : 9
-2018-01-19 17:10:01.075 [AWT-EventQu
+2018-01-22 15:19:21.142 [AWT-EventQueue-0] INFO  ihm - list proprietes recup sur le fichier lors de lecture : 
+{mode=mode CHALLENGER, longueur combinaison=4, developpement=0, nombres d'essai=10, jeu=Jeu de recherche plus moins}
+2018-01-22 15:19:21.143 [AWT-EventQueue-0] INFO  ihm - Ctrl jeu :Jeu de recherche plus moins
+2018-01-22 15:19:21.143 [AWT-EventQueue-0] INFO  ihm - Ctrl mode : mode CHALLENGER
+2018-01-22 15:19:21.144 [AWT-EventQueue-0] INFO  ihm - Ctrl nb coup :10
+2018-01-22 15:19:21.144 [AWT-EventQueue-0] INFO  ihm - Ctrl lgueur :4
+2018-01-22 15:19:21.144 [AWT-EventQueue-0] INFO  ihm - Ctrl mode dev : 0
+2018-01-22 15:19:21.144 [AWT-EventQueue-0] INFO  ihm - Ctrl chiffre/couleur : 0
+2018-01-22 15:19:23.938 [AWT-EventQueue-0] DEBUG ihm - Ctrl modeDev : 0
+2018-01-22 15:19:23.939 [AWT-EventQueue-0] INFO  ihm - la combo gagnante : 1940
+2018-01-22 15:19:25.857 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:25.857 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 4 - 4
+2018-01-22 15:19:26.031 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:26.031 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 5 - 5
+2018-01-22 15:19:26.287 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:26.287 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 7 - 7
+2018-01-22 15:19:26.585 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:26.585 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 8 - 8
+2018-01-22 15:19:27.183 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:27.183 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:27.839 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:27.839 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:28.015 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:28.015 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:28.135 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:28.135 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:28.599 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:28.599 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:28.791 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:28.791 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:28.951 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:28.951 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:29.119 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:29.119 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:29.271 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:29.271 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:29.422 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:29.422 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:29.567 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:29.567 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:29.688 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 0
+2018-01-22 15:19:29.688 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 0
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - la proposition du joueur : 4578
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 4
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 5
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 7
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 8
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - resultat difference : -3
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 9
+2018-01-22 15:19:34.256 [AWT-EventQueue-0] DEBUG ihm - resultat difference : 4
+2018-01-22 15:19:34.257 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
+2018-01-22 15:19:34.257 [AWT-EventQueue-0] DEBUG ihm - resultat difference : -3
+2018-01-22 15:19:34.257 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 0
+2018-01-22 15:19:34.257 [AWT-EventQueue-0] DEBUG ihm - resultat difference : -8
+2018-01-22 15:19:41.607 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
+2018-01-22 15:19:41.607 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 4 - 4
+2018-01-22 15:19:42.111 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
+2018-01-22 15:19:42.111 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 5 - 5
+2018-01-22 15:19:42.448 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
+2018-01-22 15:19:42.448 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 7 - 7
+2018-01-22 15:19:42.711 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 1
+2018-01-22 15:19:42.711 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 8 - 8
+2018-01-22 15:19:43.847 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 1
+2018-01-22 15:19:43.847 [AWT-EventQueue-0] DEBUG ihm - la proposition du joueur : 4578
+2018-01-22 15:19:43.847 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 4
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 5
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 7
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 8
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - resultat difference : -3
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 9
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - resultat difference : 4
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 4
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - resultat difference : -3
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 0
+2018-01-22 15:19:43.848 [AWT-EventQueue-0] DEBUG ihm - resultat difference : -8
+2018-01-22 15:19:46.607 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
+2018-01-22 15:19:46.607 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 8 - 8
+2018-01-22 15:19:46.847 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
+2018-01-22 15:19:46.847 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 7 - 7
+2018-01-22 15:19:47.087 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
+2018-01-22 15:19:47.087 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 4 - 4
+2018-01-22 15:19:47.327 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
+2018-01-22 15:19:47.327 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 5 - 5
+2018-01-22 15:19:47.863 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
+2018-01-22 15:19:47.863 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:48.575 [AWT-EventQueue-0] DEBUG ihm - le tour du joueur : 2
+2018-01-22 15:19:48.575 [AWT-EventQueue-0] DEBUG ihm - la lettre transmise : 0 - 0
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - Ctrl TourDeJeu : 2
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - la proposition du joueur : 8745
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 8
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 7
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 4
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - la liste de prop du joueur : 5
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 1
+2018-01-22 15:19:51.439 [AWT-EventQueue-0] DEBUG ihm - resultat difference : -7
+2018-01-22 15:19:51.440 [AWT-EventQueue-0] DEBUG ihm - decompo de combo : 9
+2018-01-22 15:19:51.440 [AWT-EventQueue-0] DEBUG ihm - resultat difference : 2
+2018-01-22

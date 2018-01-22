@@ -38,8 +38,8 @@ public class JoueurElectronique extends Joueur {
 	 * @param pCombo
 	 * @param pJeu
 	 */
-	public JoueurElectronique(int pCombo, String pJeu) {
-		super(pCombo, pJeu);
+	public JoueurElectronique(int pCombo, String pJeu, int pCouleur) {
+		super(pCombo, pJeu, pCouleur);
 		this.nom = "mon PC";
 	}
 	
@@ -47,15 +47,26 @@ public class JoueurElectronique extends Joueur {
 	 * Méthode initialisant la combinaison que l'ordinateur doit découvrir
 	 */
 	public void initCombiSecret() {
-		//Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau
-		try {
-			this.combiJoueur = JOptionPane.showInputDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Combinaison secrète", JOptionPane.QUESTION_MESSAGE);
+		if (couleur == 0) {
+			//Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau
+			try {
+				this.combiJoueur = JOptionPane.showInputDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Combinaison secrète", JOptionPane.QUESTION_MESSAGE);
+				this.combiSecret = Integer.valueOf(combiJoueur);
+				logger.debug("ctrl saisie : "+combiJoueur+" - "+combiSecret);
+			}catch (NumberFormatException e) {
+				logger.error("Combinaison secrète non saisie");
+				JOptionPane.showMessageDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Attention Combinaison secrète", JOptionPane.WARNING_MESSAGE);
+			}
+		}
+		else {
+			//--une boite de saisie perso avec clavier couleur
+			BoiteDialSaisieCouleur bdSaisie = new BoiteDialSaisieCouleur(null, "SAISIE COMBINAISON COULEUR", true);
+			this.combiJoueur = bdSaisie.getCombinaison();
 			this.combiSecret = Integer.valueOf(combiJoueur);
 			logger.debug("ctrl saisie : "+combiJoueur+" - "+combiSecret);
-		}catch (NumberFormatException e) {
-			logger.warn("Combinaison secrète non saisie");
-			JOptionPane.showMessageDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Attention Combinaison secrète", JOptionPane.WARNING_MESSAGE);
+			
 		}
+
 
 		this.tabConstrCombiSecret = this.combiJoueur.toCharArray();
 		this.constrCombiSecret = new Integer[this.lgueurCombo];
@@ -68,8 +79,6 @@ public class JoueurElectronique extends Joueur {
 		String message = "Vous avez choisi une combinaison secrète. \n";
 		message += "Votre adversaire joue.";
 		JOptionPane.showMessageDialog(null, message, "Combinaison secrète prête !", JOptionPane.INFORMATION_MESSAGE);
-		
-		System.out.println("la combo gagnante : "+this.combiSecret);//--Controle
 	}
 	
 	/**
@@ -77,15 +86,25 @@ public class JoueurElectronique extends Joueur {
 	 */
 	public void jeu(String pCoupJoue) {
 		if(tourDeJeu == 0) {
+			this.str = "";
 			this.constrPropOrdi = new Integer[this.lgueurCombo];
 			this.constrRepOrdi = new Integer[this.lgueurCombo];
 			this.resultCompa = "";
 			this.tabPool = new HashMap<Integer, ArrayList<Integer>>();
 			this.tabIntPool = new ArrayList<Integer>();
 			
-			//--on initialise le tableau de pool d'entier compris entre 0 et 9
-			for(int k = 0; k<10; k++)
-				this.tabIntPool.add(k);
+			if (couleur == 0) {
+				//--on initialise le tableau de pool d'entier compris entre 0 et 9
+				for(int k = 0; k<10; k++)
+					this.tabIntPool.add(k);
+			}
+			else {
+				//--on initialise le tableau de pool d'entier compris entre 0 et 7
+				for(int k = 0; k<8; k++)
+					this.tabIntPool.add(k);
+			}
+				
+
 			
 			//--l'ordi construit sa prop à partir du pool de nombre
 			for(int i = 0; i<lgueurCombo; i++) {

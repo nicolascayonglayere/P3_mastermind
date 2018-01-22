@@ -106,6 +106,7 @@ public class BoiteDialogue extends JDialog {
 		
 		plusMoinsBton = new JRadioButton(TypeJeu.RECHERCHE_NUM.toString());
 		plusMoinsBton.setBackground(Color.WHITE);
+		plusMoinsBton.setSelected(true);
 		masterBton = new JRadioButton(TypeJeu.MASTERMIND.toString());
 		masterBton.setBackground(Color.WHITE);
 		masterBton.addActionListener(new ActionListener() {
@@ -146,6 +147,7 @@ public class BoiteDialogue extends JDialog {
 		
 		challBton = new JRadioButton(ModeJeu.CHALLENGER.toString());
 		challBton.setBackground(Color.WHITE);
+		challBton.setSelected(true);
 		defBton = new JRadioButton(ModeJeu.DEFENSEUR.toString());
 		defBton.setBackground(Color.WHITE);
 		duelBton = new JRadioButton(ModeJeu.DUEL.toString());
@@ -170,6 +172,7 @@ public class BoiteDialogue extends JDialog {
 			MaskFormatter mask1 = new MaskFormatter("##");
 			saisiEssai = new JFormattedTextField(mask1);
 			saisiEssai.setPreferredSize(new Dimension(30,30));
+			saisiEssai.setText("10");
 			panEssai.add(lblEssai);
 			panEssai.add(saisiEssai);
 		}catch(ParseException e) {
@@ -234,10 +237,10 @@ public class BoiteDialogue extends JDialog {
 			else if (masterBton.isSelected()) {
 				listProp.setProperty("jeu", TypeJeu.MASTERMIND.toString());
 				
-				if(chiffreBton.isSelected())
+				if(chiffreBton.isSelected() || (!chiffreBton.isSelected() && !couleurBton.isSelected()))
 					listProp.setProperty("couleur", "0");
 				else if(couleurBton.isSelected())
-					listProp.setProperty("couleur", "1");				
+					listProp.setProperty("couleur", "1");
 			}
 			
 			if(challBton.isSelected())
@@ -247,7 +250,9 @@ public class BoiteDialogue extends JDialog {
 			else if (duelBton.isSelected())
 				listProp.setProperty("mode", ModeJeu.DUEL.toString());
 			
+
 			listProp.setProperty("nombres d'essai", saisiEssai.getText());
+
 			
 			listProp.setProperty("longueur combinaison", saisiLgueurCombi.getSelectedItem().toString());
 			
@@ -261,8 +266,13 @@ public class BoiteDialogue extends JDialog {
 			//--On écrit dans le fichier
 			GestionFichierProperties gfp = new GestionFichierProperties();
 			gfp.ecrireProp(listProp);
-
-			setVisible(false);
+			
+			if (saisiEssai.getValue() != null) {
+				setVisible(false);
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Veuillez saisir un nombre à deux chiffres entre 01 et 99", "Attention nombres essais", JOptionPane.WARNING_MESSAGE);
+			}
 		}
 		
 	}

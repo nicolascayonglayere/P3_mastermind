@@ -17,7 +17,7 @@ public abstract class Joueur implements Observable {
 	
 	protected String nom, jeu;
 	protected int tourDeJeu;
-	protected int combiSecret, lgueurCombo;
+	protected int combiSecret, lgueurCombo, couleur;
 	protected Integer[] constrCombiSecret;
 	
 	protected Integer[] listPropJoueur ;
@@ -41,7 +41,7 @@ public abstract class Joueur implements Observable {
 	 * @param pCombo
 	 * @param pJeu
 	 */
-	public Joueur(int pCombo, String pJeu) {
+	public Joueur(int pCombo, String pJeu, int pCouleur) {
 		this.nom = "";
 		this.tourDeJeu = 0;
 		this.combiSecret = 0;
@@ -49,6 +49,7 @@ public abstract class Joueur implements Observable {
 		this.jeu = pJeu;
 		this.fin = false;
 		this.listObs = new ArrayList<Observateur>();
+		this.couleur = pCouleur;
 	}
 	
 	/**

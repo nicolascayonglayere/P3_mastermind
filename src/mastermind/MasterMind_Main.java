@@ -62,6 +62,7 @@ public class MasterMind_Main extends JFrame {
 	private int couleur;
 	
 	private TableDeJeu tbleJeu ;
+	private Boolean inGame = false;
 
 	
 	
@@ -87,10 +88,18 @@ public class MasterMind_Main extends JFrame {
 			  //Ici on force tous les composants de notre fenêtre (this) à se redessiner avec le « look and feel » du système
 			  SwingUtilities.updateComponentTreeUI(this);
 			}
-		catch (InstantiationException e) {}
-		catch (ClassNotFoundException e) {}
-		catch (UnsupportedLookAndFeelException e) {}
-		catch (IllegalAccessException e) {}
+		catch (InstantiationException e) {
+			logger.error(e);
+		}
+		catch (ClassNotFoundException e) {
+			logger.error(e);
+		}
+		catch (UnsupportedLookAndFeelException e) {
+			logger.error(e);
+		}
+		catch (IllegalAccessException e) {
+			logger.error(e);
+		}
 		
 		
 		//--Les menus de la fenetre
@@ -112,55 +121,61 @@ public class MasterMind_Main extends JFrame {
 		menuJeu.addSeparator();
 		menuJeu.add(quit);
 		
+		
 		nvelle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-				BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);
-				
-				//--on récupère les proprietes du fichier 
-				GestionFichierProperties gfp = new GestionFichierProperties();
-				propriete = gfp.lireProp();
-				typeJeu = String.valueOf(propriete.getProperty("jeu"));
-				//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
-				logger.info("Ctrl jeu :"+typeJeu);
-				modeJeu = String.valueOf(propriete.getProperty("mode"));
-				//System.out.println("Ctrl mode : "+modeJeu);//--Controle
-				logger.info("Ctrl mode : "+modeJeu);
-				nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
-				//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
-				logger.info("Ctrl nb coup :"+nbCoupsConfig);
-				lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
-				//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
-				logger.info("Ctrl lgueur :"+lgueurCombo);
-				modeDev = Integer.valueOf(propriete.getProperty("developpement"));
-				logger.info("Ctrl mode dev : "+modeDev);
-				if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
-					couleur = Integer.valueOf(propriete.getProperty("couleur"));
-				else 
-					couleur = 0;
-				logger.info("Ctrl chiffre/couleur : "+couleur);
-				
-				accueil = new Accueil(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
-				afficher(accueil.getNom());
+				if (inGame == false) {
+					BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);
+					
+					//--on récupère les proprietes du fichier 
+					GestionFichierProperties gfp = new GestionFichierProperties();
+					propriete = gfp.lireProp();
+					typeJeu = String.valueOf(propriete.getProperty("jeu"));
+					//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
+					logger.info("Ctrl jeu :"+typeJeu);
+					modeJeu = String.valueOf(propriete.getProperty("mode"));
+					//System.out.println("Ctrl mode : "+modeJeu);//--Controle
+					logger.info("Ctrl mode : "+modeJeu);
+					nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
+					//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
+					logger.info("Ctrl nb coup :"+nbCoupsConfig);
+					lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
+					//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
+					logger.info("Ctrl lgueur :"+lgueurCombo);
+					modeDev = Integer.valueOf(propriete.getProperty("developpement"));
+					logger.info("Ctrl mode dev : "+modeDev);
+					if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
+						couleur = Integer.valueOf(propriete.getProperty("couleur"));
+					else 
+						couleur = 0;
+					logger.info("Ctrl chiffre/couleur : "+couleur);
+					
+					accueil = new Accueil(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
+					afficher(accueil.getNom());				
+				}
+				else {
+					int jop = JOptionPane.showConfirmDialog(null, "Souhaitez-vous quitter la partie en cours ?", "Attention partie en cours",
+							JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+					if(jop == JOptionPane.YES_OPTION) {
+						inGame = false;
+						nvelle.doClick();
+					}
+				}
 			}
-			
 		});
 		nvelle.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK ));
 		
-		
 		play.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, KeyEvent.CTRL_DOWN_MASK ));
 		play.addActionListener(new NewGameListener());
-
+		
 		
 		//--une boite de dialogue lorsque l'on quitte
 		quit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				int option = JOptionPane.showConfirmDialog(null, "Voulez-vous quitter ?",
-								"Quitter", 
-								JOptionPane.YES_NO_CANCEL_OPTION,
-								JOptionPane.QUESTION_MESSAGE);
+				int option = JOptionPane.showConfirmDialog(null, "Voulez-vous quitter ?", "Quitter", 
+						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 				if (option == JOptionPane.OK_OPTION) 
 					System.exit(0);
 			}
@@ -207,41 +222,52 @@ public class MasterMind_Main extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			//--on récupère les proprietes du fichier 
-			GestionFichierProperties gfp = new GestionFichierProperties();
-			propriete = gfp.lireProp();
-			typeJeu = String.valueOf(propriete.getProperty("jeu"));
-			//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
-			logger.info("Ctrl jeu :"+typeJeu);
-			modeJeu = String.valueOf(propriete.getProperty("mode"));
-			//System.out.println("Ctrl mode : "+modeJeu);//--Controle
-			logger.info("Ctrl mode : "+modeJeu);
-			nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
-			//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
-			logger.info("Ctrl nb coup :"+nbCoupsConfig);
-			lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
-			//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
-			logger.info("Ctrl lgueur :"+lgueurCombo);
-			modeDev = Integer.valueOf(propriete.getProperty("developpement"));
-			logger.info("Ctrl mode dev : "+modeDev);
-			if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
-				couleur = Integer.valueOf(propriete.getProperty("couleur"));
-			else 
-				couleur = 0;
-			logger.info("Ctrl chiffre/couleur : "+couleur);
-			
-			if((modeJeu.equals(ModeJeu.DUEL.toString()))){
-				tbleJeu = new TableDeJeu_4(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
-				afficher(tbleJeu.getNom());
-				tbleJeu.nouvellePartie();
+			if (inGame == false) {
+				//--on récupère les proprietes du fichier 
+				GestionFichierProperties gfp = new GestionFichierProperties();
+				propriete = gfp.lireProp();
+				typeJeu = String.valueOf(propriete.getProperty("jeu"));
+				//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
+				logger.info("Ctrl jeu :"+typeJeu);
+				modeJeu = String.valueOf(propriete.getProperty("mode"));
+				//System.out.println("Ctrl mode : "+modeJeu);//--Controle
+				logger.info("Ctrl mode : "+modeJeu);
+				nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
+				//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
+				logger.info("Ctrl nb coup :"+nbCoupsConfig);
+				lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
+				//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
+				logger.info("Ctrl lgueur :"+lgueurCombo);
+				modeDev = Integer.valueOf(propriete.getProperty("developpement"));
+				logger.info("Ctrl mode dev : "+modeDev);
+				if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
+					couleur = Integer.valueOf(propriete.getProperty("couleur"));
+				else 
+					couleur = 0;
+				logger.info("Ctrl chiffre/couleur : "+couleur);
+				
+				if((modeJeu.equals(ModeJeu.DUEL.toString()))){
+					tbleJeu = new TableDeJeu_4(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
+					afficher(tbleJeu.getNom());
+					tbleJeu.nouvellePartie();
+					inGame = tbleJeu.getInGame();
 
+				}
+				else {
+					tbleJeu = new TableDeJeu_3(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
+					afficher(tbleJeu.getNom());
+					tbleJeu.nouvellePartie();
+					inGame = tbleJeu.getInGame();
+				}
 			}
 			else {
-				tbleJeu = new TableDeJeu_3(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
-				afficher(tbleJeu.getNom());
-				tbleJeu.nouvellePartie();
-			}
-			
+				int jop = JOptionPane.showConfirmDialog(null, "Souhaitez-vous quitter la partie en cours ?", "Attention partie en cours",
+						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+				if(jop == JOptionPane.YES_OPTION) {
+					inGame = false;
+					play.doClick();
+				}
+			}			
 		}
 	}
 		

@@ -3,10 +3,13 @@ package ihm;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Event;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -148,6 +151,27 @@ public class TableDeJeu_3 extends TableDeJeu {
 					joueur.updateObservateur();					
 				}
 			});
+			finDeTour.addKeyListener(new KeyListener() {
+
+				@Override
+				public void keyPressed(KeyEvent arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void keyReleased(KeyEvent arg0) {
+					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
+						finDeTour.doClick();					
+				}
+
+				@Override
+				public void keyTyped(KeyEvent arg0) {
+					
+					
+				}
+				
+			});
 			panTbleJeu.add(finDeTour);
 		}
 		//--Si le mode de jeu est challenger, on ajoute un clavier de chiffre ou de couleur et un bouton
@@ -201,6 +225,27 @@ public class TableDeJeu_3 extends TableDeJeu {
 					cpteurLettre = 0;
 				}
 			});
+			finDeTour.addKeyListener(new KeyListener() {
+
+				@Override
+				public void keyPressed(KeyEvent arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void keyReleased(KeyEvent arg0) {
+					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
+						finDeTour.doClick();				
+				}
+
+				@Override
+				public void keyTyped(KeyEvent arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+			});
 			clavier.add(finDeTour);
 			panTbleJeu.add(clavier);
 		}
@@ -239,6 +284,7 @@ public class TableDeJeu_3 extends TableDeJeu {
 		modeDevLbl.setText("Combinaison secrete : "+String.valueOf(this.joueur.getCombiSecret()));
 		this.joueur.setTourDeJeu(0);
 		this.joueur.setVictoire(false);
+		this.inGame = true;
 	}
 
 }

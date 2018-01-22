@@ -31,7 +31,8 @@ public abstract class TableDeJeu extends JPanel {
 	private static final long serialVersionUID = 1L;
 	static Logger logger = Logger.getLogger("ihm");
 	protected Joueur joueur, joueur1;
-	private String nom = "Table De Jeu";
+	protected String nom = "Table De Jeu";
+	protected Boolean inGame = false;
 	
 	protected Properties propriete;
 	protected String jeu, modeJeu;
@@ -99,7 +100,7 @@ public abstract class TableDeJeu extends JPanel {
 
 		//--Selon le mode de jeu on initialise le joueur et la méthode update du pattern Observateur pour faire jouer le joueur et mettre a jour la table
 		if (pMode.equals(ModeJeu.CHALLENGER.toString())) {
-			this.joueur = new JoueurHumain(lgueurCombo, jeu);
+			this.joueur = new JoueurHumain(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();
@@ -118,13 +119,14 @@ public abstract class TableDeJeu extends JPanel {
 						joueur.jeu(coupJoue);
 						resultCompa = joueur.getResultCompa();
 						listResult[tourDeJeu].setText(resultCompa);
-						
+												
 						//listProp[tourDeJeu + 1].setEditable(true);//--table de jeu 1
 					}
 					//--si c'est la victoire
 					else if (joueur.getVictoire() == true) {
 						resultCompa = joueur.getResultCompa();
 						listResult[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?",
 										"Victoire", 
 										JOptionPane.YES_NO_CANCEL_OPTION,
@@ -137,6 +139,7 @@ public abstract class TableDeJeu extends JPanel {
 					else if(joueur.getVictoire() == false && tourDeJeu+1 == nbCoupsConfig) {
 						resultCompa = joueur.getResultCompa();
 						listResult[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur.getCombiSecret()+"\n Voulez-vous rejouer ?",
 										"Défaite", 
 										JOptionPane.YES_NO_CANCEL_OPTION,
@@ -149,7 +152,7 @@ public abstract class TableDeJeu extends JPanel {
 			});
 		}
 		else if (pMode.equals(ModeJeu.DEFENSEUR.toString())) {
-			this.joueur = new JoueurElectronique(lgueurCombo, jeu);
+			this.joueur = new JoueurElectronique(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();	
@@ -193,6 +196,7 @@ public abstract class TableDeJeu extends JPanel {
 					else if (joueur.getVictoire() == true) {
 						resultCompa = joueur.getResultCompa();
 						listResult[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?",
 										"Victoire", 
 										JOptionPane.YES_NO_CANCEL_OPTION,
@@ -205,6 +209,7 @@ public abstract class TableDeJeu extends JPanel {
 					else if(joueur.getVictoire() == false && tourDeJeu+1 == nbCoupsConfig) {
 						resultCompa = joueur.getResultCompa();
 						listResult[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur.getCombiSecret()+"\n Voulez-vous rejouer ?",
 										"Défaite", 
 										JOptionPane.YES_NO_CANCEL_OPTION,
@@ -218,7 +223,7 @@ public abstract class TableDeJeu extends JPanel {
 		}
 		
 		else if(pMode.equals(ModeJeu.DUEL.toString())) {
-			this.joueur = new JoueurHumain(lgueurCombo, jeu);
+			this.joueur = new JoueurHumain(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();
@@ -244,6 +249,7 @@ public abstract class TableDeJeu extends JPanel {
 					else if (joueur.getVictoire() == true) {
 						resultCompa = joueur.getResultCompa();
 						listResultJH[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "Félicitation, "+joueur.getNom()+" a trouvé la combinaison secrète ! \n "
 								+ "La combinaison de votre adversaire était : "+joueur1.getCombiSecret()+" \n Voulez-vous rejouer ?",
 										"Victoire", 
@@ -257,6 +263,7 @@ public abstract class TableDeJeu extends JPanel {
 					else if(joueur.getVictoire() == false && tourDeJeu+1 == nbCoupsConfig) {
 						resultCompa = joueur.getResultCompa();
 						listResultJH[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur.getCombiSecret()+"\n Voulez-vous rejouer ?",
 										"Défaite", 
 										JOptionPane.YES_NO_CANCEL_OPTION,
@@ -267,7 +274,7 @@ public abstract class TableDeJeu extends JPanel {
 					}
 				}				
 			});
-			this.joueur1 = new JoueurElectronique(lgueurCombo, jeu);
+			this.joueur1 = new JoueurElectronique(lgueurCombo, jeu, pCouleur);
 			this.joueur1.addObservateur(new Observateur() {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur1.getTourDeJeu();	
@@ -301,15 +308,16 @@ public abstract class TableDeJeu extends JPanel {
 					
 					//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
 					if(joueur1.getVictoire() == false && tourDeJeu+1 != nbCoupsConfig) {
-						resultCompa = joueur.getResultCompa();
+						resultCompa = joueur1.getResultCompa();
 						listResultJE[tourDeJeu].setText(resultCompa);
 						//propJE[tourDeJeu + 1].setEditable(true);
 					}
 					
 					//--si c'est la victoire
 					else if (joueur1.getVictoire() == true) {
-						resultCompa = joueur.getResultCompa();
+						resultCompa = joueur1.getResultCompa();
 						listResultJE[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "Félicitation, "+joueur1.getNom()+" a trouvé la combinaison secrète ! \n "
 								+ "La combinaison de votre adversaire était : "+joueur.getCombiSecret()+" \n Voulez-vous rejouer ?",
 										"Victoire", 
@@ -321,8 +329,9 @@ public abstract class TableDeJeu extends JPanel {
 					}
 					//--Si c'est la défaite
 					else if(joueur1.getVictoire() == false && tourDeJeu+1 == nbCoupsConfig) {
-						resultCompa = joueur.getResultCompa();
+						resultCompa = joueur1.getResultCompa();
 						listResultJE[tourDeJeu].setText(resultCompa);
+						inGame = false;
 						int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur1.getCombiSecret()+"\n Voulez-vous rejouer ?",
 										"Défaite", 
 										JOptionPane.YES_NO_CANCEL_OPTION,
@@ -361,5 +370,9 @@ public abstract class TableDeJeu extends JPanel {
 	 */
 	public String getNom() {
 		return this.nom;
+	}
+	
+	public Boolean getInGame() {
+		return this.inGame;
 	}
 }
