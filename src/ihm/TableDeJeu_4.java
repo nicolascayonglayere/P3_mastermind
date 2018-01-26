@@ -111,7 +111,8 @@ public class TableDeJeu_4 extends TableDeJeu {
 				//--L'etiquette affichant la prop
 				listLblPropJH[i][j] = new JLabel("");
 				listLblPropJH[i][j].setFont(police);
-				//listLblProp[i][j].setBackground(Color.WHITE);
+				listLblPropJH[i][j].setOpaque(true);
+				listLblPropJH[i][j].setBackground(Color.LIGHT_GRAY);
 				listLblPropJH[i][j].setHorizontalTextPosition(JLabel.CENTER);
 				listLblPropJH[i][j].setHorizontalAlignment(JLabel.CENTER);
 
@@ -132,7 +133,8 @@ public class TableDeJeu_4 extends TableDeJeu {
 				//--L'etiquette affichant la prop
 				listLblPropJE[i][j] = new JLabel("");
 				listLblPropJE[i][j].setFont(police);
-				//listLblProp[i][j].setBackground(Color.WHITE);
+				listLblPropJE[i][j].setOpaque(true);
+				listLblPropJE[i][j].setBackground(Color.LIGHT_GRAY);
 				listLblPropJE[i][j].setHorizontalTextPosition(JLabel.CENTER);
 				listLblPropJE[i][j].setHorizontalAlignment(JLabel.CENTER);
 
@@ -189,7 +191,7 @@ public class TableDeJeu_4 extends TableDeJeu {
 
 					logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
 					logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));						
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
+					//listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
 					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);//pquoi cette ligne marche pas
 					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
 					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);

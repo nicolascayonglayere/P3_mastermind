@@ -5,7 +5,6 @@ import java.awt.Color;
 import java.text.ParseException;
 import java.util.Properties;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -78,7 +77,7 @@ public abstract class TableDeJeu extends JPanel {
 		try {
 			initTable();
 		}catch(ParseException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 		this.add(panTbleJeu, BorderLayout.CENTER);
 	}
@@ -105,10 +104,6 @@ public abstract class TableDeJeu extends JPanel {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
-				//coupJoue = listProp[tourDeJeu].getText();
-				//joueur.jeu(coupJoue);
-				//resultCompa = joueur.getResultCompa();
-				//listResult[tourDeJeu].setText(resultCompa);
 					
 					//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
 					if(joueur.getVictoire() == false && tourDeJeu+1 < nbCoupsConfig) {
@@ -167,24 +162,12 @@ public abstract class TableDeJeu extends JPanel {
 					else if (pCouleur == 1) {
 						//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
 						Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
-						ImageIcon[] listImageColor = {new ImageIcon("Ressources/Images/blanc0.JPG"),
-											       	new ImageIcon ("Ressources/Images/noir1.JPG"), 
-											       	new ImageIcon("Ressources/Images/rouge2.JPG"),
-											       	new ImageIcon("Ressources/Images/jaune3.JPG"), 
-											       	new ImageIcon("Ressources/Images/vert4.JPG"),
-											       	new ImageIcon("Ressources/Images/bleu5.JPG"),
-											       	new ImageIcon("Ressources/Images/orange6.JPG"),
-											       	new ImageIcon("Ressources/Images/rose8.JPG")};
 						for (int k = 0; k<joueur.getPropOrdi().toCharArray().length; k++) {
-							listLblProp[tourDeJeu][k].setIcon(listImageColor[Character.getNumericValue(joueur.getPropOrdi().charAt(k))]);
+							listLblProp[tourDeJeu][k].setBackground(listColor[Character.getNumericValue(joueur.getPropOrdi().charAt(k))]);
 							listLblProp[tourDeJeu][k].setForeground(listColor[Character.getNumericValue(joueur.getPropOrdi().charAt(k))]);
 							listLblProp[tourDeJeu][k].setText(String.valueOf(joueur.getPropOrdi().charAt(k)));
 						}
 					}
-					
-				//listProp[tourDeJeu].setText(joueur.getPropOrdi());
-				//resultCompa = joueur.getResultCompa();
-				//listResult[tourDeJeu].setText(resultCompa);
 
 					//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
 					if(joueur.getVictoire() == false && tourDeJeu+1 != nbCoupsConfig) {
@@ -228,22 +211,17 @@ public abstract class TableDeJeu extends JPanel {
 				public void update(String coupJoue) {
 					tourDeJeu = joueur.getTourDeJeu();
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
-
-
-				//joueur.jeu(coupJoue);
-				//resultCompa = joueur.getResultCompa();
-				//listResultJH[tourDeJeu].setText(resultCompa);
 					
 					//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
 					if(joueur.getVictoire() == false && tourDeJeu+1 < nbCoupsConfig) {
 						for(int i = 0; i<lgueurCombo; i++) {
 							coupJoue += listLblPropJH[tourDeJeu][i].getText();
 						}
-						//coupJoue = listProp[tourDeJeu].getText();//--table de jeu 1
+						//coupJoue = listProp[tourDeJeu].getText();//--table de jeu 2
 						joueur.jeu(coupJoue);
 						resultCompa = joueur.getResultCompa();
 						listResultJH[tourDeJeu].setText(resultCompa);
-						//propJH[tourDeJeu + 1].setEditable(true);
+						//propJH[tourDeJeu + 1].setEditable(true);//--table de jeu 2
 					}
 					//--si c'est la victoire
 					else if (joueur.getVictoire() == true) {
@@ -280,9 +258,7 @@ public abstract class TableDeJeu extends JPanel {
 					tourDeJeu = joueur1.getTourDeJeu();	
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
 					joueur1.jeu(coupJoue);
-				//propJE[tourDeJeu].setText(joueur1.getPropOrdi());
-				//resultCompa = joueur1.getResultCompa();
-				//listResultJE[tourDeJeu].setText(resultCompa);
+
 					if(pCouleur == 0) {
 						for (int k = 0; k<joueur.getPropOrdi().toCharArray().length; k++) {
 							listLblPropJE[tourDeJeu][k].setText(String.valueOf(joueur1.getPropOrdi().charAt(k)));
@@ -291,16 +267,8 @@ public abstract class TableDeJeu extends JPanel {
 					else if (pCouleur == 1) {
 						//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
 						Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
-						ImageIcon[] listImageColor = {new ImageIcon("Ressources/Images/blanc0.JPG"),
-											       	new ImageIcon ("Ressources/Images/noir1.JPG"), 
-											       	new ImageIcon("Ressources/Images/rouge2.JPG"),
-											       	new ImageIcon("Ressources/Images/jaune3.JPG"), 
-											       	new ImageIcon("Ressources/Images/vert4.JPG"),
-											       	new ImageIcon("Ressources/Images/bleu5.JPG"),
-											       	new ImageIcon("Ressources/Images/orange6.JPG"),
-											       	new ImageIcon("Ressources/Images/rose8.JPG")};
 						for (int k = 0; k<joueur.getPropOrdi().toCharArray().length; k++) {
-							listLblPropJE[tourDeJeu][k].setIcon(listImageColor[Character.getNumericValue(joueur1.getPropOrdi().charAt(k))]);
+							listLblPropJE[tourDeJeu][k].setBackground(listColor[Character.getNumericValue(joueur1.getPropOrdi().charAt(k))]);
 							listLblPropJE[tourDeJeu][k].setForeground(listColor[Character.getNumericValue(joueur1.getPropOrdi().charAt(k))]);
 							listLblPropJE[tourDeJeu][k].setText(String.valueOf(joueur1.getPropOrdi().charAt(k)));
 						}

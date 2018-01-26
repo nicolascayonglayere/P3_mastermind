@@ -60,14 +60,16 @@ public class BoiteDialSaisieCouleur extends JDialog{
 		panSaisi.setBorder(BorderFactory.createMatteBorder(0, 1, 0, 1, Color.BLACK));
 		//panSaisi.setPreferredSize(new Dimension (200, 50));
 		GridLayout gl  = new GridLayout(1,lgueurCombo);
-		gl.setHgap(7);
+		gl.setHgap(20);
 		panSaisi.setLayout(gl);
 		
 		this.listLbl = new JLabel[lgueurCombo];
 		for (int i = 0; i< lgueurCombo; i++) {
 			listLbl[i] = new JLabel();
-			listLbl[i].setPreferredSize(new Dimension(50,50));
-			listLbl[i].setBackground(Color.WHITE);
+			//listLbl[i].setPreferredSize(new Dimension(50,50));
+			//listLbl[i].setSize(new Dimension(50,50));
+			listLbl[i].setBackground(Color.LIGHT_GRAY);
+			listLbl[i].setOpaque(true);
 			listLbl[i].setBorder(BorderFactory.createMatteBorder(0, 1, 0, 1, Color.BLACK));
 			panSaisi.add(listLbl[i]);
 		}
@@ -91,7 +93,8 @@ public class BoiteDialSaisieCouleur extends JDialog{
 
 				//logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
 				//logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));
-				listLbl[cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
+				//listLbl[cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
+				listLbl[cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);
 				listLbl[cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
 				listLbl[cpteurLettre].setText(pLettre);
 				cpteurLettre ++;
@@ -113,6 +116,10 @@ public class BoiteDialSaisieCouleur extends JDialog{
 		JButton annulBton = new JButton("Annuler");
 		annulBton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				for (int i = 0; i<lgueurCombo; i++) {
+					listLbl[i].setText("0");
+					combinaison += listLbl[i].getText();
+				}
 					setVisible(false);
 			}
 		});

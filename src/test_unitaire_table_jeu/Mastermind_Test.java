@@ -204,7 +204,7 @@ public class Mastermind_Test extends JFrame {
 						tbleJeu.nouvellePartie();
 					}break;
 					case ("mode DEFENSEUR") : {
-						tbleJeu = new TableDeJeuMasterMind_ModeDef(modeJeu, nbCoupsConfig, lgueurCombo);
+						tbleJeu = new TableDeJeuMasterMind_ModeDef1(modeJeu, nbCoupsConfig, lgueurCombo);
 						afficher(tbleJeu.getNom());
 						tbleJeu.nouvellePartie();
 					}break;

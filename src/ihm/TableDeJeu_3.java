@@ -88,9 +88,9 @@ public class TableDeJeu_3 extends TableDeJeu {
 			listEssai[i].setHorizontalAlignment(JLabel.CENTER);
 
 			panListEssai[i] = new JPanel();
-			//panListEssai[i].setLayout(new BorderLayout());
+			panListEssai[i].setLayout(new BorderLayout());
 			panListEssai[i].setBackground(Color.WHITE);
-			panListEssai[i].add(listEssai[i]);
+			panListEssai[i].add(listEssai[i], BorderLayout.CENTER);
 			
 			
 			//--Le panneau qui accueille les etiquettes affichant la prop
@@ -107,7 +107,8 @@ public class TableDeJeu_3 extends TableDeJeu {
 				//--L'etiquette affichant la prop
 				listLblProp[i][j] = new JLabel("");
 				listLblProp[i][j].setFont(police);
-				//listLblProp[i][j].setBackground(Color.WHITE);
+				listLblProp[i][j].setOpaque(true);
+				listLblProp[i][j].setBackground(Color.LIGHT_GRAY);
 				listLblProp[i][j].setHorizontalTextPosition(JLabel.CENTER);
 				listLblProp[i][j].setHorizontalAlignment(JLabel.CENTER);
 
@@ -145,10 +146,12 @@ public class TableDeJeu_3 extends TableDeJeu {
 			finDeTour.setBackground(Color.LIGHT_GRAY);
 			finDeTour.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 			finDeTour.setPreferredSize(new Dimension (300, 100));
+			finDeTour.setAlignmentX(CENTER_ALIGNMENT);
+
 			finDeTour.addActionListener(new ActionListener() {
 					@Override
 				public void actionPerformed(ActionEvent arg0) {
-					joueur.updateObservateur();					
+						joueur.updateObservateur();
 				}
 			});
 			finDeTour.addKeyListener(new KeyListener() {
@@ -161,8 +164,11 @@ public class TableDeJeu_3 extends TableDeJeu {
 
 				@Override
 				public void keyReleased(KeyEvent arg0) {
-					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
-						finDeTour.doClick();					
+					while(inGame) {
+						if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
+							finDeTour.doClick();
+					}
+					
 				}
 
 				@Override
@@ -193,19 +199,9 @@ public class TableDeJeu_3 extends TableDeJeu {
 					else if (couleur == 1) {
 						//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
 						Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
-						ImageIcon[] listImageColor = {new ImageIcon("Ressources/Images/blanc0.JPG"),
-											       	new ImageIcon ("Ressources/Images/noir1.JPG"), 
-											       	new ImageIcon("Ressources/Images/rouge2.JPG"),
-											       	new ImageIcon("Ressources/Images/jaune3.JPG"), 
-											       	new ImageIcon("Ressources/Images/vert4.JPG"),
-											       	new ImageIcon("Ressources/Images/bleu5.JPG"),
-											       	new ImageIcon("Ressources/Images/orange6.JPG"),
-											       	new ImageIcon("Ressources/Images/rose8.JPG")};
-
 						logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
 						logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));						
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);//pquoi cette ligne marche pas
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);
 						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
 						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
 												

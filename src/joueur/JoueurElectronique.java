@@ -56,6 +56,7 @@ public class JoueurElectronique extends Joueur {
 			}catch (NumberFormatException e) {
 				logger.error("Combinaison secrète non saisie");
 				JOptionPane.showMessageDialog(null, "Veuillez saisir une combinaison de "+lgueurCombo+" chiffres.", "Attention Combinaison secrète", JOptionPane.WARNING_MESSAGE);
+				initCombiSecret();
 			}
 		}
 		else {

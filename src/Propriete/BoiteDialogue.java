@@ -249,11 +249,9 @@ public class BoiteDialogue extends JDialog {
 				listProp.setProperty("mode", ModeJeu.DEFENSEUR.toString());
 			else if (duelBton.isSelected())
 				listProp.setProperty("mode", ModeJeu.DUEL.toString());
-			
 
-			listProp.setProperty("nombres d'essai", saisiEssai.getText());
-
-			
+			listProp.setProperty("nombres d'essai", String.valueOf(Integer.parseInt(saisiEssai.getText())));
+	
 			listProp.setProperty("longueur combinaison", saisiLgueurCombi.getSelectedItem().toString());
 			
 			if(modeDevBox.isSelected())
@@ -267,7 +265,7 @@ public class BoiteDialogue extends JDialog {
 			GestionFichierProperties gfp = new GestionFichierProperties();
 			gfp.ecrireProp(listProp);
 			
-			if (saisiEssai.getValue() != null) {
+			if (String.valueOf(Integer.parseInt(saisiEssai.getText())) != null) {
 				setVisible(false);
 			}
 			else {

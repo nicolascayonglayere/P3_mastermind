@@ -160,8 +160,8 @@ public abstract class TableDeJeu_Test extends JPanel {
 			listProp[i].addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					jeu();
-					//jeu1();
+					//jeu();
+					jeu1();
 				}
 			});
 			
