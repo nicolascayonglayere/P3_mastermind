@@ -109,18 +109,18 @@ public class TableDeJeuMasterMind_ModeDef1 extends TableDeJeu_Test {
 
 		this.resultCompa = "";
 		
-		for(int i =0; i<10; i++) {
-			Integer[] ctrlliste =  ttePropPossible.get(i);
-			for(int j = 0; j<this.lgueurCombo; j++) {
-				logger.debug("ctrl liste possible : "+ctrlliste[j]);//--Contrle
-			}
-		}
+	//for(int i =0; i<10; i++) {
+	//	Integer[] ctrlliste =  ttePropPossible.get(i);
+	//	for(int j = 0; j<this.lgueurCombo; j++) {
+	//		logger.debug("ctrl liste possible : "+ctrlliste[j]);//--Contrle
+	//	}
+	//}
 		
 		//--Au premier tour il prend un nb au hasard dans la liste des prop possibles
 		if(tourDeJeu == 0)
-			//prop0 = ttePropPossible.get(alea.nextInt(ttePropPossible.size()));
+			prop0 = ttePropPossible.get(alea.nextInt(ttePropPossible.size()));
 			//prop0 = ttePropPossible.get(0);
-			prop0 = meilleureProp(ttePropPossible0, ttePropPossible0);
+			//prop0 = meilleureProp(ttePropPossible0, ttePropPossible0);
 		
 		//--Ensuite, on se base sur le score relatif(score calc avec la prop précédente co liste de comparaison) pour determiner la proposition de l'ordi
 		//--on remove de la liste des possibles toutes les combinaisons qui ne tiennent pas la comparaison et on prend la première de la nouvelle liste des possibles comme proposition de l'ordi
@@ -147,8 +147,8 @@ public class TableDeJeuMasterMind_ModeDef1 extends TableDeJeu_Test {
 			}
 			logger.debug("taille des nvelles listes "+ttePropPossible.size());//--Controle
 			
-			//prop0 = ttePropPossible.get(0);
-			prop0 = meilleureProp(ttePropPossible, ttePropPossible0);
+			prop0 = ttePropPossible.get(0);
+			//prop0 = meilleureProp(ttePropPossible, ttePropPossible0);
 		}
 		
 			
