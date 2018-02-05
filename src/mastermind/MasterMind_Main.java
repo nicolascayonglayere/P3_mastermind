@@ -27,10 +27,9 @@ import Propriete.ModeJeu;
 import Propriete.TypeJeu;
 import ihm.Accueil;
 import ihm.TableDeJeu;
-import ihm.TableDeJeu_1;
-import ihm.TableDeJeu_2;
 import ihm.TableDeJeu_3;
 import ihm.TableDeJeu_4;
+import pattern_observer.Observateur;
 
 /**
  * La classe MasterMind Main hérite de JFrame et affiche les menus l'écran d'accueil et la table de jeu
@@ -50,6 +49,7 @@ public class MasterMind_Main extends JFrame {
 	private JMenuItem quit = new JMenuItem("quitter");
 	
 	private JMenu aPropos = new JMenu("A propos");
+	private JMenuItem regle = new JMenuItem("regles");
 	private JMenuItem contAPropos = new JMenuItem("?");
 	
 	private Accueil accueil = new Accueil();
@@ -61,7 +61,7 @@ public class MasterMind_Main extends JFrame {
 	private int modeDev;
 	private int couleur;
 	
-	private TableDeJeu tbleJeu ;
+	private TableDeJeu tbleJeu;
 	private Boolean inGame = false;
 
 	
@@ -89,16 +89,16 @@ public class MasterMind_Main extends JFrame {
 			  SwingUtilities.updateComponentTreeUI(this);
 			}
 		catch (InstantiationException e) {
-			logger.error(e);
+			logger.error(e.getMessage());
 		}
 		catch (ClassNotFoundException e) {
-			logger.error(e);
+			logger.error(e.getMessage());
 		}
 		catch (UnsupportedLookAndFeelException e) {
-			logger.error(e);
+			logger.error(e.getMessage());
 		}
 		catch (IllegalAccessException e) {
-			logger.error(e);
+			logger.error(e.getMessage());
 		}
 		
 		
@@ -125,34 +125,18 @@ public class MasterMind_Main extends JFrame {
 		nvelle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				//if(tbleJeu.getInGame() == false) {
 				if (inGame == false) {
 					BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);
+					bDialog.addObservateur(new Observateur() {
+						@Override
+						public void update(Object o) {
+							play.doClick();
+						}						
+					});
+					bDialog.setVisible(true);
 					
-					//--on récupère les proprietes du fichier 
-					GestionFichierProperties gfp = new GestionFichierProperties();
-					propriete = gfp.lireProp();
-					typeJeu = String.valueOf(propriete.getProperty("jeu"));
-					//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
-					logger.info("Ctrl jeu :"+typeJeu);
-					modeJeu = String.valueOf(propriete.getProperty("mode"));
-					//System.out.println("Ctrl mode : "+modeJeu);//--Controle
-					logger.info("Ctrl mode : "+modeJeu);
-					nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
-					//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
-					logger.info("Ctrl nb coup :"+nbCoupsConfig);
-					lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
-					//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
-					logger.info("Ctrl lgueur :"+lgueurCombo);
-					modeDev = Integer.valueOf(propriete.getProperty("developpement"));
-					logger.info("Ctrl mode dev : "+modeDev);
-					if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
-						couleur = Integer.valueOf(propriete.getProperty("couleur"));
-					else 
-						couleur = 0;
-					logger.info("Ctrl chiffre/couleur : "+couleur);
-					
-					accueil = new Accueil(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
-					afficher(accueil.getNom());				
+			
 				}
 				else {
 					int jop = JOptionPane.showConfirmDialog(null, "Souhaitez-vous quitter la partie en cours ?", "Attention partie en cours",
@@ -183,6 +167,39 @@ public class MasterMind_Main extends JFrame {
 		quit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, KeyEvent.CTRL_DOWN_MASK ));
 		
 		//--Le menu a propos
+		aPropos.add(regle);
+		regle.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				//--on récupère les proprietes du fichier 
+				GestionFichierProperties gfp = new GestionFichierProperties();
+				propriete = gfp.lireProp();
+				typeJeu = String.valueOf(propriete.getProperty("jeu"));
+				//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
+				logger.info("Ctrl jeu :"+typeJeu);
+				modeJeu = String.valueOf(propriete.getProperty("mode"));
+				//System.out.println("Ctrl mode : "+modeJeu);//--Controle
+				logger.info("Ctrl mode : "+modeJeu);
+				nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
+				//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
+				logger.info("Ctrl nb coup :"+nbCoupsConfig);
+				lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
+				//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
+				logger.info("Ctrl lgueur :"+lgueurCombo);
+				modeDev = Integer.valueOf(propriete.getProperty("developpement"));
+				logger.info("Ctrl mode dev : "+modeDev);
+				if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
+					couleur = Integer.valueOf(propriete.getProperty("couleur"));
+				else 
+					couleur = 0;
+				logger.info("Ctrl chiffre/couleur : "+couleur);
+				
+				accueil = new Accueil(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
+				afficher(accueil.getNom());					
+			}			
+		});
+		
 		aPropos.add(contAPropos);
 		contAPropos.addActionListener(new ActionListener() {
 			@Override
@@ -240,6 +257,7 @@ public class MasterMind_Main extends JFrame {
 				logger.info("Ctrl lgueur :"+lgueurCombo);
 				modeDev = Integer.valueOf(propriete.getProperty("developpement"));
 				logger.info("Ctrl mode dev : "+modeDev);
+				
 				if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
 					couleur = Integer.valueOf(propriete.getProperty("couleur"));
 				else 
@@ -251,7 +269,6 @@ public class MasterMind_Main extends JFrame {
 					afficher(tbleJeu.getNom());
 					tbleJeu.nouvellePartie();
 					inGame = tbleJeu.getInGame();
-
 				}
 				else {
 					tbleJeu = new TableDeJeu_3(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
@@ -278,6 +295,4 @@ public class MasterMind_Main extends JFrame {
 		f.setVisible(true);
 
 	}
-
-
 }

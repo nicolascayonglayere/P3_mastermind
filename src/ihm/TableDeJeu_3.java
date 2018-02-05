@@ -3,7 +3,6 @@ package ihm;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Event;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -13,14 +12,13 @@ import java.awt.event.KeyListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Propriete.ModeJeu;
 import clavier.Clavier;
-import clavier.Observateur_Clavier;
+import pattern_observer.Observateur;
 
 /**
  * Table de jeu pour 1 joueur, hérite de la classe abstraite TableDeJeu
@@ -158,16 +156,15 @@ public class TableDeJeu_3 extends TableDeJeu {
 
 				@Override
 				public void keyPressed(KeyEvent arg0) {
-					// TODO Auto-generated method stub
+					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
+						finDeTour.doClick();
+
 					
 				}
 
 				@Override
 				public void keyReleased(KeyEvent arg0) {
-					while(inGame) {
-						if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
-							finDeTour.doClick();
-					}
+
 					
 				}
 
@@ -184,26 +181,31 @@ public class TableDeJeu_3 extends TableDeJeu {
 		else if (this.modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
 			//--Un clavier de chiffre/couleur
 			Clavier clavier = new Clavier(couleur);
-			clavier.addObservateur(new Observateur_Clavier() {
+			//clavier.addObservateur(new Observateur_Clavier() {
+			clavier.addObservateur(new Observateur() {
 				
 				@Override
-				public void update(String pLettre) {
+				public void update(Object o) {
 					//--clavier numerique
 					if (couleur == 0) {
 						logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-						logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
-						cpteurLettre ++;	
+						logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));
+						
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
+						cpteurLettre ++;
+		
 					}
 					//--Clavier de couleur
 					else if (couleur == 1) {
 						//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
 						Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
+						
 						logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-						logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));						
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
+						logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));						
+						
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(o.toString())]);
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(o.toString())]);
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
 												
 						cpteurLettre ++;
 					}
@@ -225,14 +227,14 @@ public class TableDeJeu_3 extends TableDeJeu {
 
 				@Override
 				public void keyPressed(KeyEvent arg0) {
-					// TODO Auto-generated method stub
+					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
+						finDeTour.doClick();	
 					
 				}
 
 				@Override
 				public void keyReleased(KeyEvent arg0) {
-					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
-						finDeTour.doClick();				
+			
 				}
 
 				@Override

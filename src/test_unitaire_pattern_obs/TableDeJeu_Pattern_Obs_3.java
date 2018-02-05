@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 import Propriete.ModeJeu;
 import clavier.Clavier;
-import clavier.Observateur_Clavier;
+import pattern_observer.Observateur;
 
 public class TableDeJeu_Pattern_Obs_3 extends TableDeJeu_Pattern_Obs {
 
@@ -158,10 +158,10 @@ public class TableDeJeu_Pattern_Obs_3 extends TableDeJeu_Pattern_Obs {
 		else if (this.modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
 			//--Un clavier de chiffre
 			Clavier clavier = new Clavier(couleur);
-			clavier.addObservateur(new Observateur_Clavier() {
+			clavier.addObservateur(new Observateur() {
 				
 				@Override
-				public void update(String pLettre) {
+				public void update(Object o) {
 				////for(int j = 0 ; j < nbCoupsConfig; j++) {
 				//	for (int i = 0 ; i<lgueurCombo; i ++) {
 				//		//lblProp = listPropLbl.get(j);
@@ -172,8 +172,8 @@ public class TableDeJeu_Pattern_Obs_3 extends TableDeJeu_Pattern_Obs {
 				//}
 					if (couleur == 0) {
 						logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-						logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
+						logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
 						cpteurLettre ++;	
 					}
 					else if (couleur == 1) {
@@ -192,11 +192,11 @@ public class TableDeJeu_Pattern_Obs_3 extends TableDeJeu_Pattern_Obs {
 					//for(int i = 0; i<listColor.length; i++)
 					//	listCouleur.put(i, listColor[i]);
 						logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-						logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));						
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);//pquoi cette ligne marche pas
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
-						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
+						logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));						
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(o.toString())]);
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(o.toString())]);//pquoi cette ligne marche pas
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(o.toString())]);
+						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
 					//for(int i = 0; i<clavier.getListCouleur().size(); i++) {
 					//	if (i == clavier.getListCouleur().get(Integer.valueOf(pLettre)))
 					//		

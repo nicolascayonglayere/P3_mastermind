@@ -12,13 +12,12 @@ import java.awt.event.KeyListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import clavier.Clavier;
-import clavier.Observateur_Clavier;
+import pattern_observer.Observateur;
 
 /**
  * Table de jeu pour 2 joueurs, hérite de la classe abstraite TableDeJeu
@@ -166,35 +165,28 @@ public class TableDeJeu_4 extends TableDeJeu {
 		}
 		//--Un clavier de chiffre/couleur et un bouton tour suivant
 		Clavier clavier = new Clavier(couleur);
-		clavier.addObservateur(new Observateur_Clavier() {
+		clavier.addObservateur(new Observateur() {
 			
 			@Override
-			public void update(String pLettre) {
+			public void update(Object o) {
 
 				if (couleur == 0) {
 					logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-					logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
+					logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));
+					
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
 					cpteurLettre ++;	
 				}
 				else if (couleur == 1) {
 					//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
 					Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
-					ImageIcon[] listImageColor = {new ImageIcon("Ressources/Images/blanc0.JPG"),
-										       	new ImageIcon ("Ressources/Images/noir1.JPG"), 
-										       	new ImageIcon("Ressources/Images/rouge2.JPG"),
-										       	new ImageIcon("Ressources/Images/jaune3.JPG"), 
-										       	new ImageIcon("Ressources/Images/vert4.JPG"),
-										       	new ImageIcon("Ressources/Images/bleu5.JPG"),
-										       	new ImageIcon("Ressources/Images/orange6.JPG"),
-										       	new ImageIcon("Ressources/Images/rose8.JPG")};
-
+					
 					logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-					logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));						
-					//listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);//pquoi cette ligne marche pas
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
+					logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));						
+
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(o.toString())]);
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(o.toString())]);
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
 											
 					cpteurLettre ++;
 				}

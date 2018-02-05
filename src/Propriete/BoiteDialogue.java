@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import javax.swing.BorderFactory;
@@ -24,12 +25,15 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.text.MaskFormatter;
 
+import pattern_observer.Observable;
+import pattern_observer.Observateur;
+
 /**
  * La classe qui définit la boite de dialogue permettant la selection des proprietes du jeu
  * @author nicolas
  *
  */
-public class BoiteDialogue extends JDialog {
+public class BoiteDialogue extends JDialog implements Observable{
 
 	/**
 	 * variable d'instance
@@ -42,6 +46,7 @@ public class BoiteDialogue extends JDialog {
 	private JComboBox<String> saisiLgueurCombi;
 	private JCheckBox modeDevBox;
 	private Properties listProp = new Properties();
+	private ArrayList<Observateur> listObs = new ArrayList<Observateur>();
 	
 	
 	
@@ -91,7 +96,7 @@ public class BoiteDialogue extends JDialog {
 		this.getContentPane().add(panContent, BorderLayout.CENTER);
 		this.getContentPane().add(panBouton, BorderLayout.SOUTH);
 		
-		this.setVisible(true);
+		//this.setVisible(true);
 		
 	}
 	/**
@@ -267,11 +272,29 @@ public class BoiteDialogue extends JDialog {
 			
 			if (String.valueOf(Integer.parseInt(saisiEssai.getText())) != null) {
 				setVisible(false);
+				updateObservateur();
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Veuillez saisir un nombre à deux chiffres entre 01 et 99", "Attention nombres essais", JOptionPane.WARNING_MESSAGE);
 			}
 		}
+		
+	}
+
+	@Override
+	public void addObservateur(Observateur o) {
+		this.listObs.add(o);
+		
+	}
+	@Override
+	public void updateObservateur() {
+		for(Observateur o : this.listObs)
+			o.update("");
+		
+	}
+	@Override
+	public void delObservateur() {
+		this.listObs = new ArrayList<Observateur>();
 		
 	}
 

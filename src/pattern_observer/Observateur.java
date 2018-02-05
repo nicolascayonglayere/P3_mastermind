@@ -9,5 +9,6 @@ package pattern_observer;
  *
  */
 public interface Observateur {
-	public void update(String value);
+	//public void update(String value);
+	public void update(Object o);
 }

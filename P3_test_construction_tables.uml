@@ -1,0 +1,2169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_IHjtsAgdEeiM5MUlyyDdug" name="P3_test_construction_tables">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_ITIrkAgdEeiM5MUlyyDdug">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ROtfcAgdEeiM5MUlyyDdug" name="P3_test_constr_table">
+      <packagedElement xmi:type="uml:Package" xmi:id="_RQ-JQAgdEeiM5MUlyyDdug" name="test_unitaire_table_jeu">
+        <packagedElement xmi:type="uml:Class" xmi:id="_RRBMkAgdEeiM5MUlyyDdug" name="Mastermind_Test" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_RS4NwAgdEeiM5MUlyyDdug" general="_RRE28AgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RTXV8AgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RTZyMAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RTkxUAgdEeiM5MUlyyDdug" name="logger" visibility="private" isStatic="true" type="_RThG8AgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RTl_cAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>Logger.getLogger(Mastermind_Test.class)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RTqQ4AgdEeiM5MUlyyDdug" name="barre" visibility="private" type="_RTmmgAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RTq38AgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JMenuBar()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RTvwcAgdEeiM5MUlyyDdug" name="menuJeu" visibility="private" type="_RTsGEAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RTxloAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JMenu(&quot;Jeu&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RT2eIAgdEeiM5MUlyyDdug" name="nvelle" visibility="private" type="_RTyzwAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RT3sQAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JMenuItem(&quot;nouvelle partie&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RT46YAgdEeiM5MUlyyDdug" name="play" visibility="private" type="_RTyzwAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RT6IgAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JMenuItem(&quot;jeu&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RT79sAgdEeiM5MUlyyDdug" name="quit" visibility="private" type="_RTyzwAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RT9L0AgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JMenuItem(&quot;quitter&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RT-Z8AgdEeiM5MUlyyDdug" name="aPropos" visibility="private" type="_RTsGEAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RUAPIAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JMenu(&quot;A propos&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUBdQAgdEeiM5MUlyyDdug" name="contAPropos" visibility="private" type="_RTyzwAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RUCrYAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JMenuItem(&quot;?&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUG80AgdEeiM5MUlyyDdug" name="accueil" visibility="private" type="_RUD5gAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RUIK8AgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Accueil()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUO4oAgdEeiM5MUlyyDdug" name="propriete" visibility="private" type="_RUKnMAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUVmUAgdEeiM5MUlyyDdug" name="typeJeu" visibility="private" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUW0cAgdEeiM5MUlyyDdug" name="modeJeu" visibility="private" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUYCkAgdEeiM5MUlyyDdug" name="nbCoupsConfig" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUZ3wAgdEeiM5MUlyyDdug" name="lgueurCombo" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RUfXUAgdEeiM5MUlyyDdug" name="tbleJeu" visibility="private" type="_RUbs8AgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RUwdEAgdEeiM5MUlyyDdug" name="Mastermind_Test" specification="_RUglcAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--Param de la fenetre&#xD;
+    this.setTitle(&quot;LE MASTERMIND&quot;);&#xD;
+    this.setForeground(Color.BLACK);&#xD;
+    this.setBackground(Color.WHITE);&#xD;
+    this.setSize(new Dimension(800, 650));&#xD;
+    this.addWindowListener(new WindowAdapter() {&#xD;
+&#xD;
+        public void windowClosing(WindowEvent e) {&#xD;
+            quit.doClick();&#xD;
+        }&#xD;
+    });&#xD;
+    //--Les menus de la fenetre&#xD;
+    this.initMenu();&#xD;
+    //--Le panneau d'accueil&#xD;
+    this.afficher(accueil.getNom());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RUzgYAgdEeiM5MUlyyDdug" name="initMenu" specification="_RUySQAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--Le menu jeu&#xD;
+    menuJeu.add(nvelle);&#xD;
+    menuJeu.add(play);&#xD;
+    menuJeu.addSeparator();&#xD;
+    menuJeu.add(quit);&#xD;
+    nvelle.addActionListener(new ActionListener() {&#xD;
+&#xD;
+        @Override&#xD;
+        public void actionPerformed(ActionEvent arg0) {&#xD;
+            BoiteDialogue bDialog = new BoiteDialogue(null, &quot;CONFIGURATION DU JEU&quot;, true);&#xD;
+        }&#xD;
+    });&#xD;
+    nvelle.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK));&#xD;
+    play.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, KeyEvent.CTRL_DOWN_MASK));&#xD;
+    play.addActionListener(new NewGameListener());&#xD;
+    //--une boite de dialogue lorsque l'on quitte&#xD;
+    quit.addActionListener(new ActionListener() {&#xD;
+&#xD;
+        @Override&#xD;
+        public void actionPerformed(ActionEvent arg0) {&#xD;
+            JOptionPane jop = new JOptionPane();&#xD;
+            int option = jop.showConfirmDialog(null, &quot;Voulez-vous quitter ?&quot;, &quot;Quitter&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+            if (option == JOptionPane.OK_OPTION)&#xD;
+                System.exit(0);&#xD;
+        }&#xD;
+    });&#xD;
+    quit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, KeyEvent.CTRL_DOWN_MASK));&#xD;
+    //--Le menu a propos&#xD;
+    aPropos.add(contAPropos);&#xD;
+    contAPropos.addActionListener(new ActionListener() {&#xD;
+&#xD;
+        @Override&#xD;
+        public void actionPerformed(ActionEvent arg0) {&#xD;
+            JOptionPane jop = new JOptionPane();&#xD;
+            String message = &quot;Appli du Mastermind. Pas de copyright !\n&quot;;&#xD;
+            message += &quot;2017 - Version 1&quot;;&#xD;
+            jop.showMessageDialog(null, message, &quot;A propos&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+        }&#xD;
+    });&#xD;
+    //--Ajout des menus dans la barre des menus&#xD;
+    barre.add(menuJeu);&#xD;
+    barre.add(aPropos);&#xD;
+    this.setJMenuBar(barre);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RU4Y4AgdEeiM5MUlyyDdug" name="afficher" specification="_RU18oAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.getContentPane().removeAll();&#xD;
+    switch(pNomPage) {&#xD;
+        case (&quot;Accueil&quot;):&#xD;
+            this.getContentPane().add(accueil);&#xD;
+            break;&#xD;
+        case (&quot;Table De Jeu&quot;):&#xD;
+            this.getContentPane().add(tbleJeu);&#xD;
+            break;&#xD;
+    }&#xD;
+    this.getContentPane().revalidate();&#xD;
+    this.getContentPane().repaint();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RVNwEAgdEeiM5MUlyyDdug" name="main" specification="_RVKswAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    Appender appender = logger.getAppender(&quot;console&quot;);&#xD;
+    logger.addAppender(appender);&#xD;
+    /*Print log level information*/&#xD;
+    logger.debug(&quot;This is debug log&quot;);&#xD;
+    logger.info(&quot;This is info log&quot;);&#xD;
+    logger.warn(&quot;This is warning log&quot;);&#xD;
+    logger.error(&quot;This is error log&quot;);&#xD;
+    Mastermind_Test f = new Mastermind_Test();&#xD;
+    f.setVisible(true);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RUglcAgdEeiM5MUlyyDdug" name="Mastermind_Test" visibility="public" method="_RUwdEAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RUySQAgdEeiM5MUlyyDdug" name="initMenu" visibility="public" method="_RUzgYAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RU18oAgdEeiM5MUlyyDdug" name="afficher" visibility="public" method="_RU4Y4AgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RU3KwAgdEeiM5MUlyyDdug" name="pNomPage" type="_RUSjAAgdEeiM5MUlyyDdug"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RVKswAgdEeiM5MUlyyDdug" name="main" visibility="public" isStatic="true" method="_RVNwEAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RVL64AgdEeiM5MUlyyDdug" name="args" type="_RUSjAAgdEeiM5MUlyyDdug">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RVMh8AgdEeiM5MUlyyDdug"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RVNJAAgdEeiM5MUlyyDdug" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_RU7cMAgdEeiM5MUlyyDdug" name="NewGameListener">
+            <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_RVEmIAgdEeiM5MUlyyDdug" name="NewGameListener implements ActionListener" client="_RU7cMAgdEeiM5MUlyyDdug" supplier="_RU-fgAgdEeiM5MUlyyDdug" contract="_RU-fgAgdEeiM5MUlyyDdug"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RVJeoAgdEeiM5MUlyyDdug" name="actionPerformed" specification="_RVIQgAgdEeiM5MUlyyDdug">
+              <language>JAVA</language>
+              <body>&#xD;
+    //--on récupère les proprietes du fichier &#xD;
+    GestionFichierProperties gfp = new GestionFichierProperties();&#xD;
+    propriete = gfp.lireProp();&#xD;
+    typeJeu = String.valueOf(propriete.getProperty(&quot;jeu&quot;));&#xD;
+    //System.out.println(&quot;Ctrl jeu :&quot;+typeJeu);//--Controle&#xD;
+    logger.info(&quot;Ctrl jeu :&quot; + typeJeu);&#xD;
+    modeJeu = String.valueOf(propriete.getProperty(&quot;mode&quot;));&#xD;
+    //System.out.println(&quot;Ctrl mode : &quot;+modeJeu);//--Controle&#xD;
+    logger.info(&quot;Ctrl mode : &quot; + modeJeu);&#xD;
+    nbCoupsConfig = Integer.valueOf(propriete.getProperty(&quot;nombres d'essai&quot;));&#xD;
+    //System.out.println(&quot;Ctrl nb coup :&quot;+nbCoupsConfig);//--Controle&#xD;
+    logger.info(&quot;Ctrl nb coup :&quot; + nbCoupsConfig);&#xD;
+    lgueurCombo = Integer.valueOf(propriete.getProperty(&quot;longueur combinaison&quot;));&#xD;
+    //System.out.println(&quot;Ctrl lgueur :&quot;+lgueurCombo);//--Controle&#xD;
+    logger.info(&quot;Ctrl lgueur :&quot; + lgueurCombo);&#xD;
+    //--Selon le type de jeu et le mode, on appelle la table adequate pour jouer &#xD;
+    if (typeJeu.equals(TypeJeu.RECHERCHE_NUM.toString())) {&#xD;
+        switch(modeJeu) {&#xD;
+            case (&quot;mode CHALLENGER&quot;):&#xD;
+                {&#xD;
+                    tbleJeu = new TableDeJeuPlusMoins_ModeChall(modeJeu, nbCoupsConfig, lgueurCombo);&#xD;
+                    afficher(tbleJeu.getNom());&#xD;
+                    tbleJeu.nouvellePartie();&#xD;
+                }&#xD;
+                break;&#xD;
+            case (&quot;mode DEFENSEUR&quot;):&#xD;
+                {&#xD;
+                    tbleJeu = new TableDeJeuPlusMoins_ModeDef(modeJeu, nbCoupsConfig, lgueurCombo);&#xD;
+                    afficher(tbleJeu.getNom());&#xD;
+                    tbleJeu.nouvellePartie();&#xD;
+                }&#xD;
+                break;&#xD;
+            case (&quot;mode DUEL&quot;):&#xD;
+                {&#xD;
+                    tbleJeu = new TableDeJeuPlusMoins_ModeDuel(modeJeu, nbCoupsConfig, lgueurCombo);&#xD;
+                    afficher(tbleJeu.getNom());&#xD;
+                    tbleJeu.nouvellePartie();&#xD;
+                }&#xD;
+                break;&#xD;
+        }&#xD;
+    } else if (typeJeu.equals(TypeJeu.MASTERMIND.toString())) {&#xD;
+        switch(modeJeu) {&#xD;
+            case (&quot;mode CHALLENGER&quot;):&#xD;
+                {&#xD;
+                    tbleJeu = new TableDeJeuMasterMind_ModeChall(modeJeu, nbCoupsConfig, lgueurCombo);&#xD;
+                    afficher(tbleJeu.getNom());&#xD;
+                    tbleJeu.nouvellePartie();&#xD;
+                }&#xD;
+                break;&#xD;
+            case (&quot;mode DEFENSEUR&quot;):&#xD;
+                {&#xD;
+                    tbleJeu = new TableDeJeuMasterMind_ModeDef1(modeJeu, nbCoupsConfig, lgueurCombo);&#xD;
+                    afficher(tbleJeu.getNom());&#xD;
+                    tbleJeu.nouvellePartie();&#xD;
+                }&#xD;
+                break;&#xD;
+            case (&quot;mode DUEL&quot;):&#xD;
+                {&#xD;
+                }&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+            </ownedBehavior>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_RVIQgAgdEeiM5MUlyyDdug" name="actionPerformed" visibility="public" method="_RVJeoAgdEeiM5MUlyyDdug">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_RVI3kAgdEeiM5MUlyyDdug" name="arg0" type="_RVF0QAgdEeiM5MUlyyDdug"/>
+            </ownedOperation>
+          </nestedClassifier>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_RUbs8AgdEeiM5MUlyyDdug" name="TableDeJeu_Test" visibility="public" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_aT_o8AgdEeiM5MUlyyDdug" general="_aT7-kAgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUCFMAgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_aUFIgAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUFvkAgdEeiM5MUlyyDdug" name="logger" visibility="private" isStatic="true" type="_RThG8AgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_aUG9sAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>Logger.getLogger(TableDeJeu_Test.class)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUHkwAgdEeiM5MUlyyDdug" name="nom" visibility="protected" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_aUIy4AgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>&quot;Table De Jeu&quot;</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUKoEAgdEeiM5MUlyyDdug" name="propriete" visibility="protected" type="_RUKnMAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUMdQAgdEeiM5MUlyyDdug" name="modeJeu" visibility="protected" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUNrYAgdEeiM5MUlyyDdug" name="nbCoupsConfig" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUO5gAgdEeiM5MUlyyDdug" name="lgueurCombo" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUQHoAgdEeiM5MUlyyDdug" name="tourDeJeu" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_aUQusAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUVnMAgdEeiM5MUlyyDdug" name="listResult" visibility="protected" type="_aUR80AgdEeiM5MUlyyDdug" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aUWOQAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aUW1UAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUZ4oAgdEeiM5MUlyyDdug" name="listProp" visibility="protected" type="_aUXcYAgdEeiM5MUlyyDdug" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aUbGwAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aUbt0AgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUhNYAgdEeiM5MUlyyDdug" name="joueur" visibility="protected" type="_aUdjAAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUkQsAgdEeiM5MUlyyDdug" name="coupJoue" visibility="protected" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUle0AgdEeiM5MUlyyDdug" name="listPropJoueur" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aUnUAAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aUoiIAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUpwQAgdEeiM5MUlyyDdug" name="resultCompa" visibility="protected" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aUszkAgdEeiM5MUlyyDdug" name="panTbleJeu" visibility="protected" type="_aT7-kAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_aUvP0AgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JPanel()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_sAGeUAgdEeiM5MUlyyDdug" name="mastermind_test" type="_RRBMkAgdEeiM5MUlyyDdug" association="_r_97cAgdEeiM5MUlyyDdug">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sAHFYAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sAHFYQgdEeiM5MUlyyDdug" value="1"/>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aUzhQAgdEeiM5MUlyyDdug" name="TableDeJeu_Test" specification="_aUv24AgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--on récupère les proprietes&#xD;
+    GestionFichierProperties gfp = new GestionFichierProperties();&#xD;
+    this.propriete = gfp.lireProp();&#xD;
+    modeJeu = String.valueOf(propriete.getProperty(&quot;mode&quot;));&#xD;
+    //System.out.println(&quot;Ctrl mode : &quot;+modeJeu);//--Controle&#xD;
+    logger.debug(&quot;Ctrl mode : &quot; + modeJeu);&#xD;
+    this.nbCoupsConfig = Integer.valueOf(this.propriete.getProperty(&quot;nombres d'essai&quot;));&#xD;
+    //System.out.println(&quot;Ctrl nb coup :&quot;+this.nbCoupsConfig);//--Controle&#xD;
+    logger.debug(&quot;Ctrl nb coup :&quot; + this.nbCoupsConfig);&#xD;
+    this.lgueurCombo = Integer.valueOf(this.propriete.getProperty(&quot;longueur combinaison&quot;));&#xD;
+    //System.out.println(&quot;Ctrl lgueur :&quot;+this.lgueurCombo);//--Controle&#xD;
+    logger.debug(&quot;Ctrl lgueur :&quot; + this.lgueurCombo);&#xD;
+    //--Les composants graphiques&#xD;
+    this.setLayout(new BorderLayout());&#xD;
+    try {&#xD;
+        initTable();&#xD;
+    } catch (ParseException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    this.add(panTbleJeu, BorderLayout.CENTER);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aU9SQAgdEeiM5MUlyyDdug" name="TableDeJeu_Test" specification="_aU3LoAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.joueur = pJoueur;&#xD;
+    this.nbCoupsConfig = pEssai;&#xD;
+    this.lgueurCombo = pCombo;&#xD;
+    //--Les composants graphiques&#xD;
+    this.setLayout(new BorderLayout());&#xD;
+    try {&#xD;
+        initTable();&#xD;
+    } catch (ParseException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    this.add(panTbleJeu, BorderLayout.CENTER);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aVGcMAgdEeiM5MUlyyDdug" name="TableDeJeu_Test" specification="_aVAVkAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.modeJeu = pMode;&#xD;
+    this.nbCoupsConfig = pEssai;&#xD;
+    this.lgueurCombo = pCombo;&#xD;
+    //--Les composants graphiques&#xD;
+    this.setLayout(new BorderLayout());&#xD;
+    try {&#xD;
+        initTable();&#xD;
+    } catch (ParseException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    this.add(panTbleJeu, BorderLayout.CENTER);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aVLUsAgdEeiM5MUlyyDdug" name="initTable" specification="_aVHqUAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--Le panneau qui accueille la table de jeu&#xD;
+    panTbleJeu.setPreferredSize(new Dimension(400, 500));&#xD;
+    panTbleJeu.setBorder(BorderFactory.createLineBorder(Color.BLACK));&#xD;
+    panTbleJeu.setLayout(new BoxLayout(panTbleJeu, BoxLayout.PAGE_AXIS));&#xD;
+    panTbleJeu.setBackground(Color.WHITE);&#xD;
+    Font police = new Font(&quot;Arial&quot;, Font.BOLD, 18);&#xD;
+    //--une liste d'étiquette qui accueille le n° de la tentative&#xD;
+    JLabel[] listEssai = new JLabel[this.nbCoupsConfig];&#xD;
+    //--Une liste de JPanel &#xD;
+    JPanel[] panRef = new JPanel[this.nbCoupsConfig];&#xD;
+    //--On applique un maskFormatter au JFormattedTextField pour s'assurer de la validité de la saisie&#xD;
+    String[] listDiese = new String[this.lgueurCombo];&#xD;
+    String str = &quot;&quot;;&#xD;
+    for (int k = 0; k &lt; this.lgueurCombo; k++) {&#xD;
+        listDiese[k] = &quot;#&quot;;&#xD;
+        str += listDiese[k];&#xD;
+    }&#xD;
+    MaskFormatter mask = new MaskFormatter(str);&#xD;
+    this.listProp = new JFormattedTextField[this.nbCoupsConfig];&#xD;
+    this.listResult = new JLabel[this.nbCoupsConfig];&#xD;
+    for (int i = 0; i &lt; nbCoupsConfig; i++) {&#xD;
+        //--L'etiquette essai n°&#xD;
+        listEssai[i] = new JLabel(String.valueOf(i + 1));&#xD;
+        listEssai[i].setFont(police);&#xD;
+        listEssai[i].setBackground(Color.white);&#xD;
+        //--La zone de texte ou s'effectue la saisie&#xD;
+        listProp[i] = new JFormattedTextField(mask);&#xD;
+        listProp[i].setFont(police);&#xD;
+        listProp[i].setBackground(Color.white);&#xD;
+        listProp[i].setPreferredSize(new Dimension(100, 50));&#xD;
+        listProp[i].setEditable(false);&#xD;
+        listProp[i].setHorizontalAlignment(JFormattedTextField.CENTER);&#xD;
+        listProp[i].addActionListener(new ActionListener() {&#xD;
+&#xD;
+            @Override&#xD;
+            public void actionPerformed(ActionEvent arg0) {&#xD;
+                //jeu();&#xD;
+                jeu1();&#xD;
+            }&#xD;
+        });&#xD;
+        //--L'étiquette qui affiche le résultat de la comparaison entre la saisie et la combinaison gagnante&#xD;
+        listResult[i] = new JLabel(&quot;&quot;);&#xD;
+        listResult[i].setFont(police);&#xD;
+        listResult[i].setBackground(Color.white);&#xD;
+        listResult[i].setPreferredSize(new Dimension(300, 50));&#xD;
+        //--Le panneau qui accueille les 3 composants précédents&#xD;
+        panRef[i] = new JPanel();&#xD;
+        panRef[i].setBorder(BorderFactory.createEtchedBorder());&#xD;
+        panRef[i].setBackground(Color.WHITE);&#xD;
+        panRef[i].setLayout(new BoxLayout(panRef[i], BoxLayout.LINE_AXIS));&#xD;
+        panRef[i].add(listEssai[i]);&#xD;
+        panRef[i].add(listProp[i]);&#xD;
+        panRef[i].add(listResult[i]);&#xD;
+        panTbleJeu.add(panRef[i]);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aVO_EAgdEeiM5MUlyyDdug" name="getNom" specification="_aVNw8AgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.nom;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aVSCYAgdEeiM5MUlyyDdug" name="initCombiSecret" specification="_aVRbUAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aVTQgAgdEeiM5MUlyyDdug" name="jeu" specification="_aVSpcAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aVUeoAgdEeiM5MUlyyDdug" name="jeu1" specification="_aVT3kAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aVW64AgdEeiM5MUlyyDdug" name="nouvellePartie" specification="_aVVswAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    panTbleJeu.removeAll();&#xD;
+    resultCompa = &quot;&quot;;&#xD;
+    try {&#xD;
+        initTable();&#xD;
+    } catch (ParseException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    panTbleJeu.revalidate();&#xD;
+    panTbleJeu.repaint();&#xD;
+    listProp[0].setEditable(true);&#xD;
+    this.setLayout(new BorderLayout());&#xD;
+    this.add(panTbleJeu, BorderLayout.CENTER);&#xD;
+    initCombiSecret();&#xD;
+    tourDeJeu = 0;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aUv24AgdEeiM5MUlyyDdug" name="TableDeJeu_Test" visibility="public" method="_aUzhQAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aU3LoAgdEeiM5MUlyyDdug" name="TableDeJeu_Test" visibility="public" method="_aU9SQAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aU6O8AgdEeiM5MUlyyDdug" name="pJoueur" type="_aUdjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aU62AAgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aU62AQgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aVAVkAgdEeiM5MUlyyDdug" name="TableDeJeu_Test" visibility="public" method="_aVGcMAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aVEnAAgdEeiM5MUlyyDdug" name="pMode" type="_RUSjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aVFOEAgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aVF1IAgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aVHqUAgdEeiM5MUlyyDdug" name="initTable" visibility="public" method="_aVLUsAgdEeiM5MUlyyDdug" raisedException="_aVIRYAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aVNw8AgdEeiM5MUlyyDdug" name="getNom" visibility="public" method="_aVO_EAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aVOYAAgdEeiM5MUlyyDdug" type="_RUSjAAgdEeiM5MUlyyDdug" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aVRbUAgdEeiM5MUlyyDdug" name="initCombiSecret" visibility="public" method="_aVSCYAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aVSpcAgdEeiM5MUlyyDdug" name="jeu" visibility="public" method="_aVTQgAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aVT3kAgdEeiM5MUlyyDdug" name="jeu1" visibility="public" method="_aVUeoAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_aVVswAgdEeiM5MUlyyDdug" name="nouvellePartie" visibility="public" method="_aVW64AgdEeiM5MUlyyDdug"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_eLs6UAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeChall" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_eLuvgAgdEeiM5MUlyyDdug" general="_RUbs8AgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eLwksAgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_eLxy0AgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eLyZ4AgdEeiM5MUlyyDdug" name="combiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_eLzoAAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eL0PEAgdEeiM5MUlyyDdug" name="constrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eL1dMAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eL1dMQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eL5HkAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeChall" specification="_eL2EQAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eMAcUAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeChall" specification="_eL68wAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pJoueur, pEssai, pCombo);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eMIYIAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeChall" specification="_eMBDYAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pMode, pEssai, pCombo);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eMKNUAgdEeiM5MUlyyDdug" name="jeu" specification="_eMJmQAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.listPropJoueur = new Integer[this.lgueurCombo];&#xD;
+    resultCompa = &quot;&quot;;&#xD;
+    coupJoue = listProp[tourDeJeu].getText();&#xD;
+    //System.out.println(&quot;la proposition du joueur : &quot;+coupJoue);&#xD;
+    logger.debug(&quot;la proposition du joueur : &quot; + coupJoue);&#xD;
+    char[] tabint = coupJoue.toCharArray();&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        this.listPropJoueur[i] = Character.getNumericValue(tabint[i]);&#xD;
+        //System.out.println(&quot;la liste de prop du joueur : &quot;+listPropJoueur[i]);&#xD;
+        logger.debug(&quot;la liste de prop du joueur : &quot; + listPropJoueur[i]);&#xD;
+    }&#xD;
+    this.compare();&#xD;
+    listResult[tourDeJeu].setText(resultCompa);&#xD;
+    listProp[tourDeJeu + 1].setEditable(true);&#xD;
+    tourDeJeu++;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eMLbcAgdEeiM5MUlyyDdug" name="initCombiSecret" specification="_eMK0YAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.constrCombiSecret = new Integer[this.lgueurCombo];&#xD;
+    Random alea = new Random();&#xD;
+    String str = &quot;&quot;;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //--on tire 1 chiffre au hasard&#xD;
+        constrCombiSecret[i] = alea.nextInt(10);&#xD;
+        //--on concatene les différents chiffres &#xD;
+        str += String.valueOf(constrCombiSecret[i]);&#xD;
+    }&#xD;
+    this.combiSecret = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la combo gagnante : &quot;+this.combiSecret);//--Controle&#xD;
+    logger.warn(&quot;la combo gagnante : &quot; + this.combiSecret);&#xD;
+    JOptionPane jop = new JOptionPane();&#xD;
+    String message = &quot;La combinaison secrète est prête \n&quot;;&#xD;
+    message += &quot;A vous de jouer&quot;;&#xD;
+    jop.showMessageDialog(null, message, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+    listProp[0].setEditable(true);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eMMpkQgdEeiM5MUlyyDdug" name="compare" specification="_eMMpkAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo du coup joue &quot;+Integer.valueOf(coupJoue.charAt(i)));&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);&#xD;
+        logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+        difference = constrCombiSecret[i] - listPropJoueur[i];&#xD;
+        //System.out.println(difference);&#xD;
+        logger.debug(&quot;resultat difference : &quot; + difference);&#xD;
+        if (difference == 0) {&#xD;
+            resultCompa += &quot;=&quot;;&#xD;
+        } else if (difference &lt; 0) {&#xD;
+            resultCompa += &quot;-&quot;;&#xD;
+        } else if (difference > 0) {&#xD;
+            resultCompa += &quot;+&quot;;&#xD;
+        }&#xD;
+    }&#xD;
+    int diff2 = (Integer.valueOf(coupJoue)) - combiSecret;&#xD;
+    //--Victoire&#xD;
+    if (diff2 == 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?&quot;, &quot;Victoire&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+    //--Defaite&#xD;
+    if (tourDeJeu + 1 == nbCoupsConfig &amp;&amp; diff2 != 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;C'est perdu ! \n La combinaison gagnante est &quot; + combiSecret + &quot;\n Voulez-vous rejouer ?&quot;, &quot;Défaite&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_eL2EQAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeChall" visibility="public" method="_eL5HkAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_eL68wAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeChall" visibility="public" method="_eMAcUAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eL-nIAgdEeiM5MUlyyDdug" name="pJoueur" type="_aUdjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eL_OMAgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eL_1QAgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_eMBDYAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeChall" visibility="public" method="_eMIYIAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eMEGsAgdEeiM5MUlyyDdug" name="pMode" type="_RUSjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eMEtwAgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_eMGi8AgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_eMJmQAgdEeiM5MUlyyDdug" name="jeu" visibility="public" method="_eMKNUAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_eMK0YAgdEeiM5MUlyyDdug" name="initCombiSecret" visibility="public" method="_eMLbcAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_eMMpkAgdEeiM5MUlyyDdug" name="compare" visibility="public" method="_eMMpkQgdEeiM5MUlyyDdug"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_hGB9cAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDef" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_hGDyoAgdEeiM5MUlyyDdug" general="_RUbs8AgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGFn0AgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_hGHdAAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGJ5QAgdEeiM5MUlyyDdug" name="alea" visibility="private" type="_hGIEEAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_hGKgUAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Random()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGLucAgdEeiM5MUlyyDdug" name="str" visibility="private" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_hGM8kAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>&quot;&quot;</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGNjoAgdEeiM5MUlyyDdug" name="combiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGOxwAgdEeiM5MUlyyDdug" name="tabConstrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_5lVhgBydEduyofBvg4RL2w"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hGPY0AgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hGP_4AgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGQm8AgdEeiM5MUlyyDdug" name="constrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hGROAAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hGR1EAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGR1EQgdEeiM5MUlyyDdug" name="constrPropOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hGTDMAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hGTDMQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGTqQAgdEeiM5MUlyyDdug" name="constrRepOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hGURUAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hGU4YAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGWtkQgdEeiM5MUlyyDdug" name="tabIntervalles" visibility="private" type="_hGU4YQgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGX7sAgdEeiM5MUlyyDdug" name="propOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_hGYiwAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGZJ0AgdEeiM5MUlyyDdug" name="tabPool" visibility="private" type="_hGU4YQgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hGZw4AgdEeiM5MUlyyDdug" name="tabIntPool" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hGa_AAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hGbmEAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_hGepYAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDef" specification="_hGcNIAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_hGjh4AgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDef" specification="_hGf3gAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pMode, pEssai, pCombo);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_hGlXEQgdEeiM5MUlyyDdug" name="initCombiSecret" specification="_hGlXEAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau&#xD;
+    JOptionPane jop0 = new JOptionPane();&#xD;
+    String combiJoueur = jop0.showInputDialog(null, &quot;Veuillez saisir une combinaison de &quot; + lgueurCombo + &quot; chiffres.&quot;, &quot;Combinaison secrète&quot;, JOptionPane.QUESTION_MESSAGE);&#xD;
+    this.combiSecret = Integer.valueOf(combiJoueur);&#xD;
+    this.tabConstrCombiSecret = combiJoueur.toCharArray();&#xD;
+    this.constrCombiSecret = new Integer[this.lgueurCombo];&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;Ctrl combo :&quot;+tabConstrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;Ctrl combo :&quot; + tabConstrCombiSecret[i]);&#xD;
+        this.constrCombiSecret[i] = Character.getNumericValue(tabConstrCombiSecret[i]);&#xD;
+    }&#xD;
+    //-- Une boite de dialogue pour informer la partie lancee&#xD;
+    JOptionPane jop1 = new JOptionPane();&#xD;
+    String message = &quot;Vous avez choisi une combinaison secrète. \n&quot;;&#xD;
+    message += &quot;Votre adversaire joue.&quot;;&#xD;
+    jop1.showMessageDialog(null, message, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+    //System.out.println(&quot;la combo gagnante : &quot;+this.combiSecret);//--Controle&#xD;
+    logger.info(&quot;la combo gagnante : &quot; + this.combiSecret);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_hGnMQAgdEeiM5MUlyyDdug" name="jeu1" specification="_hGl-IAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (tourDeJeu == 0) {&#xD;
+        //--L'ordi choisit une combinaison aléatoire et remplit un tbleau contenant sa reponse de -1&#xD;
+        this.constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.constrRepOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.tabIntervalles = new HashMap&lt;Integer, Integer>();&#xD;
+        //this.intOri = new HashMap&lt;Integer, Integer>();&#xD;
+        //this.intFin = new HashMap&lt;Integer, Integer>();&#xD;
+        resultCompa = &quot;&quot;;&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            //--on remplit le tableau de reponse de -1&#xD;
+            constrRepOrdi[i] = -1;&#xD;
+            //--on tire 1 chiffre au hasard&#xD;
+            constrPropOrdi[i] = alea.nextInt(10);&#xD;
+            //--on concatene les différents chiffres &#xD;
+            str += String.valueOf(constrPropOrdi[i]);&#xD;
+        }&#xD;
+        propOrdi = Integer.valueOf(str);&#xD;
+        //System.out.println(&quot;la proposition de l'odinateur : &quot;+propOrdi);//--Controle&#xD;
+        logger.info(&quot;la proposition de l'odinateur : &quot; + propOrdi);&#xD;
+        //--Il la propose en l'affichant ds la zone de texte&#xD;
+        listProp[tourDeJeu].setText(str);&#xD;
+        //--Il compare&#xD;
+        this.compare();&#xD;
+        //--affichage du résultat&#xD;
+        listResult[tourDeJeu].setText(resultCompa);&#xD;
+        listProp[tourDeJeu + 1].setEditable(true);&#xD;
+        tourDeJeu++;&#xD;
+    } else {&#xD;
+        //--on reinitialise la prop de l'ordi&#xD;
+        constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        propOrdi = 0;&#xD;
+        resultCompa = &quot;&quot;;&#xD;
+        str = &quot;&quot;;&#xD;
+        //--on recupere les prop correctes quand il y en a &#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            if (constrRepOrdi[i] != -1) {&#xD;
+                constrPropOrdi[i] = constrRepOrdi[i];&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            } else //--sinon on tire au hasard dans l'intervalle restreint&#xD;
+            {&#xD;
+                //constrPropOrdi[i] = alea.nextInt(10);&#xD;
+                //System.out.println(&quot;tabIntervalle : &quot;+tabIntervalles.get(i));//--Controle&#xD;
+                logger.debug(&quot;tabIntervalle : &quot; + tabIntervalles.get(i));&#xD;
+                constrPropOrdi[i] = alea.nextInt(tabIntervalles.get(i));&#xD;
+                //--on genere aleatoirement un nb dans un intervalle defini que l'on met ds une liste intermediaire&#xD;
+                //List&lt;Integer> tabInt = (alea.ints(intOri.get(i), intFin.get(i))).boxed().collect(Collectors.toList());&#xD;
+                //--on recupere la proposition de l'ordi&#xD;
+                //System.out.println(&quot;nb aleatoire intermediaire : &quot;+tabInt.get(i));//--Controle&#xD;
+                //constrPropOrdi[i] = tabInt.get(i);&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            }&#xD;
+        }&#xD;
+        propOrdi = Integer.valueOf(str);&#xD;
+        //System.out.println(&quot;la proposition de l'odinateur : &quot;+propOrdi);//--Controle&#xD;
+        logger.info(&quot;la proposition de l'odinateur : &quot; + propOrdi);&#xD;
+        //--Il la propose en l'affichant ds la zone de texte&#xD;
+        listProp[tourDeJeu].setText(str);&#xD;
+        //--Il compare&#xD;
+        this.compare();&#xD;
+        //--affichage du résultat&#xD;
+        listResult[tourDeJeu].setText(resultCompa);&#xD;
+        listProp[tourDeJeu + 1].setEditable(true);&#xD;
+        tourDeJeu++;&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_hGpBcAgdEeiM5MUlyyDdug" name="compare" specification="_hGnzUAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    this.tabIntPool = new ArrayList&lt;Integer>();&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+        difference = constrCombiSecret[i] - constrPropOrdi[i];&#xD;
+        //System.out.println(difference);//--Controle&#xD;
+        logger.debug(&quot;Ctrl difference :&quot; + difference);&#xD;
+        this.tabIntPool = new ArrayList&lt;Integer>();&#xD;
+        //--Si la diférence est nulle, le chiffre est dans la combinaison secrete et on l'affecte dans la reponse de l'ordi&#xD;
+        if (difference == 0) {&#xD;
+            resultCompa += &quot;=&quot;;&#xD;
+            constrRepOrdi[i] = constrPropOrdi[i];&#xD;
+        } else //--Si la différence est negative on restreint l'intervalle de choix de l'ordi&#xD;
+        if (difference &lt; 0) {&#xD;
+            resultCompa += &quot;-&quot;;&#xD;
+            tabIntervalles.put(i, constrPropOrdi[i] - 1);&#xD;
+            //intFin.put(i,constrPropOrdi[i]-1);&#xD;
+            for (int j = 0; j &lt; constrPropOrdi[i]; j++) {&#xD;
+                tabIntPool.add(j);&#xD;
+                //System.out.println(&quot;ctrl pool construit ap comparaison &lt;0: &quot;+tabIntPool.get(j));//--Controle&#xD;
+                logger.debug(&quot;ctrl pool construit ap comparaison &lt;0: &quot; + tabIntPool.get(j));&#xD;
+            }&#xD;
+            for (int k = 0; k &lt; tabIntPool.size(); k++) //System.out.println(&quot;ma var qui transporte le pool &quot;+tabIntPool.get(k));//--Controle&#xD;
+            logger.debug(&quot;ma var qui transporte le pool &quot; + tabIntPool.get(k));&#xD;
+            tabPool.put(i, tabIntPool);&#xD;
+            //System.out.println(&quot;un autre ctrl : &quot;+tabPool.toString());//--Controle&#xD;
+            logger.debug(&quot;un autre ctrl : &quot; + tabPool.toString() + &quot; - &quot; + tabPool.get(i).size());&#xD;
+        } else //--Si la différence est positive on restreint aussi l'intervalle de choix de l'ordi&#xD;
+        if (difference > 0) {&#xD;
+            resultCompa += &quot;+&quot;;&#xD;
+            tabIntervalles.put(i, 10);&#xD;
+            //intFin.put(i, 10);&#xD;
+            for (int j = 0; j &lt; 10 - constrPropOrdi[i]; j++) {&#xD;
+                tabIntPool.add(j + constrPropOrdi[i] + 1);&#xD;
+                //System.out.println(&quot;ctrl pool construit ap comparaison >0: &quot;+tabIntPool.get(j));//--Controle&#xD;
+                logger.debug(&quot;ctrl pool construit ap comparaison >0: &quot; + tabIntPool.get(j));&#xD;
+            }&#xD;
+            for (int k = 0; k &lt; tabIntPool.size(); k++) //System.out.println(&quot;ma var qui transporte le pool &quot;+tabIntPool.get(k));//--Controle&#xD;
+            logger.debug(&quot;ma var qui transporte le pool &quot; + tabIntPool.get(k));&#xD;
+            tabPool.put(i, tabIntPool);&#xD;
+            //System.out.println(&quot;un autre ctrl : &quot;+tabPool.toString() + &quot; - &quot;+tabPool.get(i).size());//--Controle&#xD;
+            logger.debug(&quot;un autre ctrl : &quot; + tabPool.toString() + &quot; - &quot; + tabPool.get(i).size());&#xD;
+        }&#xD;
+    }&#xD;
+    int diff2 = (propOrdi - combiSecret);&#xD;
+    //--Victoire&#xD;
+    if (diff2 == 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?&quot;, &quot;Victoire&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+    //--Defaite&#xD;
+    if (tourDeJeu + 1 == nbCoupsConfig &amp;&amp; diff2 != 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;C'est perdu ! \n La combinaison gagnante est &quot; + combiSecret + &quot;\n Voulez-vous rejouer ?&quot;, &quot;Défaite&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_hGrdsAgdEeiM5MUlyyDdug" name="jeu" specification="_hGpogAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (tourDeJeu == 0) {&#xD;
+        this.constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.constrRepOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.resultCompa = &quot;&quot;;&#xD;
+        this.tabPool = new HashMap&lt;Integer, ArrayList&lt;Integer>>();&#xD;
+        this.tabIntPool = new ArrayList&lt;Integer>();&#xD;
+        this.tabIntervalles = new HashMap&lt;Integer, Integer>();&#xD;
+        //--on initialise le tableau de pool d'entier compris entre 0 et 9&#xD;
+        for (int k = 0; k &lt; 10; k++) this.tabIntPool.add(k);&#xD;
+        //--l'ordi construit sa prop à partir du pool de nombre&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            //--on remplit le tableau de reponse de -1&#xD;
+            constrRepOrdi[i] = -1;&#xD;
+            //--on construit la prop de l'ordi a partir du pool de nombre : 0123&#xD;
+            constrPropOrdi[i] = tabIntPool.get(i);&#xD;
+            str += String.valueOf(constrPropOrdi[i]);&#xD;
+        }&#xD;
+    } else {&#xD;
+        //--on réinitialise la prop de l'ordi ainsi que le tableau contenant celle-ci&#xD;
+        this.constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        propOrdi = 0;&#xD;
+        resultCompa = &quot;&quot;;&#xD;
+        str = &quot;&quot;;&#xD;
+        //--l'ordi construit sa prop à partir du pool de nombre s'il n'a pas trouvé le chiffre&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            if (constrRepOrdi[i] != -1) {&#xD;
+                constrPropOrdi[i] = constrRepOrdi[i];&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            } else {&#xD;
+                tabIntPool = tabPool.get(i);&#xD;
+                for (//--Controle&#xD;
+                int j = 0; //--Controle&#xD;
+                j &lt; tabIntPool.size(); //--Controle&#xD;
+                j++) {&#xD;
+                    //System.out.println(&quot;ctrl1 pool : &quot;+tabIntPool.get(j));//--Controle&#xD;
+                    logger.debug(&quot;ctrl1 pool : &quot; + tabIntPool.get(j));&#xD;
+                //--Controle&#xD;
+                }&#xD;
+                constrPropOrdi[i] = tabIntPool.get(0);&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+    propOrdi = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la proposition de l'odinateur : &quot;+propOrdi);//--Controle&#xD;
+    logger.info(&quot;la proposition de l'odinateur : &quot; + propOrdi);&#xD;
+    //--Il la propose en l'affichant ds la zone de texte&#xD;
+    listProp[tourDeJeu].setText(str);&#xD;
+    //--Il compare&#xD;
+    this.compare();&#xD;
+    //--affichage du résultat&#xD;
+    listResult[tourDeJeu].setText(resultCompa);&#xD;
+    listProp[tourDeJeu + 1].setEditable(true);&#xD;
+    tourDeJeu++;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hGcNIAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDef" visibility="public" method="_hGepYAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hGf3gAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDef" visibility="public" method="_hGjh4AgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_hGiTwAgdEeiM5MUlyyDdug" name="pMode" type="_RUSjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_hGi60AgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_hGi60QgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hGlXEAgdEeiM5MUlyyDdug" name="initCombiSecret" visibility="public" method="_hGlXEQgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hGl-IAgdEeiM5MUlyyDdug" name="jeu1" visibility="public" method="_hGnMQAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hGnzUAgdEeiM5MUlyyDdug" name="compare" visibility="public" method="_hGpBcAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hGpogAgdEeiM5MUlyyDdug" name="jeu" visibility="public" method="_hGrdsAgdEeiM5MUlyyDdug"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_jpYrAAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDuel" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_jpYrAQgdEeiM5MUlyyDdug" general="_RUbs8AgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpZSEAgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_jpZSEQgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpZSEggdEeiM5MUlyyDdug" name="combiSecretOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_jpZSEwgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpZSFAgdEeiM5MUlyyDdug" name="constrCombiSecretOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jpZ5IAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jpZ5IQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpZ5IggdEeiM5MUlyyDdug" name="combiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpZ5IwgdEeiM5MUlyyDdug" name="tabConstrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_5lVhgBydEduyofBvg4RL2w"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jpZ5JAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jpZ5JQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpagMAgdEeiM5MUlyyDdug" name="constrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jpagMQgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jpagMggdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpagMwgdEeiM5MUlyyDdug" name="constrPropOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jpagNAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jpagNQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jpagNggdEeiM5MUlyyDdug" name="constrRepOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jpagNwgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jpbHQAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_jpcVYAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDuel" specification="_jpbHQQgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_jpexoggdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDuel" specification="_jpc8cAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pMode, pEssai, pCombo);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_jpfYsAgdEeiM5MUlyyDdug" name="initCombiSecret" specification="_jpexowgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.constrCombiSecretOrdi = new Integer[this.lgueurCombo];&#xD;
+    Random alea = new Random();&#xD;
+    String str = &quot;&quot;;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //--on tire 1 chiffre au hasard&#xD;
+        constrCombiSecretOrdi[i] = alea.nextInt(10);&#xD;
+        //--on concatene les différents chiffres &#xD;
+        str += String.valueOf(constrCombiSecretOrdi[i]);&#xD;
+    }&#xD;
+    this.combiSecretOrdi = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la combo gagnante : &quot;+this.combiSecret);//--Controle&#xD;
+    logger.warn(&quot;la combo gagnante : &quot; + this.combiSecretOrdi);&#xD;
+    JOptionPane jop = new JOptionPane();&#xD;
+    String message = &quot;La combinaison secrète est prête \n&quot;;&#xD;
+    message += &quot;A vous de jouer&quot;;&#xD;
+    jop.showMessageDialog(null, message, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+    //--Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau&#xD;
+    JOptionPane jop0 = new JOptionPane();&#xD;
+    String combiJoueur = jop0.showInputDialog(null, &quot;Veuillez saisir une combinaison de &quot; + lgueurCombo + &quot; chiffres.&quot;, &quot;Combinaison secrète&quot;, JOptionPane.QUESTION_MESSAGE);&#xD;
+    this.combiSecret = Integer.valueOf(combiJoueur);&#xD;
+    this.tabConstrCombiSecret = combiJoueur.toCharArray();&#xD;
+    this.constrCombiSecret = new Integer[this.lgueurCombo];&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;Ctrl combo :&quot;+tabConstrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;Ctrl combo :&quot; + tabConstrCombiSecret[i]);&#xD;
+        this.constrCombiSecret[i] = Character.getNumericValue(tabConstrCombiSecret[i]);&#xD;
+    }&#xD;
+    //-- Une boite de dialogue pour informer la partie lancee&#xD;
+    JOptionPane jop1 = new JOptionPane();&#xD;
+    String message1 = &quot;Vous avez choisi une combinaison secrète. \n&quot;;&#xD;
+    message1 += &quot;Votre adversaire joue.&quot;;&#xD;
+    jop1.showMessageDialog(null, message1, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+    //System.out.println(&quot;la combo gagnante : &quot;+this.combiSecret);//--Controle&#xD;
+    logger.info(&quot;la combo gagnante : &quot; + this.combiSecret);&#xD;
+    listProp[0].setEditable(true);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_jpbHQQgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDuel" visibility="public" method="_jpcVYAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_jpc8cAgdEeiM5MUlyyDdug" name="TableDeJeuPlusMoins_ModeDuel" visibility="public" method="_jpexoggdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_jpeKkAgdEeiM5MUlyyDdug" name="pMode" type="_RUSjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_jpexoAgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_jpexoQgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_jpexowgdEeiM5MUlyyDdug" name="initCombiSecret" visibility="public" method="_jpfYsAgdEeiM5MUlyyDdug"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_mtyQIAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeChall" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_mtzeQAgdEeiM5MUlyyDdug" general="_RUbs8AgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mt0FUAgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_mt1TcAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mt1TcQgdEeiM5MUlyyDdug" name="constrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mt16gAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mt2hkAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mt2hkQgdEeiM5MUlyyDdug" name="combiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_mt3IoAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mt3vsAgdEeiM5MUlyyDdug" name="compteurOK" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mt4WwAgdEeiM5MUlyyDdug" name="compteurPresent" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mt7aEAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeChall" specification="_mt490AgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_muASkAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeChall" specification="_mt8oMAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pJoueur, pEssai, pCombo);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_muEkAQgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeChall" specification="_muBgsAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pMode, pEssai, pCombo);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_muFyIAgdEeiM5MUlyyDdug" name="jeu" specification="_muFLEAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.listPropJoueur = new Integer[this.lgueurCombo];&#xD;
+    resultCompa = &quot;&quot;;&#xD;
+    coupJoue = listProp[tourDeJeu].getText();&#xD;
+    //System.out.println(&quot;la proposition du joueur : &quot;+coupJoue);&#xD;
+    logger.info(&quot;la proposition du joueur : &quot; + coupJoue);&#xD;
+    char[] tabint = coupJoue.toCharArray();&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        this.listPropJoueur[i] = Character.getNumericValue(tabint[i]);&#xD;
+        //System.out.println(&quot;la liste de prop du joueur : &quot;+listPropJoueur[i]);&#xD;
+        logger.debug(&quot;la liste de prop du joueur : &quot; + listPropJoueur[i]);&#xD;
+    }&#xD;
+    this.compare();&#xD;
+    listResult[tourDeJeu].setText(resultCompa);&#xD;
+    listProp[tourDeJeu + 1].setEditable(true);&#xD;
+    tourDeJeu++;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_muHnUAgdEeiM5MUlyyDdug" name="initCombiSecret" specification="_muGZMAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.constrCombiSecret = new Integer[this.lgueurCombo];&#xD;
+    Random alea = new Random();&#xD;
+    String str = &quot;&quot;;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //--on tire 1 chiffre au hasard&#xD;
+        constrCombiSecret[i] = alea.nextInt(10);&#xD;
+        //--on concatene les différents chiffres &#xD;
+        str += String.valueOf(constrCombiSecret[i]);&#xD;
+    }&#xD;
+    this.combiSecret = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la combo gagnante : &quot;+this.combiSecret);//--Controle&#xD;
+    logger.info(&quot;la combo gagnante : &quot; + this.combiSecret);&#xD;
+    JOptionPane jop = new JOptionPane();&#xD;
+    String message = &quot;La combinaison secrète est prête \n&quot;;&#xD;
+    message += &quot;A vous de jouer&quot;;&#xD;
+    jop.showMessageDialog(null, message, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+    listProp[0].setEditable(true);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_muJcgAgdEeiM5MUlyyDdug" name="compare" specification="_muI1cAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    compteurOK = 0;&#xD;
+    compteurPresent = 0;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);&#xD;
+        logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+        difference = constrCombiSecret[i] - listPropJoueur[i];&#xD;
+        //System.out.println(difference);&#xD;
+        logger.debug(&quot;Ctrl difference : &quot; + difference);&#xD;
+        if (difference == 0) {&#xD;
+            compteurOK++;&#xD;
+            compteurPresent++;&#xD;
+        } else {&#xD;
+            for (int j = 0; j &lt; lgueurCombo; j++) {&#xD;
+                if (listPropJoueur[i] == constrCombiSecret[j]) {&#xD;
+                    compteurPresent++;&#xD;
+                }&#xD;
+            }&#xD;
+        }&#xD;
+        resultCompa = &quot;Reponse : &quot; + compteurPresent + &quot; présents - &quot; + compteurOK + &quot; bien placés&quot;;&#xD;
+        int diff2 = (Integer.valueOf(coupJoue)) - combiSecret;&#xD;
+        //--Victoire&#xD;
+        if (diff2 == 0) {&#xD;
+            JOptionPane jop = new JOptionPane();&#xD;
+            int option = jop.showConfirmDialog(null, &quot;Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?&quot;, &quot;Victoire&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+            if (option == JOptionPane.OK_OPTION) {&#xD;
+                nouvellePartie();&#xD;
+            }&#xD;
+        }&#xD;
+        //--Defaite&#xD;
+        if (tourDeJeu + 1 == nbCoupsConfig &amp;&amp; diff2 != 0) {&#xD;
+            JOptionPane jop = new JOptionPane();&#xD;
+            int option = jop.showConfirmDialog(null, &quot;C'est perdu ! \n La combinaison gagnante est &quot; + combiSecret + &quot;\n Voulez-vous rejouer ?&quot;, &quot;Défaite&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+            if (option == JOptionPane.OK_OPTION) {&#xD;
+                nouvellePartie();&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_mt490AgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeChall" visibility="public" method="_mt7aEAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_mt8oMAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeChall" visibility="public" method="_muASkAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_mt-dYAgdEeiM5MUlyyDdug" name="pJoueur" type="_aUdjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_mt_rgAgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_mt_rgQgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_muBgsAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeChall" visibility="public" method="_muEkAQgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_muDV4AgdEeiM5MUlyyDdug" name="pMode" type="_RUSjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_muD88AgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_muEkAAgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_muFLEAgdEeiM5MUlyyDdug" name="jeu" visibility="public" method="_muFyIAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_muGZMAgdEeiM5MUlyyDdug" name="initCombiSecret" visibility="public" method="_muHnUAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_muI1cAgdEeiM5MUlyyDdug" name="compare" visibility="public" method="_muJcgAgdEeiM5MUlyyDdug"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_oIWwsAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeDef" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_oIXXwAgdEeiM5MUlyyDdug" general="_RUbs8AgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIYl4AgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oIZM8AgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIZ0AAgdEeiM5MUlyyDdug" name="combiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIbCIAgdEeiM5MUlyyDdug" name="tabConstrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_5lVhgBydEduyofBvg4RL2w"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIbpMAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIbpMQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIcQQAgdEeiM5MUlyyDdug" name="constrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIc3UAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIc3UQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIdeYAgdEeiM5MUlyyDdug" name="constrPropOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIeFcAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIeFcQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIesgAgdEeiM5MUlyyDdug" name="constrPropOrdi1" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIfTkAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIfTkQgdEeiM5MUlyyDdug" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oIf6oAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Integer[this.lgueurCombo][this.nbCoupsConfig]</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIghsAgdEeiM5MUlyyDdug" name="poolNbPropOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIhIwAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIhv0AgdEeiM5MUlyyDdug" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oIhv0QgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Integer>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIiW4AgdEeiM5MUlyyDdug" name="poolRepOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIi98AgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIjlAAgdEeiM5MUlyyDdug" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oIkMEAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Integer>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIkzIAgdEeiM5MUlyyDdug" name="constrRepOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIlaMAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oImBQAgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oImBQQgdEeiM5MUlyyDdug" name="str" visibility="private" type="_RUSjAAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oInPYAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>&quot;&quot;</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIn2cAgdEeiM5MUlyyDdug" name="propOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oIodgAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIpEkAgdEeiM5MUlyyDdug" name="tabPool" visibility="private" type="_hGU4YQgdEeiM5MUlyyDdug" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIqSsAgdEeiM5MUlyyDdug" name="tabIntPool" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIq5wAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIq5wQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIrg0AgdEeiM5MUlyyDdug" name="compteurPresent" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIsH4AgdEeiM5MUlyyDdug" name="compteurOK" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIsu8AgdEeiM5MUlyyDdug" name="alea" visibility="private" type="_hGIEEAgdEeiM5MUlyyDdug" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oItWAAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Random()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIukIAgdEeiM5MUlyyDdug" name="ttePropPossible" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIvLMAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIvyQAgdEeiM5MUlyyDdug" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oIwZUAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Integer[]>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIxAYAgdEeiM5MUlyyDdug" name="scoreTtePropPossible" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oIxncAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oIyOgAgdEeiM5MUlyyDdug" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oIy1kAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Integer>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oIzcoAgdEeiM5MUlyyDdug" name="prop" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oI0qwAgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oI0qwQgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oI1R0AgdEeiM5MUlyyDdug" name="prop0" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oI1R0QgdEeiM5MUlyyDdug"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oI144AgdEeiM5MUlyyDdug" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oI2f8AgdEeiM5MUlyyDdug" name="scProp" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oI3HAAgdEeiM5MUlyyDdug" name="scProp0" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oI3uEAgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oI6xYAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeDef" specification="_oI3uEQgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oI_p4AgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeDef" specification="_oI7_gAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pMode, pEssai, pCombo);&#xD;
+    for (int i = 0; i &lt; 10; i++) this.poolNbPropOrdi.add(i);&#xD;
+    this.constrRepOrdi = new Integer[this.lgueurCombo];&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //--on remplit le tableau de reponse de -1&#xD;
+        this.constrRepOrdi[i] = -1;&#xD;
+    //this.poolRepOrdi[i] = -1;&#xD;
+    }&#xD;
+//this.prop = new Integer[this.lgueurCombo];&#xD;
+//for (int i = 0; i&lt;poolNbPropOrdi.size(); i ++) {&#xD;
+//	for(int j = 0; j&lt;this.lgueurCombo; j++) {&#xD;
+//		prop[j] = i;&#xD;
+//	}&#xD;
+//	ttePropPossible.add(prop);&#xD;
+//	scoreTtePropPossible.add(calcScore(prop));&#xD;
+//	//ttePropPossible.put(prop, calcScore(prop));&#xD;
+//}&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJA4AQgdEeiM5MUlyyDdug" name="initCombiSecret" specification="_oJA4AAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau&#xD;
+    JOptionPane jop0 = new JOptionPane();&#xD;
+    String combiJoueur = jop0.showInputDialog(null, &quot;Veuillez saisir une combinaison de &quot; + lgueurCombo + &quot; chiffres.&quot;, &quot;Combinaison secrète&quot;, JOptionPane.QUESTION_MESSAGE);&#xD;
+    this.combiSecret = Integer.valueOf(combiJoueur);&#xD;
+    this.tabConstrCombiSecret = combiJoueur.toCharArray();&#xD;
+    this.constrCombiSecret = new Integer[this.lgueurCombo];&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;Ctrl combo :&quot;+tabConstrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;Ctrl combo :&quot; + tabConstrCombiSecret[i]);&#xD;
+        this.constrCombiSecret[i] = Character.getNumericValue(tabConstrCombiSecret[i]);&#xD;
+    }&#xD;
+    //-- Une boite de dialogue pour informer la partie lancee&#xD;
+    JOptionPane jop1 = new JOptionPane();&#xD;
+    String message = &quot;Vous avez choisi une combinaison secrète. \n&quot;;&#xD;
+    message += &quot;Votre adversaire joue.&quot;;&#xD;
+    jop1.showMessageDialog(null, message, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+    //System.out.println(&quot;la combo gagnante : &quot;+this.combiSecret);//--Controle&#xD;
+    logger.warn(&quot;la combo gagnante : &quot; + this.combiSecret);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJCtMAgdEeiM5MUlyyDdug" name="jeu" specification="_oJBfEAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (tourDeJeu == 0) {&#xD;
+        this.constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.constrRepOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.resultCompa = &quot;&quot;;&#xD;
+        this.tabPool = new HashMap&lt;Integer, ArrayList&lt;Integer>>();&#xD;
+        this.tabIntPool = new ArrayList&lt;Integer>();&#xD;
+        //--on initialise le tableau de pool d'entier compris entre 0 et 9&#xD;
+        for (int k = 0; k &lt; 10; k++) this.tabIntPool.add(k);&#xD;
+        //--l'ordi construit sa prop à partir du pool de nombre&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            //--on remplit le tableau de reponse de -1&#xD;
+            constrRepOrdi[i] = -1;&#xD;
+            //--on construit la prop de l'ordi a partir du pool de nombre : 0123&#xD;
+            constrPropOrdi[i] = tabIntPool.get(i);&#xD;
+            str += String.valueOf(constrPropOrdi[i]);&#xD;
+        }&#xD;
+    } else {&#xD;
+        //--on réinitialise la prop de l'ordi ainsi que le tableau contenant celle-ci&#xD;
+        this.constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        propOrdi = 0;&#xD;
+        resultCompa = &quot;&quot;;&#xD;
+        str = &quot;&quot;;&#xD;
+        //--l'ordi construit sa prop à partir du pool de nombre s'il n'a pas trouvé le chiffre&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            if (constrRepOrdi[i] != -1) {&#xD;
+                constrPropOrdi[i] = constrRepOrdi[i];&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            } else {&#xD;
+                tabIntPool = tabPool.get(i);&#xD;
+                //System.out.println(&quot;taille pool : &quot;+tabIntPool.size());//--Controle&#xD;
+                logger.debug(&quot;taille pool : &quot; + tabIntPool.size());&#xD;
+                for (//--Controle&#xD;
+                int j = 0; //--Controle&#xD;
+                j &lt; tabIntPool.size(); //--Controle&#xD;
+                j++) {&#xD;
+                    //System.out.println(&quot;ctrl1 pool : &quot;+tabIntPool.get(j));//--Controle&#xD;
+                    logger.debug(&quot;ctrl1 pool : &quot; + tabIntPool.get(j));&#xD;
+                //--Controle&#xD;
+                }&#xD;
+                constrPropOrdi[i] = tabIntPool.get(0);&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+    propOrdi = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la proposition de l'odinateur : &quot;+propOrdi);//--Controle&#xD;
+    logger.info(&quot;la proposition de l'odinateur : &quot; + propOrdi);&#xD;
+    //--Il la propose en l'affichant ds la zone de texte&#xD;
+    listProp[tourDeJeu].setText(str);&#xD;
+    //--Il compare&#xD;
+    this.compare();&#xD;
+    //--affichage du résultat&#xD;
+    listResult[tourDeJeu].setText(resultCompa);&#xD;
+    listProp[tourDeJeu + 1].setEditable(true);&#xD;
+    tourDeJeu++;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJEiYAgdEeiM5MUlyyDdug" name="compare" specification="_oJD7UAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    compteurOK = 0;&#xD;
+    compteurPresent = 0;&#xD;
+    Boolean boolPresent = false;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+        difference = constrCombiSecret[i] - constrPropOrdi[i];&#xD;
+        //System.out.println(difference);//--Controle&#xD;
+        logger.debug(&quot;Ctrl difference : &quot; + difference);&#xD;
+        //--Si la difference est nulle, la prop est correcte et on construit la reponse de l'ordi&#xD;
+        if (difference == 0) {&#xD;
+            compteurOK++;&#xD;
+            compteurPresent++;&#xD;
+            constrRepOrdi[i] = constrPropOrdi[i];&#xD;
+        } else //--Sinon, on vérifie la présence de la prop de l'ordi dans la combinaison secrete, on incremente le compteur de presence et on chge le booleen&#xD;
+        //--le cas echeant&#xD;
+        {&#xD;
+            for (int j = 0; j &lt; lgueurCombo; j++) {&#xD;
+                if (constrPropOrdi[i] == constrCombiSecret[j] &amp;&amp; constrPropOrdi[i] != constrRepOrdi[j]) {&#xD;
+                    compteurPresent++;&#xD;
+                    boolPresent = true;&#xD;
+                    break;&#xD;
+                } else {&#xD;
+                    boolPresent = false;&#xD;
+                }&#xD;
+            }&#xD;
+            //System.out.println(&quot;mon booleen Present :&quot; +boolPresent);//--Controle&#xD;
+            logger.debug(&quot;mon booleen Present :&quot; + boolPresent);&#xD;
+            //--Si la prop est fausse, on la retire du pool d'entier&#xD;
+            if (boolPresent == false) {&#xD;
+                tabIntPool.remove(constrPropOrdi[i]);&#xD;
+            }&#xD;
+            for (int k = 0; k &lt; tabIntPool.size(); k++) //System.out.println(&quot;ma var qui transporte le pool &quot;+tabIntPool.get(k));//--Controle&#xD;
+            logger.debug(&quot;ma var qui transporte le pool &quot; + tabIntPool.get(k));&#xD;
+            //--on met le pool dans le tableau des pool&#xD;
+            tabPool.put(i, tabIntPool);&#xD;
+            //System.out.println(&quot;un autre ctrl : &quot;+tabPool.toString());//--Controle&#xD;
+            logger.debug(&quot;un autre ctrl : &quot; + tabPool.toString());&#xD;
+        }&#xD;
+    }&#xD;
+    //--On affiche le resultat de la proposition&#xD;
+    resultCompa = &quot;Reponse : &quot; + compteurPresent + &quot; présents - &quot; + compteurOK + &quot; bien placés&quot;;&#xD;
+    int diff2 = propOrdi - combiSecret;&#xD;
+    //--Victoire&#xD;
+    if (diff2 == 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?&quot;, &quot;Victoire&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+    //--Defaite&#xD;
+    if (tourDeJeu + 1 == nbCoupsConfig &amp;&amp; diff2 != 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;C'est perdu ! \n La combinaison gagnante est &quot; + combiSecret + &quot;\n Voulez-vous rejouer ?&quot;, &quot;Défaite&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJGXkAgdEeiM5MUlyyDdug" name="jeu1" specification="_oJFwgAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    compteurPresent = 0;&#xD;
+    compteurOK = 0;&#xD;
+    //Integer[] key = new Integer[ttePropPossible.size()];&#xD;
+    this.resultCompa = &quot;&quot;;&#xD;
+    int nbTotProp = 1;&#xD;
+    //prop = ttePropPossible.get(alea.nextInt(ttePropPossible.size()));&#xD;
+    for (int i = 0; i &lt; this.lgueurCombo; i++) {&#xD;
+        nbTotProp *= poolNbPropOrdi.size();&#xD;
+    }&#xD;
+    this.prop = new Integer[this.lgueurCombo];&#xD;
+    this.prop0 = new Integer[this.lgueurCombo];&#xD;
+    for (int i = 0; i &lt; nbTotProp; i++) {&#xD;
+        String str = String.valueOf(i);&#xD;
+        if (str.length() &lt; this.lgueurCombo) {&#xD;
+            DecimalFormat nf = new DecimalFormat(&quot;0000&quot;);&#xD;
+            str = nf.format(Integer.valueOf(str));&#xD;
+            for (int j = 0; j &lt; this.lgueurCombo; j++) {&#xD;
+                char[] tabint = str.toCharArray();&#xD;
+                prop[j] = Character.getNumericValue(tabint[j]);&#xD;
+            }&#xD;
+            ttePropPossible.add(prop);&#xD;
+        } else {&#xD;
+            for (int j = 0; j &lt; this.lgueurCombo; j++) {&#xD;
+                char[] tabint = str.toCharArray();&#xD;
+                prop[j] = Character.getNumericValue(tabint[j]);&#xD;
+            }&#xD;
+            ttePropPossible.add(prop);&#xD;
+        }&#xD;
+    }&#xD;
+    logger.debug(&quot;taille des listes creees &quot; + ttePropPossible.size() + &quot; - &quot; + scoreTtePropPossible.size());&#xD;
+    prop0 = ttePropPossible.get(0);&#xD;
+    //prop0 = ttePropPossible.get(alea.nextInt(ttePropPossible.size()));&#xD;
+    for (int i = 0; i &lt; this.lgueurCombo; i++) {&#xD;
+        constrPropOrdi1[i][tourDeJeu] = prop0[i];&#xD;
+        str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    }&#xD;
+    logger.debug(&quot;propo ordi : &quot; + str);&#xD;
+    scProp0 = calcScore(prop0, constrCombiSecret);&#xD;
+    //		int nbDep = 0;&#xD;
+    //	this.constrPropOrdi1 = new Integer[this.lgueurCombo][this.nbCoupsConfig];&#xD;
+    //	this.resultCompa = &quot;&quot;;&#xD;
+    //this.poolRepOrdi = new ArrayList&lt;Integer>();&#xD;
+    //this.poolNbPropOrdi = new ArrayList&lt;Integer>();&#xD;
+    //this.constrRepOrdi = new Integer[this.lgueurCombo];&#xD;
+    ////this.propOrdi = 0;&#xD;
+    //for (int i = 0; i &lt;10; i++)&#xD;
+    //	this.poolNbPropOrdi.add(i);	&#xD;
+    //for(int i = 0; i&lt;lgueurCombo; i++) 				&#xD;
+    //	//--on remplit le tableau de reponse de -1&#xD;
+    //	constrRepOrdi[i] = -1;&#xD;
+    //tant que l'on a pas trouve les 4 val de la combinaison, on les cherche &#xD;
+    //if(this.poolRepOrdi.size() &lt; this.lgueurCombo) {&#xD;
+    //	this.constrPropOrdi1 = new Integer[this.lgueurCombo][this.nbCoupsConfig];&#xD;
+    //	this.resultCompa = &quot;&quot;;&#xD;
+    //nbDep = poolNbPropOrdi.get(alea.nextInt(poolNbPropOrdi.size()));&#xD;
+    //&#xD;
+    //	&#xD;
+    //--1er tour et tant que l'on a pas trouve 1 val de la combinaison&#xD;
+    //if (poolRepOrdi.size() == 0) {&#xD;
+    //	for (int i = 0; i&lt;this.lgueurCombo; i++) {&#xD;
+    //		//--on construit la prop de l'ordi avec un seul nombre tiré au hasard&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi 1er tour : &quot;+str);&#xD;
+    //	}&#xD;
+    //}		&#xD;
+    ////--des qu'on a 1 val de la combinaison on l'utilise pour construire la prop de l'ordi&#xD;
+    //else if (poolRepOrdi.size() !=0 ){&#xD;
+    //	for (int i = 0; i&lt;this.poolRepOrdi.size(); i++) {&#xD;
+    //			logger.debug(&quot;le contenu du pool de reponse : &quot;+poolRepOrdi.get(i));&#xD;
+    //			constrPropOrdi1[i][tourDeJeu] = poolRepOrdi.get(i);&#xD;
+    //			str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //			logger.debug(&quot;constr prop ordi poolRep : &quot;+str);&#xD;
+    //	}&#xD;
+    //	for(int i = this.poolRepOrdi.size();i&lt;this.lgueurCombo; i++) {&#xD;
+    //		//--on complete la prop avec une val aleatoire possible&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi completion poolRep: &quot;+str);&#xD;
+    //&#xD;
+    ////--on vérifie qu'il n'y a pas de bonne réponse&#xD;
+    //if(constrRepOrdi[i] == -1) {&#xD;
+    //	for(int j = 0; j&lt;poolRepOrdi.size(); j++) {&#xD;
+    //		logger.debug(&quot;le contenu du pool de reponse : &quot;+poolRepOrdi.get(j));&#xD;
+    //		//--on vérifie de jouer a un endroit different du tour precedent&#xD;
+    //		&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = poolRepOrdi.get(j);&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi poolRep : &quot;+str);&#xD;
+    //	}&#xD;
+    //	for(int j = poolRepOrdi.size(); j&lt;this.lgueurCombo; j++) {&#xD;
+    //		//--on complete la prop avec une val aleatoire possible&#xD;
+    //		constrPropOrdi1[j][tourDeJeu] = nbDep;&#xD;
+    //		str += String.valueOf(constrPropOrdi1[j][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi completion poolRep: &quot;+str);	&#xD;
+    //	}&#xD;
+    //	&#xD;
+    //}&#xD;
+    //else {&#xD;
+    //	for(int k : constrRepOrdi) {&#xD;
+    //		logger.debug(&quot;le contenu du pool de reponse : &quot;+constrRepOrdi[i]);&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = constrRepOrdi[i];&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi reponse : &quot;+str);&#xD;
+    //	}&#xD;
+    //}&#xD;
+    ////--on complete la prop avec une val aleatoire possible&#xD;
+    //constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //logger.debug(&quot;constr prop ordi completion poolRep: &quot;+str);	&#xD;
+    //	}&#xD;
+    //		&#xD;
+    //		&#xD;
+    //	}&#xD;
+    //		//--on complete la prop avec une val aleatoire possible&#xD;
+    //constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //			str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //			logger.debug(&quot;constr prop ordi completion poolRep: &quot;+str);&#xD;
+    //		//--si on a la bonne val on la met dans la proposition&#xD;
+    //		else if (constrRepOrdi[i] != -1){&#xD;
+    //			constrPropOrdi1[i][tourDeJeu] = constrRepOrdi[i];&#xD;
+    //			str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //			logger.debug(&quot;constr prop ordi reponse : &quot;+str);&#xD;
+    //		}&#xD;
+    //		//--lorsqu'on a 1 val de la combinaison, on la met dans la prop que l'on complete avec une val aleatoire possible&#xD;
+    //		else if(poolRepOrdi.size() !=0 &amp;&amp; poolRepOrdi.size() &lt; i+2 ){&#xD;
+    //			//for(int j = 0; j&lt;poolRepOrdi.size(); j++) {&#xD;
+    //				logger.debug(&quot;le contenu du pool de reponse : &quot;+poolRepOrdi.get(i));&#xD;
+    //				constrPropOrdi1[i][tourDeJeu] = poolRepOrdi.get(i);&#xD;
+    //				str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //				logger.debug(&quot;constr prop ordi poolRep : &quot;+str);&#xD;
+    //			//}&#xD;
+    //			//for(int j = 0; j&lt;(this.lgueurCombo-poolRepOrdi.size()); j++) {&#xD;
+    //			//constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //			//str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //			//logger.debug(&quot;constr prop ordi completion poolRep: &quot;+str);&#xD;
+    //			//}&#xD;
+    //		}&#xD;
+    //		//--on complete la prop avec une val aleatoire possible&#xD;
+    //		else {&#xD;
+    //			constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //			str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //			logger.debug(&quot;constr prop ordi completion poolRep: &quot;+str);&#xD;
+    //		}&#xD;
+    //	}&#xD;
+    //}&#xD;
+    //nbDep = poolNbPropOrdi.get(alea.nextInt(poolNbPropOrdi.size()));&#xD;
+    //for(int j = 0; j&lt;this.poolRepOrdi.length; j++) {&#xD;
+    //	//--1er tour et tant que l'on a pas trouve 1 val de la combinaison&#xD;
+    //	if(this.poolRepOrdi[j] == -1) {&#xD;
+    //		//--on construit la prop de l'ordi avec un seul nombre tiré au hasard&#xD;
+    //		constrPropOrdi1[j][tourDeJeu] = nbDep;&#xD;
+    //		str += String.valueOf(constrPropOrdi1[j][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi 1er tour : &quot;+str);	&#xD;
+    //	}&#xD;
+    //	else {&#xD;
+    //		//--lorsqu'on a 1 val de la combinaison, on la met dans la prop que l'on complete avec une val aleatoire possible&#xD;
+    //		logger.debug(&quot;le contenu du pool de reponse : &quot;+poolRepOrdi[j]);&#xD;
+    //		constrPropOrdi1[j][tourDeJeu] = poolRepOrdi[j];&#xD;
+    //		str += String.valueOf(constrPropOrdi1[j][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi poolRep : &quot;+str);&#xD;
+    //	}&#xD;
+    //}&#xD;
+    ////--1er tour et tant que l'on a pas trouve 1 val de la combinaison&#xD;
+    //if(this.poolRepOrdi.size() == 0) {&#xD;
+    //	nbDep = poolNbPropOrdi.get(alea.nextInt(poolNbPropOrdi.size()));&#xD;
+    //	for (int i = 0; i&lt;this.lgueurCombo; i++) {&#xD;
+    //		//--on construit la prop de l'ordi avec un seul nombre tiré au hasard&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi 1er tour : &quot;+str);	&#xD;
+    //	}&#xD;
+    //}&#xD;
+    ////--lorsqu'on a 1 val de la combinaison, on la met dans la prop que l'on complete avec une val aleatoire possible&#xD;
+    //else if(0 &lt; this.poolRepOrdi.size() &amp;&amp; this.poolRepOrdi.size()&lt;this.lgueurCombo) {&#xD;
+    //	for (int i = 0; i&lt; this.poolRepOrdi.size(); i++) {&#xD;
+    //		logger.debug(&quot;le contenu du pool de reponse : &quot;+poolRepOrdi.get(i));&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = poolRepOrdi.get(i);&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi poolRep : &quot;+str);&#xD;
+    //	}&#xD;
+    //	//--On complete avec une val aleatoire possible&#xD;
+    //	nbDep = poolNbPropOrdi.get(alea.nextInt(poolNbPropOrdi.size()));&#xD;
+    //	for(int i = this.poolRepOrdi.size(); i&lt;this.lgueurCombo; i++) {&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = nbDep;&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi completion poolRep: &quot;+str);&#xD;
+    //	}&#xD;
+    //}&#xD;
+    //&#xD;
+    //&#xD;
+    //else if(this.poolRepOrdi.size() == this.lgueurCombo) {&#xD;
+    //	//this.constrPropOrdi1 = new Integer[this.lgueurCombo][this.nbCoupsConfig];&#xD;
+    //	this.resultCompa = &quot;&quot;;&#xD;
+    //	&#xD;
+    //	for(int i = 0; i&lt;this.lgueurCombo; i++) {&#xD;
+    //		constrPropOrdi1[i][tourDeJeu] = this.poolRepOrdi.get(i);&#xD;
+    //		str += String.valueOf(constrPropOrdi1[i][tourDeJeu]);&#xD;
+    //		logger.debug(&quot;constr prop ordi 2: &quot;+str);&#xD;
+    //	}&#xD;
+    //}&#xD;
+    propOrdi = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la proposition de l'odinateur : &quot;+propOrdi);//--Controle&#xD;
+    logger.info(&quot;la proposition de l'odinateur : &quot; + propOrdi);&#xD;
+    //--Il la propose en l'affichant ds la zone de texte&#xD;
+    listProp[tourDeJeu].setText(str);&#xD;
+    //--Il compare&#xD;
+    //this.compare1();&#xD;
+    this.compare2();&#xD;
+    //--affichage du résultat&#xD;
+    listResult[tourDeJeu].setText(resultCompa);&#xD;
+    listProp[tourDeJeu + 1].setEditable(true);&#xD;
+    tourDeJeu++;&#xD;
+    propOrdi = 0;&#xD;
+    str = &quot;&quot;;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJKpAAgdEeiM5MUlyyDdug" name="calcScore" specification="_oJHlsAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    compteurOK = 0;&#xD;
+    int compteurOccurCombo = 0;&#xD;
+    int compteurOccurProp = 0;&#xD;
+    //--on calcule le score&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;decompo de liste comparee : &quot; + plistCompa[i]);&#xD;
+        logger.debug(&quot;decompo prop ordi : &quot; + pconstrPropOrdi[i]);&#xD;
+        difference = plistCompa[i] - pconstrPropOrdi[i];&#xD;
+        //System.out.println(difference);//--Controle&#xD;
+        logger.debug(&quot;Ctrl difference : &quot; + difference);&#xD;
+        if (difference == 0) {&#xD;
+            compteurOK++;&#xD;
+        }&#xD;
+    }&#xD;
+    compteurPresent = -compteurOK;&#xD;
+    for (int j = 0; j &lt; 10 - 1; j++) {&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            if (plistCompa[i] == j)&#xD;
+                compteurOccurCombo++;&#xD;
+            if (pconstrPropOrdi[i] == j)&#xD;
+                compteurOccurProp++;&#xD;
+        }&#xD;
+        if (compteurOccurCombo &lt; compteurOccurProp)&#xD;
+            compteurPresent = compteurPresent + compteurOccurCombo;&#xD;
+        else&#xD;
+            compteurPresent = compteurPresent + compteurOccurProp;&#xD;
+    }&#xD;
+    scProp = 10 * compteurOK + compteurPresent;&#xD;
+    logger.debug(&quot;le score : &quot; + scProp + &quot; de la prop &quot; + pconstrPropOrdi.toString());&#xD;
+    return scProp;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJL3IAgdEeiM5MUlyyDdug" name="calcScore" specification="_oJLQEAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    compteurOK = 0;&#xD;
+    int compteurOccurCombo = 0;&#xD;
+    int compteurOccurProp = 0;&#xD;
+    //--on calcule le score&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+        logger.debug(&quot;decompo prop ordi : &quot; + constrPropOrdi1[i][tourDeJeu]);&#xD;
+        difference = constrCombiSecret[i] - constrPropOrdi1[i][tourDeJeu];&#xD;
+        //System.out.println(difference);//--Controle&#xD;
+        logger.debug(&quot;Ctrl difference : &quot; + difference);&#xD;
+        if (difference == 0) {&#xD;
+            compteurOK++;&#xD;
+        }&#xD;
+    }&#xD;
+    compteurPresent = -compteurOK;&#xD;
+    for (int j = 0; j &lt; 10 - 1; j++) {&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            if (constrCombiSecret[i] == j)&#xD;
+                compteurOccurCombo++;&#xD;
+            if (constrPropOrdi1[i][tourDeJeu] == j)&#xD;
+                compteurOccurProp++;&#xD;
+        }&#xD;
+        if (compteurOccurCombo &lt; compteurOccurProp)&#xD;
+            compteurPresent = compteurPresent + compteurOccurCombo;&#xD;
+        else&#xD;
+            compteurPresent = compteurPresent + compteurOccurProp;&#xD;
+    }&#xD;
+    scProp = 10 * compteurOK + compteurPresent;&#xD;
+    resultCompa = &quot;Reponse : &quot; + compteurPresent + &quot; présents - &quot; + compteurOK + &quot; bien placés&quot;;&#xD;
+    int diff2 = propOrdi - combiSecret;&#xD;
+    //--Victoire&#xD;
+    if (diff2 == 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?&quot;, &quot;Victoire&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+    //--Defaite&#xD;
+    if (tourDeJeu + 1 == nbCoupsConfig &amp;&amp; diff2 != 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;C'est perdu ! \n La combinaison gagnante est &quot; + combiSecret + &quot;\n Voulez-vous rejouer ?&quot;, &quot;Défaite&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJNsUAgdEeiM5MUlyyDdug" name="compare2" specification="_oJNFQAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    ArrayList&lt;Integer> supprTtePropPossible = new ArrayList&lt;Integer>();&#xD;
+    Integer[] constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+    int difference = 0;&#xD;
+    compteurOK = 0;&#xD;
+    this.poolNbPropOrdi = new ArrayList&lt;Integer>();&#xD;
+    for (int i = 0; i &lt; constrPropOrdi.length; i++) {&#xD;
+        constrPropOrdi[i] = constrPropOrdi1[i][tourDeJeu];&#xD;
+        logger.debug(&quot;la taille de la propOrdi : &quot; + constrPropOrdi.length + &quot; - son contenu :&quot; + constrPropOrdi[i]);&#xD;
+    }&#xD;
+    int diff2 = propOrdi - combiSecret;&#xD;
+    //--Victoire&#xD;
+    if (diff2 == 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?&quot;, &quot;Victoire&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+    for (//for(Integer[] l : ttePropPossible) {&#xD;
+    int i = 0; //for(Integer[] l : ttePropPossible) {&#xD;
+    i &lt; ttePropPossible.size(); //for(Integer[] l : ttePropPossible) {&#xD;
+    i++) {&#xD;
+        Integer[] propPoss = new Integer[this.lgueurCombo];&#xD;
+        propPoss = ttePropPossible.get(i);&#xD;
+        for (int k : propPoss) logger.debug(&quot;detail prop comparee&quot; + k);&#xD;
+        if (scProp0 != calcScore(propPoss, constrPropOrdi)) {&#xD;
+            supprTtePropPossible.add(i);&#xD;
+        }&#xD;
+    }&#xD;
+    logger.debug(&quot;taille des listes &quot; + ttePropPossible.size() + &quot; - &quot; + scoreTtePropPossible.size() + &quot; - listSuppr : &quot; + supprTtePropPossible.size());&#xD;
+    for (int i = 0; i &lt; supprTtePropPossible.size(); i++) {&#xD;
+        int index = supprTtePropPossible.get(i);&#xD;
+        ttePropPossible.remove(index);&#xD;
+    //scoreTtePropPossible.remove(index);&#xD;
+    }&#xD;
+    logger.debug(&quot;taille des nvelles listes &quot; + ttePropPossible.size() + &quot; - &quot; + scoreTtePropPossible.size());&#xD;
+    //--si score  = 0 on remove toutes propPossible avec la val et leur score correspondant&#xD;
+    //if(scProp == 0) {&#xD;
+    //	for(int i = 0; i&lt; ttePropPossible.size() ; i++) {&#xD;
+    //		Integer[] propPoss = new Integer[this.lgueurCombo];&#xD;
+    //		propPoss = ttePropPossible.get(i);&#xD;
+    //		&#xD;
+    //		for(int j =0; j&lt;this.lgueurCombo; j++) {//for(int j = 0; j&lt;this.lgueurCombo; j++) {&#xD;
+    //			for(int k = 0; k&lt;this.lgueurCombo; k++){&#xD;
+    //				logger.debug(&quot;on compare : &quot;+propPoss[k]+&quot; avec &quot;+constrPropOrdi1[j][tourDeJeu]);&#xD;
+    //				if(constrPropOrdi1[j][tourDeJeu] == propPoss[k]) {&#xD;
+    //					supprTtePropPossible.add(i);&#xD;
+    //					//logger.debug(&quot;la liste des prop a suppr : &quot;+i);&#xD;
+    //				}&#xD;
+    //			}&#xD;
+    //		}&#xD;
+    //	}&#xD;
+    //	logger.debug(&quot;taille des listes &quot;+ttePropPossible.size()+&quot; - &quot;+scoreTtePropPossible.size()+&quot; - listSuppr : &quot;+supprTtePropPossible.size());&#xD;
+    //	for(int i = 0; i &lt;supprTtePropPossible.size(); i++) {&#xD;
+    //		int index = supprTtePropPossible.get(i);&#xD;
+    //		ttePropPossible.remove(index);&#xD;
+    //		scoreTtePropPossible.remove(supprTtePropPossible.get(i));&#xD;
+    //	}&#xD;
+    //	logger.debug(&quot;taille des nvelles listes &quot;+ttePropPossible.size()+&quot; - &quot;+scoreTtePropPossible.size());&#xD;
+    //}&#xD;
+    ////--sinon, on parcours les scores de ttesPropPossibles ayant au moins une val candidate et on remove tous ceux =&lt; scProp dans les 2 ArrayList&#xD;
+    //else {&#xD;
+    //	for(int i = 0; i&lt; ttePropPossible.size() ; i++) {&#xD;
+    //		Integer[] propPoss = new Integer[this.lgueurCombo]; &#xD;
+    //		int scPropPoss = calcScore(propPoss);&#xD;
+    //		for(int j = 0; j&lt;this.lgueurCombo; j++) {&#xD;
+    //			if(constrPropOrdi1[j][tourDeJeu] == propPoss[j] &amp;&amp; (scPropPoss &lt; scProp || scPropPoss == scProp)) {&#xD;
+    //				supprTtePropPossible.add(i);&#xD;
+    //			}&#xD;
+    //		}&#xD;
+    //	}&#xD;
+    //	for(int i = 0; i &lt;supprTtePropPossible.size(); i++) {&#xD;
+    //		ttePropPossible.remove(supprTtePropPossible.get(i));&#xD;
+    //		scoreTtePropPossible.remove(supprTtePropPossible.get(i));&#xD;
+    //	}&#xD;
+    //}&#xD;
+    //for (int i = 0; i &lt; ttePropPossible.size(); i++) {&#xD;
+    //	logger.debug(&quot;on compare la score de la prop : &quot;+scProp+&quot; avec les score &quot;+ttePropPossible.get(i));&#xD;
+    //	if (scProp > ttePropPossible.get(i)) {&#xD;
+    //		ttePropPossible.remove(i);&#xD;
+    //	} &#xD;
+    //}&#xD;
+    resultCompa = &quot;Reponse : &quot; + compteurPresent + &quot; présents - &quot; + compteurOK + &quot; bien placés&quot;;&#xD;
+    //--Defaite&#xD;
+    if (tourDeJeu + 1 == nbCoupsConfig &amp;&amp; diff2 != 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;C'est perdu ! \n La combinaison gagnante est &quot; + combiSecret + &quot;\n Voulez-vous rejouer ?&quot;, &quot;Défaite&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oJO6cAgdEeiM5MUlyyDdug" name="compare1" specification="_oJOTYAgdEeiM5MUlyyDdug">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    compteurOK = 0;&#xD;
+    compteurPresent = 0;&#xD;
+    Boolean boolPresent = false;&#xD;
+    Boolean poolRep = false;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+        logger.debug(&quot;decompo prop ordi : &quot; + constrPropOrdi1[i][tourDeJeu]);&#xD;
+        difference = constrCombiSecret[i] - constrPropOrdi1[i][tourDeJeu];&#xD;
+        //System.out.println(difference);//--Controle&#xD;
+        logger.debug(&quot;Ctrl difference : &quot; + difference);&#xD;
+        //--Si la difference est nulle, la prop est correcte et on construit la reponse de l'ordi&#xD;
+        if (difference == 0) {&#xD;
+            compteurOK++;&#xD;
+            compteurPresent++;&#xD;
+            poolRepOrdi.add(constrPropOrdi1[i][tourDeJeu]);&#xD;
+            poolNbPropOrdi.remove(constrPropOrdi1[i][tourDeJeu]);&#xD;
+        //if(tourDeJeu + 1 &lt; this.nbCoupsConfig) {&#xD;
+        //constrPropOrdi1[i][tourDeJeu +1] = constrPropOrdi1[i][tourDeJeu];&#xD;
+        //constrPropOrdi1[alea.nextInt(3)][tourDeJeu +1] = constrPropOrdi1[i][tourDeJeu];&#xD;
+        //constrRepOrdi[alea.nextInt(3)] = constrPropOrdi1[i][tourDeJeu];&#xD;
+        //}&#xD;
+        //else if (tourDeJeu + 1 == this.nbCoupsConfig) {&#xD;
+        //	&#xD;
+        //}&#xD;
+        } else //--Sinon, on vérifie la présence de la prop de l'ordi dans la combinaison secrete, on incremente le compteur de presence et on chge le booleen&#xD;
+        //--le cas echeant&#xD;
+        {&#xD;
+            for (int j = 0; j &lt; lgueurCombo; j++) {&#xD;
+                if (// &amp;&amp; constrPropOrdi1[i][tourDeJeu]!= constrPropOrdi1[j][tourDeJeu+1]) {&#xD;
+                constrPropOrdi1[i][tourDeJeu] == constrCombiSecret[j]) {&#xD;
+                    //--On vérifie que la valeur n'est pas deja ds le pool de repOrdi&#xD;
+                    for (int k : poolRepOrdi) {&#xD;
+                        if (constrPropOrdi1[i][tourDeJeu] == k)&#xD;
+                            poolRep = true;&#xD;
+                        else&#xD;
+                            poolRep = false;&#xD;
+                    }&#xD;
+                    if (poolRep = false) {&#xD;
+                        poolRepOrdi.add(constrPropOrdi1[i][tourDeJeu]);&#xD;
+                        poolNbPropOrdi.remove(constrPropOrdi1[i][tourDeJeu]);&#xD;
+                        compteurPresent++;&#xD;
+                        boolPresent = true;&#xD;
+                        break;&#xD;
+                    }&#xD;
+                //constrPropOrdi1[i][tourDeJeu +1] = constrPropOrdi1[alea.nextInt(3)][tourDeJeu];&#xD;
+                //compteurPresent ++;&#xD;
+                //boolPresent = true;&#xD;
+                //break;&#xD;
+                } else {&#xD;
+                    boolPresent = false;&#xD;
+                }&#xD;
+            }&#xD;
+            //System.out.println(&quot;mon booleen Present :&quot; +boolPresent);//--Controle&#xD;
+            logger.debug(&quot;mon booleen Present :&quot; + boolPresent);&#xD;
+            //--Si la prop est fausse, on la retire du pool d'entier&#xD;
+            if (boolPresent == false) {&#xD;
+                this.poolNbPropOrdi.remove(constrPropOrdi1[i][tourDeJeu]);&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+    for (int k = 0; k &lt; poolNbPropOrdi.size(); k++) {&#xD;
+        //--Controle&#xD;
+        logger.debug(&quot;le pool de nb : &quot; + poolNbPropOrdi.get(k));&#xD;
+    }&#xD;
+    for (int k = 0; k &lt; poolRepOrdi.size(); k++) logger.debug(&quot;le pool de repOrdi : &quot; + poolRepOrdi.get(k));&#xD;
+    //--On affiche le resultat de la proposition&#xD;
+    resultCompa = &quot;Reponse : &quot; + compteurPresent + &quot; présents - &quot; + compteurOK + &quot; bien placés&quot;;&#xD;
+    int diff2 = propOrdi - combiSecret;&#xD;
+    //--Victoire&#xD;
+    if (diff2 == 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?&quot;, &quot;Victoire&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+    //--Defaite&#xD;
+    if (tourDeJeu + 1 == nbCoupsConfig &amp;&amp; diff2 != 0) {&#xD;
+        JOptionPane jop = new JOptionPane();&#xD;
+        int option = jop.showConfirmDialog(null, &quot;C'est perdu ! \n La combinaison gagnante est &quot; + combiSecret + &quot;\n Voulez-vous rejouer ?&quot;, &quot;Défaite&quot;, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);&#xD;
+        if (option == JOptionPane.OK_OPTION) {&#xD;
+            nouvellePartie();&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oI3uEQgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeDef" visibility="public" method="_oI6xYAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oI7_gAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeDef" visibility="public" method="_oI_p4AgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oI90sAgdEeiM5MUlyyDdug" name="pMode" type="_RUSjAAgdEeiM5MUlyyDdug"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oI-bwAgdEeiM5MUlyyDdug" name="pEssai">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oI_C0AgdEeiM5MUlyyDdug" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJA4AAgdEeiM5MUlyyDdug" name="initCombiSecret" visibility="public" method="_oJA4AQgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJBfEAgdEeiM5MUlyyDdug" name="jeu" visibility="public" method="_oJCtMAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJD7UAgdEeiM5MUlyyDdug" name="compare" visibility="public" method="_oJEiYAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJFwgAgdEeiM5MUlyyDdug" name="jeu1" visibility="public" method="_oJGXkAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJHlsAgdEeiM5MUlyyDdug" name="calcScore" visibility="public" method="_oJKpAAgdEeiM5MUlyyDdug">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oJHlsQgdEeiM5MUlyyDdug" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oJIMwAgdEeiM5MUlyyDdug" name="pconstrPropOrdi">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oJIz0AgdEeiM5MUlyyDdug"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJIz0QgdEeiM5MUlyyDdug" value="*"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oJJa4AgdEeiM5MUlyyDdug" name="plistCompa">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oJKB8AgdEeiM5MUlyyDdug"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJKB8QgdEeiM5MUlyyDdug" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJLQEAgdEeiM5MUlyyDdug" name="calcScore" visibility="public" method="_oJL3IAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJNFQAgdEeiM5MUlyyDdug" name="compare2" visibility="public" method="_oJNsUAgdEeiM5MUlyyDdug"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oJOTYAgdEeiM5MUlyyDdug" name="compare1" visibility="public" method="_oJO6cAgdEeiM5MUlyyDdug"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_pf2IEAgdEeiM5MUlyyDdug" name="TableDeJeuMasterMind_ModeDuel" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_pf2vIAgdEeiM5MUlyyDdug" general="_RUbs8AgdEeiM5MUlyyDdug"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_pf3WMAgdEeiM5MUlyyDdug" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pf3WMQgdEeiM5MUlyyDdug" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_RRCasAgdEeiM5MUlyyDdug" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_RRDBwAgdEeiM5MUlyyDdug" name="javax">
+        <packagedElement xmi:type="uml:Package" xmi:id="_RRDo0AgdEeiM5MUlyyDdug" name="swing">
+          <packagedElement xmi:type="uml:Class" xmi:id="_RRE28AgdEeiM5MUlyyDdug" name="JFrame"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_RTmmgAgdEeiM5MUlyyDdug" name="JMenuBar"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_RTsGEAgdEeiM5MUlyyDdug" name="JMenu"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_RTyzwAgdEeiM5MUlyyDdug" name="JMenuItem"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_aT7-kAgdEeiM5MUlyyDdug" name="JPanel"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_aUR80AgdEeiM5MUlyyDdug" name="JLabel"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_aUXcYAgdEeiM5MUlyyDdug" name="JFormattedTextField"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_RTeDoAgdEeiM5MUlyyDdug" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_RTfRwAgdEeiM5MUlyyDdug" name="apache">
+          <packagedElement xmi:type="uml:Package" xmi:id="_RTgf4AgdEeiM5MUlyyDdug" name="log4j">
+            <packagedElement xmi:type="uml:Class" xmi:id="_RThG8AgdEeiM5MUlyyDdug" name="Logger"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_RUDScAgdEeiM5MUlyyDdug" name="ihm">
+        <packagedElement xmi:type="uml:Class" xmi:id="_RUD5gAgdEeiM5MUlyyDdug" name="Accueil"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_aUcU4AgdEeiM5MUlyyDdug" name="joueur">
+        <packagedElement xmi:type="uml:Class" xmi:id="_aUdjAAgdEeiM5MUlyyDdug" name="Joueur"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_RUJZEAgdEeiM5MUlyyDdug" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_RUKAIAgdEeiM5MUlyyDdug" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_RUKAIQgdEeiM5MUlyyDdug" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_RUKnMAgdEeiM5MUlyyDdug" name="Properties"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_hGIEEAgdEeiM5MUlyyDdug" name="Random"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_hGU4YQgdEeiM5MUlyyDdug" name="HashMap"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_RURU4AgdEeiM5MUlyyDdug" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_RUSjAAgdEeiM5MUlyyDdug" name="String"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_RU8qUAgdEeiM5MUlyyDdug" name="awt">
+          <packagedElement xmi:type="uml:Package" xmi:id="_RU9RYAgdEeiM5MUlyyDdug" name="event">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_RU-fgAgdEeiM5MUlyyDdug" name="ActionListener"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_RVF0QAgdEeiM5MUlyyDdug" name="ActionEvent"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_aVHqUQgdEeiM5MUlyyDdug" name="text">
+          <packagedElement xmi:type="uml:Class" xmi:id="_aVIRYAgdEeiM5MUlyyDdug" name="ParseException"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_r_97cAgdEeiM5MUlyyDdug" memberEnd="_sAGeUAgdEeiM5MUlyyDdug _sAHFYggdEeiM5MUlyyDdug">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sAF3QAgdEeiM5MUlyyDdug" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sAF3QQgdEeiM5MUlyyDdug" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_sAHFYggdEeiM5MUlyyDdug" name="tabledejeu_test" type="_RUbs8AgdEeiM5MUlyyDdug" association="_r_97cAgdEeiM5MUlyyDdug"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_RPwBQAgdEeiM5MUlyyDdug">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RPydgAgdEeiM5MUlyyDdug" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_RQPJcAgdEeiM5MUlyyDdug">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RQPwgAgdEeiM5MUlyyDdug" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_RQXsUAgdEeiM5MUlyyDdug">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RQYTYAgdEeiM5MUlyyDdug" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_RS3msAgdEeiM5MUlyyDdug" name="javax.swing.JFrame" base_Classifier="_RRE28AgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RTjjMAgdEeiM5MUlyyDdug" name="org.apache.log4j.Logger" base_Classifier="_RThG8AgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RTpCwAgdEeiM5MUlyyDdug" name="javax.swing.JMenuBar" base_Classifier="_RTmmgAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RTvJYAgdEeiM5MUlyyDdug" name="javax.swing.JMenu" base_Classifier="_RTsGEAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RT1QAAgdEeiM5MUlyyDdug" name="javax.swing.JMenuItem" base_Classifier="_RTyzwAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RUGVwAgdEeiM5MUlyyDdug" name="ihm.Accueil" base_Classifier="_RUD5gAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RUNDcAgdEeiM5MUlyyDdug" name="java.util.Properties" base_Classifier="_RUKnMAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RUUYMAgdEeiM5MUlyyDdug" name="java.lang.String" base_Classifier="_RUSjAAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RUdiIAgdEeiM5MUlyyDdug" name="TableDeJeu_Test" base_Classifier="_RUbs8AgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_RUpIUAgdEeiM5MUlyyDdug" base_BehavioralFeature="_RUglcAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RVAUsAgdEeiM5MUlyyDdug" name="java.awt.event.ActionListener" base_Classifier="_RU-fgAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_RVHCYAgdEeiM5MUlyyDdug" name="java.awt.event.ActionEvent" base_Classifier="_RVF0QAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_aT-a0AgdEeiM5MUlyyDdug" name="javax.swing.JPanel" base_Classifier="_aT7-kAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_aUUZEAgdEeiM5MUlyyDdug" name="javax.swing.JLabel" base_Classifier="_aUR80AgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_aUYqgAgdEeiM5MUlyyDdug" name="javax.swing.JFormattedTextField" base_Classifier="_aUXcYAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_aUfYMAgdEeiM5MUlyyDdug" name="joueur.Joueur" base_Classifier="_aUdjAAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_aUxsEAgdEeiM5MUlyyDdug" base_BehavioralFeature="_aUv24AgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_aU5n4AgdEeiM5MUlyyDdug" base_BehavioralFeature="_aU3LoAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_aVBjsAgdEeiM5MUlyyDdug" base_BehavioralFeature="_aVAVkAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_aVKGkAgdEeiM5MUlyyDdug" name="java.text.ParseException" base_Classifier="_aVIRYAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_eL3SYAgdEeiM5MUlyyDdug" base_BehavioralFeature="_eL2EQAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_eL9ZAAgdEeiM5MUlyyDdug" base_BehavioralFeature="_eL68wAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_eMC4kAgdEeiM5MUlyyDdug" base_BehavioralFeature="_eMBDYAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_hGJSMAgdEeiM5MUlyyDdug" name="java.util.Random" base_Classifier="_hGIEEAgdEeiM5MUlyyDdug"/>
+  <PapyrusJava:External xmi:id="_hGWtkAgdEeiM5MUlyyDdug" name="java.util.HashMap" base_Classifier="_hGU4YQgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_hGeCUAgdEeiM5MUlyyDdug" base_BehavioralFeature="_hGcNIAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_hGhFoAgdEeiM5MUlyyDdug" base_BehavioralFeature="_hGf3gAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_jpbuUAgdEeiM5MUlyyDdug" base_BehavioralFeature="_jpbHQQgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_jpdjgAgdEeiM5MUlyyDdug" base_BehavioralFeature="_jpc8cAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_mt6zAAgdEeiM5MUlyyDdug" base_BehavioralFeature="_mt490AgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_mt92UAgdEeiM5MUlyyDdug" base_BehavioralFeature="_mt8oMAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_muCu0AgdEeiM5MUlyyDdug" base_BehavioralFeature="_muBgsAgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_oI5jQAgdEeiM5MUlyyDdug" base_BehavioralFeature="_oI3uEQgdEeiM5MUlyyDdug"/>
+  <standard:Create xmi:id="_oI9NoAgdEeiM5MUlyyDdug" base_BehavioralFeature="_oI7_gAgdEeiM5MUlyyDdug"/>
+</xmi:XMI>

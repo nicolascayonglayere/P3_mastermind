@@ -17,13 +17,16 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
+import pattern_observer.Observable;
+import pattern_observer.Observateur;
+
 
 /**
- * La classe définissant un clavier numérique 
+ * La classe définissant un clavier numérique ou de couleur 
  * @author nicolas
  *
  */
-public class Clavier extends JPanel implements Observable_Clavier {
+public class Clavier extends JPanel implements Observable {
 
 	/**
 	 * 
@@ -38,7 +41,7 @@ public class Clavier extends JPanel implements Observable_Clavier {
 	private GridLayout gl = new GridLayout(2,5);
 	private String lettre  ;
 	private int couleurMode = -1;
-	private ArrayList<Observateur_Clavier> listObs = new ArrayList<Observateur_Clavier>();
+	private ArrayList<Observateur> listObs = new ArrayList<Observateur>();
 
 		
 		/**
@@ -95,13 +98,11 @@ public class Clavier extends JPanel implements Observable_Clavier {
 				gl.setHgap(7);
 				gl.setVgap(7);
 				panBouton.setLayout(gl);
-				//listCouleur = new HashMap<Integer, Color>();
 				Font police = new Font("Arial", Font.BOLD, 18);
 				//--On construit nos boutons dans la liste
 				for(int i = 0; i <listChar.length; i++) {
 					//--on cree nos boutons avec des ecouteurs clavier integres
 					listBouton[i]=(createBouton(this.listChar[i], 96+i));
-					//listBouton[i].setBackground(listColor[i]);
 					listBouton[i].setFont(police);
 					listBouton[i].setPreferredSize(new Dimension(50,50));
 					//--On ajoute les ecouteurs souris sur les boutons, les ecouteurs claviers sont inclus ds les boutons
@@ -116,7 +117,6 @@ public class Clavier extends JPanel implements Observable_Clavier {
 			}
 			//--couleur selectionnee
 			else if(pCouleur == 1) {
-				//this.listCouleur = new HashMap<Integer, File>();
 				//--Le panel qui accueillera les boutons selon un rangement sur grille gl
 				gl.setHgap(7);
 				gl.setVgap(7);
@@ -127,6 +127,7 @@ public class Clavier extends JPanel implements Observable_Clavier {
 				for(int i = 0; i <listColor.length; i++) {
 					//--on cree nos boutons avec des ecouteurs clavier integres
 					listBouton[i] = new JButton();
+					
 					listBouton[i].setIcon(listImageColor[i]);
 					listBouton[i].setBackground(listColor[i]);
 					listBouton[i].setFont(police);
@@ -163,7 +164,7 @@ public class Clavier extends JPanel implements Observable_Clavier {
 		/**
 		 * Pattern Observer; methode d'ajout des abonnes
 		 */
-		public void addObservateur(Observateur_Clavier o) {
+		public void addObservateur(Observateur o) {
 			this.listObs.add(o);			
 		}
 
@@ -171,7 +172,7 @@ public class Clavier extends JPanel implements Observable_Clavier {
 		 * Pattern Observer; mise a jour des abonnes
 		 */
 		public void updateObservateur() {
-			for (Observateur_Clavier o : listObs) {
+			for (Observateur o : listObs) {
 				o.update(this.lettre);
 			}
 		}
@@ -180,7 +181,7 @@ public class Clavier extends JPanel implements Observable_Clavier {
 		 * Pattern Observer; suppression d'abonnes
 		 */
 		public void delObservateur() {
-			this.listObs = new ArrayList<Observateur_Clavier>();			
+			this.listObs = new ArrayList<Observateur>();			
 		}
 		
 		/**

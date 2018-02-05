@@ -70,18 +70,30 @@ public class JoueurHumain extends Joueur {
 	public void jeu(String pCoupJoue) {
 		this.listPropJoueur = new Integer[this.lgueurCombo];
 		resultCompa = "";
+		coupJoue = "";
 		coupJoue = pCoupJoue;
 		//System.out.println("la proposition du joueur : "+coupJoue);
 		logger.debug("la proposition du joueur : "+coupJoue);
 		char[] tabint = coupJoue.toCharArray();
 		
 		for (int i = 0; i<lgueurCombo; i++) {
-			this.listPropJoueur[i] = Character.getNumericValue(tabint[i]);
-			//System.out.println("la liste de prop du joueur : "+listPropJoueur[i]);
-			logger.debug("la liste de prop du joueur : "+listPropJoueur[i]);
+			try {
+				this.listPropJoueur[i] = Character.getNumericValue(tabint[i]);
+				//System.out.println("la liste de prop du joueur : "+listPropJoueur[i]);
+				logger.debug("la liste de prop du joueur : "+listPropJoueur[i]);
+			}catch (ArrayIndexOutOfBoundsException e) {
+				logger.warn(e.getMessage());
+				//JOptionPane.showMessageDialog(null, "Entrez votre combinaison ", "Trop de clics", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 		
 		this.compare();
+		
+		int diff2 = (Integer.valueOf(coupJoue)) - combiSecret;
+		if(diff2 == 0) {
+			fin = true;
+		}
+		
 		tourDeJeu++;
 	}
 	
@@ -139,10 +151,6 @@ public class JoueurHumain extends Joueur {
 				resultCompa = "Reponse : "+compteurPresent+" présents - "+compteurOK+" bien placés";
 				
 			}
-		}
-		int diff2 = (Integer.valueOf(coupJoue)) - combiSecret;
-		if(diff2 == 0) {
-			fin = true;
 		}
 	}	
 }

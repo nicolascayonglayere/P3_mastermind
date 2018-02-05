@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import clavier.Clavier;
-import clavier.Observateur_Clavier;
+import pattern_observer.Observateur;
 
 public class TableDeJeu_Pattern_Obs_4 extends TableDeJeu_Pattern_Obs {
 
@@ -150,15 +150,15 @@ public class TableDeJeu_Pattern_Obs_4 extends TableDeJeu_Pattern_Obs {
 		}
 		//--Un clavier de chiffre/couleur et un bouton tour suivant
 		Clavier clavier = new Clavier(couleur);
-		clavier.addObservateur(new Observateur_Clavier() {
+		clavier.addObservateur(new Observateur() {
 			
 			@Override
-			public void update(String pLettre) {
+			public void update(Object o) {
 
 				if (couleur == 0) {
 					logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-					logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
+					logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
 					cpteurLettre ++;	
 				}
 				else if (couleur == 1) {
@@ -174,11 +174,11 @@ public class TableDeJeu_Pattern_Obs_4 extends TableDeJeu_Pattern_Obs {
 										       	new ImageIcon("Ressources/Images/rose8.JPG")};
 
 					logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-					logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));						
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);//pquoi cette ligne marche pas
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
-					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(pLettre);
+					logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));						
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setIcon(listImageColor[Integer.valueOf(o.toString())]);
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(o.toString())]);//pquoi cette ligne marche pas
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(o.toString())]);
+					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
 											
 					cpteurLettre ++;
 				}

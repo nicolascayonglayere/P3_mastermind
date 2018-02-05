@@ -74,7 +74,7 @@ public abstract class Joueur implements Observable {
 	 * @param pCoupJoue
 	 */
 	public void jeu(String pCoupJoue) {}
-	
+			
 	/**
 	 * Methode pour comparer la proposition du joueur avec la combinaison secrete
 	 */

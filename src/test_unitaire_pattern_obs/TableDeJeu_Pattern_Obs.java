@@ -55,7 +55,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 	
 	//private String coupJoue ;
 	//private Integer[] listPropJoueur ;
-	protected String resultCompa;
+	protected String resultCompa, coupJoue;
 	
 	protected JPanel panTbleJeu = new JPanel();
 	
@@ -104,7 +104,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 		if (pMode.equals(ModeJeu.CHALLENGER.toString())) {
 			this.joueur = new JoueurHumain(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
-				public void update(String coupJoue) {
+				public void update(Object o) {
 					tourDeJeu = joueur.getTourDeJeu();
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
 			//	coupJoue = listProp[tourDeJeu].getText();
@@ -154,9 +154,10 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 		else if (pMode.equals(ModeJeu.DEFENSEUR.toString())) {
 			this.joueur = new JoueurElectronique(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
-				public void update(String coupJoue) {
+				public void update(Object o) {
 					tourDeJeu = joueur.getTourDeJeu();	
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
+					coupJoue = String.valueOf(o);
 					joueur.jeu(coupJoue);
 					if(pCouleur == 0) {
 						for (int k = 0; k<joueur.getPropOrdi().toCharArray().length; k++) {
@@ -230,7 +231,7 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 		else if(pMode.equals(ModeJeu.DUEL.toString())) {
 			this.joueur = new JoueurHumain(lgueurCombo, jeu, pCouleur);
 			this.joueur.addObservateur(new Observateur() {
-				public void update(String coupJoue) {
+				public void update(Object o) {
 					tourDeJeu = joueur.getTourDeJeu();
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
 				//coupJoue = propJH[tourDeJeu].getText();
@@ -280,9 +281,10 @@ public class TableDeJeu_Pattern_Obs extends JPanel {
 			});
 			this.joueur1 = new JoueurElectronique(lgueurCombo, jeu, pCouleur);
 			this.joueur1.addObservateur(new Observateur() {
-				public void update(String coupJoue) {
+				public void update(Object o) {
 					tourDeJeu = joueur1.getTourDeJeu();	
 					logger.debug("Ctrl TourDeJeu : "+tourDeJeu);
+					coupJoue = String.valueOf(o);
 					joueur1.jeu(coupJoue);
 				//propJE[tourDeJeu].setText(joueur1.getPropOrdi());
 				//resultCompa = joueur1.getResultCompa();

@@ -2,7 +2,6 @@ package joueur;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -11,7 +10,6 @@ import java.awt.event.ActionListener;
 import java.util.Properties;
 
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -21,8 +19,13 @@ import javax.swing.JPanel;
 
 import Propriete.GestionFichierProperties;
 import clavier.Clavier;
-import clavier.Observateur_Clavier;
+import pattern_observer.Observateur;
 
+/**
+ * Classe definissant une boite de dialogue pour la saisie de la combinaison en couleur
+ * @author nicolas
+ *
+ */
 public class BoiteDialSaisieCouleur extends JDialog{
 
 	/**
@@ -35,9 +38,17 @@ public class BoiteDialSaisieCouleur extends JDialog{
 	private int cpteurLettre = 0;
 	private String combinaison = "";
 	
+	
+	/**
+	 * Constructeur avec parametre
+	 * @param parent
+	 * @param ptitre
+	 * @param modal
+	 */
 	public BoiteDialSaisieCouleur(JFrame parent, String ptitre, boolean modal) {
 		super(parent, ptitre, modal);
 		
+		//--la boite de dialogue
 		this.setSize(400,200);
 		this.setLocationRelativeTo(null);
 		this.setUndecorated(true);
@@ -58,16 +69,14 @@ public class BoiteDialSaisieCouleur extends JDialog{
 		JPanel panSaisi = new JPanel();
 		panSaisi.setBackground(Color.WHITE);
 		panSaisi.setBorder(BorderFactory.createMatteBorder(0, 1, 0, 1, Color.BLACK));
-		//panSaisi.setPreferredSize(new Dimension (200, 50));
 		GridLayout gl  = new GridLayout(1,lgueurCombo);
 		gl.setHgap(20);
 		panSaisi.setLayout(gl);
 		
+		//--Les etiquettes affichant la couleur
 		this.listLbl = new JLabel[lgueurCombo];
 		for (int i = 0; i< lgueurCombo; i++) {
 			listLbl[i] = new JLabel();
-			//listLbl[i].setPreferredSize(new Dimension(50,50));
-			//listLbl[i].setSize(new Dimension(50,50));
 			listLbl[i].setBackground(Color.LIGHT_GRAY);
 			listLbl[i].setOpaque(true);
 			listLbl[i].setBorder(BorderFactory.createMatteBorder(0, 1, 0, 1, Color.BLACK));
@@ -76,27 +85,16 @@ public class BoiteDialSaisieCouleur extends JDialog{
 		
 		//--Le clavier couleur
 		Clavier clavier = new Clavier(1);
-		clavier .addObservateur(new Observateur_Clavier() {
+		clavier .addObservateur(new Observateur() {
 
 			@Override
-			public void update(String pLettre) {
+			public void update(Object o) {
 				//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
 				Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
-				ImageIcon[] listImageColor = {new ImageIcon("Ressources/Images/blanc0.JPG"),
-									       	new ImageIcon ("Ressources/Images/noir1.JPG"), 
-									       	new ImageIcon("Ressources/Images/rouge2.JPG"),
-									       	new ImageIcon("Ressources/Images/jaune3.JPG"), 
-									       	new ImageIcon("Ressources/Images/vert4.JPG"),
-									       	new ImageIcon("Ressources/Images/bleu5.JPG"),
-									       	new ImageIcon("Ressources/Images/orange6.JPG"),
-									       	new ImageIcon("Ressources/Images/rose8.JPG")};
 
-				//logger.debug("le tour du joueur : "+joueur.getTourDeJeu());
-				//logger.debug("la lettre transmise : "+pLettre+" - "+Integer.valueOf(pLettre));
-				//listLbl[cpteurLettre].setIcon(listImageColor[Integer.valueOf(pLettre)]);
-				listLbl[cpteurLettre].setBackground(listColor[Integer.valueOf(pLettre)]);
-				listLbl[cpteurLettre].setForeground(listColor[Integer.valueOf(pLettre)]);
-				listLbl[cpteurLettre].setText(pLettre);
+				listLbl[cpteurLettre].setBackground(listColor[Integer.valueOf(o.toString())]);
+				listLbl[cpteurLettre].setForeground(listColor[Integer.valueOf(o.toString())]);
+				listLbl[cpteurLettre].setText(o.toString());
 				cpteurLettre ++;
 			}
 			
@@ -139,6 +137,11 @@ public class BoiteDialSaisieCouleur extends JDialog{
 		return this.combinaison;
 	}
 	
+	/**
+	 * classe interne definissant le comportement du bouton OK lorsqu'on clique dessus (on vérifie que la combinaison n'est pas null)
+	 * @author nicolas
+	 *
+	 */
 	class OKListener implements ActionListener{
 
 		@Override
