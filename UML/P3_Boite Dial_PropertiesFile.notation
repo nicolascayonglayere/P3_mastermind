@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ZmG3wApYEeiRePfNqIKmQA" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_k9r0AApYEeiRePfNqIKmQA" type="Enumeration_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_k92zIApYEeiRePfNqIKmQA" type="Enumeration_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_k93aMApYEeiRePfNqIKmQA" type="Enumeration_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_k93aMQpYEeiRePfNqIKmQA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_k93aMgpYEeiRePfNqIKmQA" type="Enumeration_LiteralCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_mxxAwApYEeiRePfNqIKmQA" type="EnumerationLiteral_LiteralLabel">
+        <element xmi:type="uml:EnumerationLiteral" href="P3_Boite%20Dial_PropertiesFile.uml#_k7KrgApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mxxAwQpYEeiRePfNqIKmQA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_nEzRgApYEeiRePfNqIKmQA" type="EnumerationLiteral_LiteralLabel">
+        <element xmi:type="uml:EnumerationLiteral" href="P3_Boite%20Dial_PropertiesFile.uml#_k7QLEApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nEzRgQpYEeiRePfNqIKmQA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_nVIzkApYEeiRePfNqIKmQA" type="EnumerationLiteral_LiteralLabel">
+        <element xmi:type="uml:EnumerationLiteral" href="P3_Boite%20Dial_PropertiesFile.uml#_k7TOYApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nVIzkQpYEeiRePfNqIKmQA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_k93aMwpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_k93aNApYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_k93aNQpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k93aNgpYEeiRePfNqIKmQA"/>
+    </children>
+    <element xmi:type="uml:Enumeration" href="P3_Boite%20Dial_PropertiesFile.uml#_k7IPQApYEeiRePfNqIKmQA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k9r0AQpYEeiRePfNqIKmQA" x="160" y="300"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_oQqAoApYEeiRePfNqIKmQA" type="Enumeration_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_oQqnsApYEeiRePfNqIKmQA" type="Enumeration_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_oQqnsQpYEeiRePfNqIKmQA" type="Enumeration_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_oQqnsgpYEeiRePfNqIKmQA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_oQqnswpYEeiRePfNqIKmQA" type="Enumeration_LiteralCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_pn6HcApYEeiRePfNqIKmQA" type="EnumerationLiteral_LiteralLabel">
+        <element xmi:type="uml:EnumerationLiteral" href="P3_Boite%20Dial_PropertiesFile.uml#_oQXFsApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pn6HcQpYEeiRePfNqIKmQA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_p63fsApYEeiRePfNqIKmQA" type="EnumerationLiteral_LiteralLabel">
+        <element xmi:type="uml:EnumerationLiteral" href="P3_Boite%20Dial_PropertiesFile.uml#_oQZh8ApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_p63fsQpYEeiRePfNqIKmQA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_oQqntApYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oQqntQpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oQqntgpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oQqntwpYEeiRePfNqIKmQA"/>
+    </children>
+    <element xmi:type="uml:Enumeration" href="P3_Boite%20Dial_PropertiesFile.uml#_oQUpcApYEeiRePfNqIKmQA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oQqAoQpYEeiRePfNqIKmQA" x="160" y="140"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_vMua4ApYEeiRePfNqIKmQA" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vMvB8ApYEeiRePfNqIKmQA" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vMvpAApYEeiRePfNqIKmQA" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_vMvpAQpYEeiRePfNqIKmQA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vMvpAgpYEeiRePfNqIKmQA" type="Class_AttributeCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_7ckb4ApYEeiRePfNqIKmQA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="P3_Boite%20Dial_PropertiesFile.uml#_vL9l4ApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7ckb4QpYEeiRePfNqIKmQA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_vMvpAwpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vMvpBApYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vMvpBQpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vMvpBgpYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vMvpBwpYEeiRePfNqIKmQA" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_vMvpCApYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vMvpCQpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vMvpCgpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vMvpCwpYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vMvpDApYEeiRePfNqIKmQA" type="Class_NestedClassifierCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_2w1FgApYEeiRePfNqIKmQA" type="Class_ClassNestedClassifierLabel">
+        <element xmi:type="uml:Class" href="P3_Boite%20Dial_PropertiesFile.uml#_vMcuEApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2w1FgQpYEeiRePfNqIKmQA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_vMvpDQpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vMvpDgpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vMvpDwpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vMvpEApYEeiRePfNqIKmQA"/>
+    </children>
+    <element xmi:type="uml:Class" href="P3_Boite%20Dial_PropertiesFile.uml#_vKb74ApYEeiRePfNqIKmQA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vMua4QpYEeiRePfNqIKmQA" x="460" y="180" width="221"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_wIYx4ApYEeiRePfNqIKmQA" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wIYx4gpYEeiRePfNqIKmQA" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_wIYx4wpYEeiRePfNqIKmQA" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wIYx5ApYEeiRePfNqIKmQA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_wIYx5QpYEeiRePfNqIKmQA" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_wIYx5gpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wIYx5wpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wIYx6ApYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wIYx6QpYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_wIZY8ApYEeiRePfNqIKmQA" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_wIZY8QpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wIZY8gpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wIZY8wpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wIZY9ApYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_wIZY9QpYEeiRePfNqIKmQA" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_wIZY9gpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wIZY9wpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wIZY-ApYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wIZY-QpYEeiRePfNqIKmQA"/>
+    </children>
+    <element xmi:type="uml:Class" href="P3_Boite%20Dial_PropertiesFile.uml#_vKeYIApYEeiRePfNqIKmQA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wIYx4QpYEeiRePfNqIKmQA" x="460" y="20"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_wIvXMApYEeiRePfNqIKmQA" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_wIvXMQpYEeiRePfNqIKmQA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_wIv-QApYEeiRePfNqIKmQA" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="P3_Boite%20Dial_PropertiesFile.uml#_vKeYIApYEeiRePfNqIKmQA"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wIvXMgpYEeiRePfNqIKmQA" x="200"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zbEqoApYEeiRePfNqIKmQA" type="Interface_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zbFRsApYEeiRePfNqIKmQA" type="Interface_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zbFRsQpYEeiRePfNqIKmQA" type="Interface_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zbFRsgpYEeiRePfNqIKmQA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_zbFRswpYEeiRePfNqIKmQA" type="Interface_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_zbFRtApYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zbFRtQpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zbFRtgpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbFRtwpYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_zbFRuApYEeiRePfNqIKmQA" type="Interface_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_zbFRuQpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zbFRugpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zbFRuwpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbFRvApYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_zbFRvQpYEeiRePfNqIKmQA" type="Interface_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_zbFRvgpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zbFRvwpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zbFRwApYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbFRwQpYEeiRePfNqIKmQA"/>
+    </children>
+    <element xmi:type="uml:Interface" href="P3_Boite%20Dial_PropertiesFile.uml#_vKkewApYEeiRePfNqIKmQA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbEqoQpYEeiRePfNqIKmQA" x="640" y="20"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zbaB0wpYEeiRePfNqIKmQA" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_zbaB1ApYEeiRePfNqIKmQA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_zbaB1gpYEeiRePfNqIKmQA" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Interface" href="P3_Boite%20Dial_PropertiesFile.uml#_vKkewApYEeiRePfNqIKmQA"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbaB1QpYEeiRePfNqIKmQA" x="200"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="___OuwApYEeiRePfNqIKmQA" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="___PV0ApYEeiRePfNqIKmQA" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="___PV0QpYEeiRePfNqIKmQA" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="___PV0gpYEeiRePfNqIKmQA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="___PV0wpYEeiRePfNqIKmQA" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="___PV1ApYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="___PV1QpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="___PV1gpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="___PV1wpYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="___PV2ApYEeiRePfNqIKmQA" type="Class_OperationCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_CYAkAApZEeiRePfNqIKmQA" type="Operation_ClassOperationLabel">
+        <element xmi:type="uml:Operation" href="P3_Boite%20Dial_PropertiesFile.uml#___IoIApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CYAkAQpZEeiRePfNqIKmQA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_CvRNcApZEeiRePfNqIKmQA" type="Operation_ClassOperationLabel">
+        <element xmi:type="uml:Operation" href="P3_Boite%20Dial_PropertiesFile.uml#___LrcApYEeiRePfNqIKmQA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CvRNcQpZEeiRePfNqIKmQA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="___PV2QpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="___PV2gpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="___PV2wpYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="___PV3ApYEeiRePfNqIKmQA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="___PV3QpYEeiRePfNqIKmQA" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="___PV3gpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="___PV3wpYEeiRePfNqIKmQA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="___PV4ApYEeiRePfNqIKmQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="___PV4QpYEeiRePfNqIKmQA"/>
+    </children>
+    <element xmi:type="uml:Class" href="P3_Boite%20Dial_PropertiesFile.uml#__-2UQApYEeiRePfNqIKmQA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="___OuwQpYEeiRePfNqIKmQA" x="460" y="400"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_ZmG3wQpYEeiRePfNqIKmQA" name="diagram_compatibility_version" stringValue="1.3.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ZmG3wgpYEeiRePfNqIKmQA"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_ZmG3wwpYEeiRePfNqIKmQA" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+    <owner xmi:type="uml:Model" href="P3_Boite%20Dial_PropertiesFile.uml#_ZjEK0ApYEeiRePfNqIKmQA"/>
+  </styles>
+  <element xmi:type="uml:Model" href="P3_Boite%20Dial_PropertiesFile.uml#_ZjEK0ApYEeiRePfNqIKmQA"/>
+  <edges xmi:type="notation:Connector" xmi:id="_wIv-QQpYEeiRePfNqIKmQA" type="StereotypeCommentLink" source="_wIYx4ApYEeiRePfNqIKmQA" target="_wIvXMApYEeiRePfNqIKmQA">
+    <styles xmi:type="notation:FontStyle" xmi:id="_wIv-QgpYEeiRePfNqIKmQA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_wIwlUApYEeiRePfNqIKmQA" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="P3_Boite%20Dial_PropertiesFile.uml#_vKeYIApYEeiRePfNqIKmQA"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wIv-QwpYEeiRePfNqIKmQA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wIv-RApYEeiRePfNqIKmQA"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wIv-RQpYEeiRePfNqIKmQA"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_wJXpUApYEeiRePfNqIKmQA" type="Generalization_Edge" source="_vMua4ApYEeiRePfNqIKmQA" target="_wIYx4ApYEeiRePfNqIKmQA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wJXpUwpYEeiRePfNqIKmQA" type="Generalization_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_wnFgEApYEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wJYQYApYEeiRePfNqIKmQA" x="1" y="39"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wJXpUQpYEeiRePfNqIKmQA"/>
+    <element xmi:type="uml:Generalization" href="P3_Boite%20Dial_PropertiesFile.uml#_vKiCgApYEeiRePfNqIKmQA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wJXpUgpYEeiRePfNqIKmQA" points="[550, 262, -643984, -643984]$[0, 0, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wnXz8ApYEeiRePfNqIKmQA" id="(0.36199095022624433,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wnYbAApYEeiRePfNqIKmQA" id="(0.4,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_zbaB1wpYEeiRePfNqIKmQA" type="StereotypeCommentLink" source="_zbEqoApYEeiRePfNqIKmQA" target="_zbaB0wpYEeiRePfNqIKmQA">
+    <styles xmi:type="notation:FontStyle" xmi:id="_zbaB2ApYEeiRePfNqIKmQA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_zbao4ApYEeiRePfNqIKmQA" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Interface" href="P3_Boite%20Dial_PropertiesFile.uml#_vKkewApYEeiRePfNqIKmQA"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zbaB2QpYEeiRePfNqIKmQA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zbaB2gpYEeiRePfNqIKmQA"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zbaB2wpYEeiRePfNqIKmQA"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_zb6_MApYEeiRePfNqIKmQA" type="InterfaceRealization_Edge" source="_vMua4ApYEeiRePfNqIKmQA" target="_zbEqoApYEeiRePfNqIKmQA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zb6_MwpYEeiRePfNqIKmQA" type="InterfaceRealization_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_z0MVQApYEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zb6_NApYEeiRePfNqIKmQA" y="39"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zb6_NQpYEeiRePfNqIKmQA" type="InterfaceRealization_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_z0WtUApYEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zb6_NgpYEeiRePfNqIKmQA" x="37" y="47"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zb6_MQpYEeiRePfNqIKmQA"/>
+    <element xmi:type="uml:InterfaceRealization" href="P3_Boite%20Dial_PropertiesFile.uml#_vKzIQApYEeiRePfNqIKmQA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zb6_MgpYEeiRePfNqIKmQA" points="[460, 185, -643984, -643984]$[0, 0, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z0kvwApYEeiRePfNqIKmQA" id="(0.6787330316742082,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z0lW0ApYEeiRePfNqIKmQA" id="(0.02,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_jGVbYApZEeiRePfNqIKmQA" type="Association_Edge" source="_vMua4ApYEeiRePfNqIKmQA" target="___OuwApYEeiRePfNqIKmQA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jGVbYwpZEeiRePfNqIKmQA" type="Association_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_mWlrMApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jGVbZApZEeiRePfNqIKmQA" y="-19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jGVbZQpZEeiRePfNqIKmQA" type="Association_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_mWzGkApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jGVbZgpZEeiRePfNqIKmQA" x="-1" y="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jGVbZwpZEeiRePfNqIKmQA" type="Association_TargetRoleLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_mXAh8ApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jGVbaApZEeiRePfNqIKmQA" x="23" y="-19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jGVbaQpZEeiRePfNqIKmQA" type="Association_SourceRoleLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_mXLhEApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jGVbagpZEeiRePfNqIKmQA" x="-24" y="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jGVbawpZEeiRePfNqIKmQA" type="Association_SourceMultiplicityLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_mXXuUApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jGVbbApZEeiRePfNqIKmQA" x="23" y="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jGVbbQpZEeiRePfNqIKmQA" type="Association_TargetMultiplicityLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_mXlwwApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jGVbbgpZEeiRePfNqIKmQA" x="-23" y="-19"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_jGVbYQpZEeiRePfNqIKmQA"/>
+    <element xmi:type="uml:Association" href="P3_Boite%20Dial_PropertiesFile.uml#_jF7ywApZEeiRePfNqIKmQA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jGVbYgpZEeiRePfNqIKmQA" points="[580, 283, -643984, -643984]$[620, 436, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jHLI4ApZEeiRePfNqIKmQA" id="(0.5429864253393665,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jHLI4QpZEeiRePfNqIKmQA" id="(0.4291845493562232,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_kj_FIApZEeiRePfNqIKmQA" type="Association_Edge" source="_oQqAoApYEeiRePfNqIKmQA" target="_vMua4ApYEeiRePfNqIKmQA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_kj_FIwpZEeiRePfNqIKmQA" type="Association_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_pyhmkApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kj_FJApZEeiRePfNqIKmQA" x="1" y="-18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_kj_FJQpZEeiRePfNqIKmQA" type="Association_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_pyr-oApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kj_FJgpZEeiRePfNqIKmQA" y="19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_kj_FJwpZEeiRePfNqIKmQA" type="Association_TargetRoleLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_py3k0ApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kj_FKApZEeiRePfNqIKmQA" x="44" y="-18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_kj_FKQpZEeiRePfNqIKmQA" type="Association_SourceRoleLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_pzDLAApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kj_FKgpZEeiRePfNqIKmQA" x="-44" y="19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_kj_FKwpZEeiRePfNqIKmQA" type="Association_SourceMultiplicityLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_pzPYQApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kj_FLApZEeiRePfNqIKmQA" x="44" y="19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_kj_FLQpZEeiRePfNqIKmQA" type="Association_TargetMultiplicityLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_pzdasApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kj_FLgpZEeiRePfNqIKmQA" x="-44" y="-18"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kj_FIQpZEeiRePfNqIKmQA"/>
+    <element xmi:type="uml:Association" href="P3_Boite%20Dial_PropertiesFile.uml#_kjy34ApZEeiRePfNqIKmQA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kj_FIgpZEeiRePfNqIKmQA" points="[168, 240, -643984, -643984]$[500, 180, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kkfbcApZEeiRePfNqIKmQA" id="(1.0,0.6)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kkfbcQpZEeiRePfNqIKmQA" id="(0.0,0.3883495145631068)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_loAG4ApZEeiRePfNqIKmQA" type="Association_Edge" source="_k9r0AApYEeiRePfNqIKmQA" target="_vMua4ApYEeiRePfNqIKmQA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_loAG4wpZEeiRePfNqIKmQA" type="Association_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qJHhoApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_loAG5ApZEeiRePfNqIKmQA" x="1" y="-18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_loAG5QpZEeiRePfNqIKmQA" type="Association_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qJRSoApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_loAG5gpZEeiRePfNqIKmQA" y="19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_loAG5wpZEeiRePfNqIKmQA" type="Association_TargetRoleLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qJc40ApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_loAG6ApZEeiRePfNqIKmQA" x="51" y="-18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_loAG6QpZEeiRePfNqIKmQA" type="Association_SourceRoleLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qJqUMApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_loAG6gpZEeiRePfNqIKmQA" x="-51" y="19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_loAG6wpZEeiRePfNqIKmQA" type="Association_SourceMultiplicityLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qJ2hcApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_loAG7ApZEeiRePfNqIKmQA" x="52" y="19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_loAG7QpZEeiRePfNqIKmQA" type="Association_TargetMultiplicityLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qKCHoApZEeiRePfNqIKmQA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_loAG7gpZEeiRePfNqIKmQA" x="-51" y="-18"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_loAG4QpZEeiRePfNqIKmQA"/>
+    <element xmi:type="uml:Association" href="P3_Boite%20Dial_PropertiesFile.uml#_lnw2UApZEeiRePfNqIKmQA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_loAG4gpZEeiRePfNqIKmQA" points="[143, 380, -643984, -643984]$[460, 240, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lokHkApZEeiRePfNqIKmQA" id="(1.0,0.4)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lokHkQpZEeiRePfNqIKmQA" id="(0.0,0.5825242718446602)"/>
+  </edges>
+</notation:Diagram>

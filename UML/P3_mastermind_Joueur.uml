@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_21ETAApdEeiRePfNqIKmQA" name="P3_mastermind_Joueur">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_23_EIApdEeiRePfNqIKmQA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5TJfAApdEeiRePfNqIKmQA" name="P3_mastermind_Joueur">
+      <packagedElement xmi:type="uml:Package" xmi:id="_5TyYMApdEeiRePfNqIKmQA" name="joueur">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5T0NYApdEeiRePfNqIKmQA" name="Joueur" visibility="public" isAbstract="true">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VExoApdEeiRePfNqIKmQA" name="logger" visibility="private" isStatic="true" type="_5VBuUQpdEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_5VFYsApdEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>Logger.getLogger(&quot;ihm&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VKRMApdEeiRePfNqIKmQA" name="nom" visibility="protected" type="_5VIcAApdEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VK4QApdEeiRePfNqIKmQA" name="jeu" visibility="protected" type="_5VIcAApdEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VQ-4ApdEeiRePfNqIKmQA" name="tourDeJeu" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VRl8ApdEeiRePfNqIKmQA" name="combiSecret" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VSNAApdEeiRePfNqIKmQA" name="lgueurCombo" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VS0EApdEeiRePfNqIKmQA" name="couleur" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VTbIApdEeiRePfNqIKmQA" name="constrCombiSecret" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5VUCMApdEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5VUCMQpdEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VUpQApdEeiRePfNqIKmQA" name="listPropJoueur" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5VVQUApdEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5VVQUQpdEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VV3YApdEeiRePfNqIKmQA" name="resultCompa" visibility="protected" type="_5VIcAApdEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VWecApdEeiRePfNqIKmQA" name="coupJoue" visibility="protected" type="_5VIcAApdEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VXFgApdEeiRePfNqIKmQA" name="fin" visibility="protected" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_f-GnEPaLEeW5KOK8aDMdgA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VY6sApdEeiRePfNqIKmQA" name="listObs" visibility="protected" type="_5VXskApdEeiRePfNqIKmQA" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5VZhwApdEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5VZhwQpdEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_5U_SEApdEeiRePfNqIKmQA" name="Joueur implements Observable" client="_5T0NYApdEeiRePfNqIKmQA" supplier="_5T1bgApdEeiRePfNqIKmQA" contract="_5T1bgApdEeiRePfNqIKmQA"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VbW8ApdEeiRePfNqIKmQA" name="Joueur" specification="_5VZhwgpdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.nom = &quot;&quot;;&#xD;
+    this.combiSecret = 0;&#xD;
+    this.tourDeJeu = 0;&#xD;
+    this.listObs = new ArrayList&lt;Observateur>();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5Vg2gApdEeiRePfNqIKmQA" name="Joueur" specification="_5VdMIApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.nom = &quot;&quot;;&#xD;
+    this.tourDeJeu = 0;&#xD;
+    this.combiSecret = 0;&#xD;
+    this.lgueurCombo = pCombo;&#xD;
+    this.jeu = pJeu;&#xD;
+    this.fin = false;&#xD;
+    this.listObs = new ArrayList&lt;Observateur>();&#xD;
+    this.couleur = pCouleur;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VhdkQpdEeiRePfNqIKmQA" name="initCombiSecret" specification="_5VhdkApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5Vj50ApdEeiRePfNqIKmQA" name="getConstrCombiSecret" specification="_5ViEoApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.constrCombiSecret;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VlvAApdEeiRePfNqIKmQA" name="getCombiSecret" specification="_5Vkg4ApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.combiSecret;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VoLQApdEeiRePfNqIKmQA" name="jeu" specification="_5Vm9IApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VpZYApdEeiRePfNqIKmQA" name="compare" specification="_5VoyUApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VrOkApdEeiRePfNqIKmQA" name="setVictoire" specification="_5VqngApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.fin = pVictoire;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VscsQpdEeiRePfNqIKmQA" name="getVictoire" specification="_5Vr1oApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.fin;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5Vtq0QpdEeiRePfNqIKmQA" name="getResultCompa" specification="_5VtDwApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.resultCompa;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VvgAApdEeiRePfNqIKmQA" name="setTourDeJeu" specification="_5VuR4ApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.tourDeJeu = pTourDeJeu;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VwuIApdEeiRePfNqIKmQA" name="getTourDeJeu" specification="_5VvgAQpdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.tourDeJeu;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5Vx8QQpdEeiRePfNqIKmQA" name="getPropOrdi" specification="_5VxVMApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.coupJoue;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5VzxcApdEeiRePfNqIKmQA" name="addObservateur" specification="_5VyjUApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.listObs.add(o);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5V0YgQpdEeiRePfNqIKmQA" name="getNom" specification="_5VzxcQpdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return this.nom;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5V1moApdEeiRePfNqIKmQA" name="updateObservateur" specification="_5V0_kApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    for (Observateur o : this.listObs) {&#xD;
+        o.update(&quot;&quot;);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5V2NsQpdEeiRePfNqIKmQA" name="delObservateur" specification="_5V2NsApdEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.listObs = new ArrayList&lt;Observateur>();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VZhwgpdEeiRePfNqIKmQA" name="Joueur" visibility="public" method="_5VbW8ApdEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VdMIApdEeiRePfNqIKmQA" name="Joueur" visibility="public" method="_5Vg2gApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VfBUApdEeiRePfNqIKmQA" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VfoYApdEeiRePfNqIKmQA" name="pJeu" type="_5VIcAApdEeiRePfNqIKmQA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VgPcApdEeiRePfNqIKmQA" name="pCouleur">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VhdkApdEeiRePfNqIKmQA" name="initCombiSecret" visibility="public" method="_5VhdkQpdEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5ViEoApdEeiRePfNqIKmQA" name="getConstrCombiSecret" visibility="public" method="_5Vj50ApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VirsApdEeiRePfNqIKmQA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5VjSwApdEeiRePfNqIKmQA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5VjSwQpdEeiRePfNqIKmQA" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5Vkg4ApdEeiRePfNqIKmQA" name="getCombiSecret" visibility="public" method="_5VlvAApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VlH8ApdEeiRePfNqIKmQA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5Vm9IApdEeiRePfNqIKmQA" name="jeu" visibility="public" method="_5VoLQApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VnkMApdEeiRePfNqIKmQA" name="pCoupJoue" type="_5VIcAApdEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VoyUApdEeiRePfNqIKmQA" name="compare" visibility="public" method="_5VpZYApdEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VqngApdEeiRePfNqIKmQA" name="setVictoire" visibility="public" method="_5VrOkApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VqngQpdEeiRePfNqIKmQA" name="pVictoire">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_f-GnEPaLEeW5KOK8aDMdgA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5Vr1oApdEeiRePfNqIKmQA" name="getVictoire" visibility="public" method="_5VscsQpdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VscsApdEeiRePfNqIKmQA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VtDwApdEeiRePfNqIKmQA" name="getResultCompa" visibility="public" method="_5Vtq0QpdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5Vtq0ApdEeiRePfNqIKmQA" type="_5VIcAApdEeiRePfNqIKmQA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VuR4ApdEeiRePfNqIKmQA" name="setTourDeJeu" visibility="public" method="_5VvgAApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5Vu48ApdEeiRePfNqIKmQA" name="pTourDeJeu">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VvgAQpdEeiRePfNqIKmQA" name="getTourDeJeu" visibility="public" method="_5VwuIApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VwHEApdEeiRePfNqIKmQA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VxVMApdEeiRePfNqIKmQA" name="getPropOrdi" visibility="public" method="_5Vx8QQpdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5Vx8QApdEeiRePfNqIKmQA" type="_5VIcAApdEeiRePfNqIKmQA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VyjUApdEeiRePfNqIKmQA" name="addObservateur" visibility="public" method="_5VzxcApdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5VzKYApdEeiRePfNqIKmQA" name="o" type="_5VXskApdEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5VzxcQpdEeiRePfNqIKmQA" name="getNom" visibility="public" method="_5V0YgQpdEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5V0YgApdEeiRePfNqIKmQA" type="_5VIcAApdEeiRePfNqIKmQA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5V0_kApdEeiRePfNqIKmQA" name="updateObservateur" visibility="public" method="_5V1moApdEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5V2NsApdEeiRePfNqIKmQA" name="delObservateur" visibility="public" method="_5V2NsQpdEeiRePfNqIKmQA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_PKK1oApeEeiRePfNqIKmQA" name="JoueurHumain" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_PKNR4ApeEeiRePfNqIKmQA" general="_5T0NYApdEeiRePfNqIKmQA"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_PKOgAQpeEeiRePfNqIKmQA" name="JoueurHumain" specification="_PKNR4QpeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+    //--Initialisation du joueur via une boite de dialogue&#xD;
+    this.nom = JOptionPane.showInputDialog(null, &quot;Quel est votre nom ?&quot;, &quot;Identification&quot;, JOptionPane.QUESTION_MESSAGE);&#xD;
+    JOptionPane.showMessageDialog(null, &quot;Bonjour &quot; + this.nom, &quot;Bonjour&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_PKRjUApeEeiRePfNqIKmQA" name="JoueurHumain" specification="_PKPHEApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pCombo, pJeu, pCouleur);&#xD;
+    //--Initialisation du joueur via une boite de dialogue&#xD;
+    this.nom = JOptionPane.showInputDialog(null, &quot;Quel est votre nom ?&quot;, &quot;Identification&quot;, JOptionPane.QUESTION_MESSAGE);&#xD;
+    JOptionPane.showMessageDialog(null, &quot;Bonjour &quot; + this.nom, &quot;Bonjour&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_PKRjUgpeEeiRePfNqIKmQA" name="initCombiSecret" specification="_PKRjUQpeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.constrCombiSecret = new Integer[this.lgueurCombo];&#xD;
+    Random alea = new Random();&#xD;
+    String str = &quot;&quot;;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        if (couleur == 0) {&#xD;
+            //--on tire 1 chiffre au hasard&#xD;
+            constrCombiSecret[i] = alea.nextInt(10);&#xD;
+        } else {&#xD;
+            //--on tire 1 chiffre au hasard&#xD;
+            constrCombiSecret[i] = alea.nextInt(8);&#xD;
+        }&#xD;
+        //--on concatene les différents chiffres &#xD;
+        str += String.valueOf(constrCombiSecret[i]);&#xD;
+    }&#xD;
+    this.combiSecret = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la combo gagnante : &quot;+this.combiSecret);//--Controle&#xD;
+    logger.info(&quot;la combo gagnante : &quot; + this.combiSecret);&#xD;
+    String message = &quot;La combinaison secrète est prête \n&quot;;&#xD;
+    message += &quot;A vous de jouer&quot;;&#xD;
+    JOptionPane.showMessageDialog(null, message, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_PKSKYgpeEeiRePfNqIKmQA" name="jeu" specification="_PKSKYApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.listPropJoueur = new Integer[this.lgueurCombo];&#xD;
+    resultCompa = &quot;&quot;;&#xD;
+    coupJoue = &quot;&quot;;&#xD;
+    coupJoue = pCoupJoue;&#xD;
+    //System.out.println(&quot;la proposition du joueur : &quot;+coupJoue);&#xD;
+    logger.debug(&quot;la proposition du joueur : &quot; + coupJoue);&#xD;
+    char[] tabint = coupJoue.toCharArray();&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        try {&#xD;
+            this.listPropJoueur[i] = Character.getNumericValue(tabint[i]);&#xD;
+            //System.out.println(&quot;la liste de prop du joueur : &quot;+listPropJoueur[i]);&#xD;
+            logger.debug(&quot;la liste de prop du joueur : &quot; + listPropJoueur[i]);&#xD;
+        } catch (ArrayIndexOutOfBoundsException e) {&#xD;
+            logger.warn(e.getMessage());&#xD;
+        }&#xD;
+    }&#xD;
+    this.compare();&#xD;
+    int diff2 = (Integer.valueOf(coupJoue)) - combiSecret;&#xD;
+    if (diff2 == 0) {&#xD;
+        fin = true;&#xD;
+    }&#xD;
+    tourDeJeu++;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_PKSxcApeEeiRePfNqIKmQA" name="compare" specification="_PKSKYwpeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    int compteurOK = 0;&#xD;
+    int compteurPresent = 0;&#xD;
+    //--Selon le jeu, on renvoie différents résultats&#xD;
+    if (jeu.equals(TypeJeu.RECHERCHE_NUM.toString())) {&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            //System.out.println(&quot;decompo du coup joue &quot;+Integer.valueOf(coupJoue.charAt(i)));&#xD;
+            //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);&#xD;
+            logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+            difference = constrCombiSecret[i] - listPropJoueur[i];&#xD;
+            //System.out.println(difference);&#xD;
+            logger.debug(&quot;resultat difference : &quot; + difference);&#xD;
+            if (difference == 0) {&#xD;
+                resultCompa += &quot;=&quot;;&#xD;
+            } else if (difference &lt; 0) {&#xD;
+                resultCompa += &quot;-&quot;;&#xD;
+            } else if (difference > 0) {&#xD;
+                resultCompa += &quot;+&quot;;&#xD;
+            }&#xD;
+        }&#xD;
+    } else {&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);&#xD;
+            logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+            difference = constrCombiSecret[i] - listPropJoueur[i];&#xD;
+            //System.out.println(difference);&#xD;
+            logger.debug(&quot;Ctrl difference : &quot; + difference);&#xD;
+            if (difference == 0) {&#xD;
+                compteurOK++;&#xD;
+                compteurPresent++;&#xD;
+            } else {&#xD;
+                for (int j = 0; j &lt; lgueurCombo; j++) {&#xD;
+                    if (listPropJoueur[i] == constrCombiSecret[j]) {&#xD;
+                        compteurPresent++;&#xD;
+                    }&#xD;
+                }&#xD;
+            }&#xD;
+            resultCompa = &quot;Reponse : &quot; + compteurPresent + &quot; présents - &quot; + compteurOK + &quot; bien placés&quot;;&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_PKNR4QpeEeiRePfNqIKmQA" name="JoueurHumain" visibility="public" method="_PKOgAQpeEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_PKPHEApeEeiRePfNqIKmQA" name="JoueurHumain" visibility="public" method="_PKRjUApeEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_PKQVMQpeEeiRePfNqIKmQA" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_PKQ8QApeEeiRePfNqIKmQA" name="pJeu" type="_5VIcAApdEeiRePfNqIKmQA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_PKQ8QQpeEeiRePfNqIKmQA" name="pCouleur">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_PKRjUQpeEeiRePfNqIKmQA" name="initCombiSecret" visibility="public" method="_PKRjUgpeEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_PKSKYApeEeiRePfNqIKmQA" name="jeu" visibility="public" method="_PKSKYgpeEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_PKSKYQpeEeiRePfNqIKmQA" name="pCoupJoue" type="_5VIcAApdEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_PKSKYwpeEeiRePfNqIKmQA" name="compare" visibility="public" method="_PKSxcApeEeiRePfNqIKmQA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_TvhQIApeEeiRePfNqIKmQA" name="JoueurElectronique" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_TvieQApeEeiRePfNqIKmQA" general="_5T0NYApdEeiRePfNqIKmQA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TvkTcApeEeiRePfNqIKmQA" name="str" visibility="private" type="_5VIcAApdEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_TvmvsApeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>&quot;&quot;</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tvn90ApeEeiRePfNqIKmQA" name="combiJoueur" visibility="private" type="_5VIcAApdEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tvok4ApeEeiRePfNqIKmQA" name="tabConstrCombiSecret" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_5lVhgBydEduyofBvg4RL2w"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TvpL8ApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TvpzAApeEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TvpzAQpeEeiRePfNqIKmQA" name="constrPropOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TvrBIApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TvrBIQpeEeiRePfNqIKmQA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_TvrBIgpeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Integer[this.lgueurCombo]</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TvroMApeEeiRePfNqIKmQA" name="constrRepOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tvs2UApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tvs2UQpeEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TvtdYApeEeiRePfNqIKmQA" name="propOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_TvuEcApeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TvwgsApeEeiRePfNqIKmQA" name="tabPool" visibility="private" type="_TvurgQpeEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tvxu0ApeEeiRePfNqIKmQA" name="tabIntPool" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TvyV4ApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tvy88ApeEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tvy88QpeEeiRePfNqIKmQA" name="poolNbPropOrdi" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TvzkAApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tv0LEApeEeiRePfNqIKmQA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Tv0LEQpeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Integer>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tv0yIApeEeiRePfNqIKmQA" name="ttePropPossible" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tv1ZMApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tv1ZMQpeEeiRePfNqIKmQA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Tv2AQApeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Integer[]>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tv2nUApeEeiRePfNqIKmQA" name="ttePropPossible0" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tv3OYApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tv3OYQpeEeiRePfNqIKmQA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Tv31cApeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Integer[]>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tv4cgApeEeiRePfNqIKmQA" name="prop" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tv5DkApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tv5qoApeEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tv6RsApeEeiRePfNqIKmQA" name="prop0" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tv64wApeEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tv7f0ApeEeiRePfNqIKmQA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tv8G4ApeEeiRePfNqIKmQA" name="scProp0" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Tv8t8ApeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Tv_xQApeEeiRePfNqIKmQA" name="alea" visibility="private" type="_Tv9VAApeEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_TwAYUApeEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Random()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwEpwApeEeiRePfNqIKmQA" name="JoueurElectronique" specification="_TwBmcApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+    this.nom = &quot;mon PC&quot;;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwKJUApeEeiRePfNqIKmQA" name="JoueurElectronique" specification="_TwF34ApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(pCombo, pJeu, pCouleur);&#xD;
+    this.nom = &quot;mon PC&quot;;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwLXcApeEeiRePfNqIKmQA" name="initCombiSecret" specification="_TwKwYApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (couleur == 0) {&#xD;
+        //Une boite de saisie ou l'on recup la combinaison que l'on decompose dans un tableau&#xD;
+        try {&#xD;
+            this.combiJoueur = JOptionPane.showInputDialog(null, &quot;Veuillez saisir une combinaison de &quot; + lgueurCombo + &quot; chiffres.&quot;, &quot;Combinaison secrète&quot;, JOptionPane.QUESTION_MESSAGE);&#xD;
+            this.combiSecret = Integer.valueOf(combiJoueur);&#xD;
+            logger.debug(&quot;ctrl saisie : &quot; + combiJoueur + &quot; - &quot; + combiSecret);&#xD;
+        } catch (NumberFormatException e) {&#xD;
+            logger.error(&quot;Combinaison secrète non saisie&quot;);&#xD;
+            JOptionPane.showMessageDialog(null, &quot;Veuillez saisir une combinaison de &quot; + lgueurCombo + &quot; chiffres.&quot;, &quot;Attention Combinaison secrète&quot;, JOptionPane.WARNING_MESSAGE);&#xD;
+            initCombiSecret();&#xD;
+        }&#xD;
+    } else {&#xD;
+        //--une boite de saisie perso avec clavier couleur&#xD;
+        BoiteDialSaisieCouleur bdSaisie = new BoiteDialSaisieCouleur(null, &quot;SAISIE COMBINAISON COULEUR&quot;, true);&#xD;
+        this.combiJoueur = bdSaisie.getCombinaison();&#xD;
+        this.combiSecret = Integer.valueOf(combiJoueur);&#xD;
+        logger.debug(&quot;ctrl saisie : &quot; + combiJoueur + &quot; - &quot; + combiSecret);&#xD;
+    }&#xD;
+    //--on récupère la combinaison secrete que l'on met dans une liste&#xD;
+    this.tabConstrCombiSecret = this.combiJoueur.toCharArray();&#xD;
+    this.constrCombiSecret = new Integer[this.lgueurCombo];&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        logger.debug(&quot;Ctrl combo :&quot; + tabConstrCombiSecret[i]);&#xD;
+        this.constrCombiSecret[i] = Character.getNumericValue(tabConstrCombiSecret[i]);&#xD;
+    }&#xD;
+    // Une boite de dialogue pour informer la partie lancee&#xD;
+    String message = &quot;Vous avez choisi une combinaison secrète. \n&quot;;&#xD;
+    message += &quot;Votre adversaire joue.&quot;;&#xD;
+    JOptionPane.showMessageDialog(null, message, &quot;Combinaison secrète prête !&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwNzsApeEeiRePfNqIKmQA" name="nbBase" specification="_TwL-gApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    int q = pNbre / pBase;&#xD;
+    int x = pNbre % pBase;&#xD;
+    int p = 1;&#xD;
+    while (q != 0) {&#xD;
+        p = 10 * p;&#xD;
+        x = x + 10 * (q % pBase);&#xD;
+        q = q / pBase;&#xD;
+    }&#xD;
+    return x;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwQ3AApeEeiRePfNqIKmQA" name="jeu" specification="_TwPB0ApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    Integer[] propPoss = new Integer[this.lgueurCombo];&#xD;
+    ArrayList&lt;Integer[]> supprTtePropPossible = new ArrayList&lt;Integer[]>();&#xD;
+    this.resultCompa = &quot;&quot;;&#xD;
+    if (jeu.equals(TypeJeu.MASTERMIND.toString())) {&#xD;
+        //--Au premier tour il prend un nb au hasard dans la liste des prop possibles&#xD;
+        if (tourDeJeu == 0) {&#xD;
+            if (this.couleur == 0) {&#xD;
+                //--on intialise le pool de nombre, ici de 0 à 9&#xD;
+                for (int i = 0; i &lt; 10; i++) this.poolNbPropOrdi.add(i);&#xD;
+            } else {&#xD;
+                //--on intialise le pool de nombre, ici de 0 à 7&#xD;
+                for (int i = 0; i &lt; 8; i++) {&#xD;
+                    this.poolNbPropOrdi.add(i);&#xD;
+                }&#xD;
+            }&#xD;
+            int nbTotProp = 1;&#xD;
+            for (int i = 0; i &lt; this.lgueurCombo; i++) {&#xD;
+                nbTotProp *= poolNbPropOrdi.size();&#xD;
+            }&#xD;
+            this.prop = new Integer[this.lgueurCombo];&#xD;
+            this.prop0 = new Integer[this.lgueurCombo];&#xD;
+            //--on initialise la liste de toutes les combinaisons possibles qui sont chaque nombre entre 0 et le nb total de proposition&#xD;
+            //--on formate les nombres en ajoutant des 0 devant&#xD;
+            String str0 = &quot;0&quot;;&#xD;
+            for (int i = 0; i &lt; this.lgueurCombo - 1; i++) {&#xD;
+                str0 += &quot;0&quot;;&#xD;
+            }&#xD;
+            for (int i = 0; i &lt; nbTotProp; i++) {&#xD;
+                Integer[] propConstr = new Integer[this.lgueurCombo];&#xD;
+                String str1 = String.valueOf(i);&#xD;
+                //String str1 = String.valueOf(nbBase(i,8));&#xD;
+                DecimalFormat nf = new DecimalFormat(str0);&#xD;
+                str1 = nf.format(Integer.valueOf(str1));&#xD;
+                for (int j = 0; j &lt; this.lgueurCombo; j++) {&#xD;
+                    char[] tabint = str1.toCharArray();&#xD;
+                    propConstr[j] = Character.getNumericValue(tabint[j]);&#xD;
+                    logger.debug(//--Controle&#xD;
+                    &quot;val de liste possible : &quot; + //--Controle&#xD;
+                    propConstr[j]);&#xD;
+                }&#xD;
+                ttePropPossible0.add(propConstr);&#xD;
+                ttePropPossible.add(propConstr);&#xD;
+            }&#xD;
+            logger.debug(&quot;taille de liste des possibles creee &quot; + //--Controle&#xD;
+            ttePropPossible.size());&#xD;
+            prop0 = ttePropPossible.get(alea.nextInt(ttePropPossible.size()));&#xD;
+        } else //prop0 = ttePropPossible.get(0);&#xD;
+        //prop0 = meilleureProp(ttePropPossible0, ttePropPossible0);&#xD;
+        //--Les tours suivants, on se base sur le score relatif(score calc avec la prop précédente co liste de comparaison) pour determiner la proposition de l'ordi&#xD;
+        //--on remove de la liste des possibles toutes les combinaisons qui ne tiennent pas la comparaison et on prend la première de la nouvelle liste des possibles comme proposition de l'ordi&#xD;
+        {&#xD;
+            prop = prop0;&#xD;
+            for (int i = 0; i &lt; ttePropPossible.size(); i++) {&#xD;
+                propPoss = ttePropPossible.get(i);&#xD;
+                int scRelPropPoss = calcScore(propPoss, prop);&#xD;
+                for (int k : propPoss) logger.debug(&quot;detail prop comparee&quot; + k);&#xD;
+                logger.debug(&quot;comp score rel :&quot; + scProp0 + &quot; - &quot; + calcScore(//--Controle&#xD;
+                propPoss, //--Controle&#xD;
+                prop));&#xD;
+                if (scRelPropPoss != scProp0) {&#xD;
+                    supprTtePropPossible.add(propPoss);&#xD;
+                }&#xD;
+            }&#xD;
+            logger.debug(&quot;taille liste suppr : &quot; + //--Controle&#xD;
+            supprTtePropPossible.size());&#xD;
+            for (Integer[] i : supprTtePropPossible) {&#xD;
+                ttePropPossible.remove(i);&#xD;
+            }&#xD;
+            logger.debug(&quot;taille des nvelles listes &quot; + //--Controle&#xD;
+            ttePropPossible.size());&#xD;
+            prop0 = ttePropPossible.get(0);&#xD;
+        //prop0 = meilleureProp(ttePropPossible, ttePropPossible0);&#xD;
+        }&#xD;
+        for (int i = 0; i &lt; this.lgueurCombo; i++) {&#xD;
+            constrPropOrdi[i] = prop0[i];&#xD;
+            str += String.valueOf(constrPropOrdi[i]);&#xD;
+        }&#xD;
+        logger.debug(&quot;propo ordi : &quot; + str);&#xD;
+        coupJoue = str;&#xD;
+        scProp0 = calcScore(prop0, constrCombiSecret);&#xD;
+        //scoreRel.add(scProp0);&#xD;
+        propOrdi = Integer.valueOf(str);&#xD;
+        //System.out.println(&quot;la proposition de l'odinateur : &quot;+propOrdi);//--Controle&#xD;
+        logger.info(&quot;la proposition de l'odinateur : &quot; + propOrdi + &quot; et son score &quot; + scProp0);&#xD;
+        int diff2 = propOrdi - combiSecret;&#xD;
+        if (diff2 == 0) {&#xD;
+            fin = true;&#xD;
+        }&#xD;
+        tourDeJeu++;&#xD;
+        propOrdi = 0;&#xD;
+        str = &quot;&quot;;&#xD;
+    } else if (jeu.equals(TypeJeu.RECHERCHE_NUM.toString()))&#xD;
+        jeu1(pCoupJoue);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwT6UApeEeiRePfNqIKmQA" name="calcScore" specification="_TwReEApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    int scProp = 0;&#xD;
+    int difference = 0;&#xD;
+    int compteurOK = 0;&#xD;
+    int compteurPresent = 0;&#xD;
+    //--le nb de fois ou la val apparait dans la combinaison secrete&#xD;
+    int compteurOccurCombo = 0;&#xD;
+    //--le nb de fois ou la val apparait dans la proposition&#xD;
+    int compteurOccurProp = 0;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //logger.debug(&quot;decompo de liste comparee : &quot;+plistCompa[i]);&#xD;
+        //logger.debug(&quot;decompo prop ordi : &quot;+pconstrPropOrdi[i]);&#xD;
+        difference = plistCompa[i] - pconstrPropOrdi[i];&#xD;
+        //logger.debug(&quot;Ctrl difference : &quot;+difference);&#xD;
+        if (difference == 0) {&#xD;
+            compteurOK++;&#xD;
+        }&#xD;
+    }&#xD;
+    compteurPresent = -compteurOK;&#xD;
+    for (int j = 0; j &lt; this.poolNbPropOrdi.size() - 1; j++) {&#xD;
+        compteurOccurCombo = 0;&#xD;
+        compteurOccurProp = 0;&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            if (plistCompa[i] == j)&#xD;
+                compteurOccurCombo++;&#xD;
+            if (pconstrPropOrdi[i] == j)&#xD;
+                compteurOccurProp++;&#xD;
+        }&#xD;
+        if (compteurOccurCombo &lt; compteurOccurProp)&#xD;
+            compteurPresent = compteurPresent + compteurOccurCombo;&#xD;
+        else&#xD;
+            compteurPresent = compteurPresent + compteurOccurProp;&#xD;
+    }&#xD;
+    scProp = 10 * compteurOK + compteurPresent;&#xD;
+    //--Le résultat de la comparaison apres calcul du score&#xD;
+    resultCompa = &quot;Reponse : &quot; + compteurPresent + &quot; présents - &quot; + compteurOK + &quot; bien placés&quot;;&#xD;
+    return scProp;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwVvgApeEeiRePfNqIKmQA" name="jeu1" specification="_TwUhYApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (tourDeJeu == 0) {&#xD;
+        this.str = &quot;&quot;;&#xD;
+        this.constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.constrRepOrdi = new Integer[this.lgueurCombo];&#xD;
+        this.resultCompa = &quot;&quot;;&#xD;
+        this.tabPool = new HashMap&lt;Integer, ArrayList&lt;Integer>>();&#xD;
+        this.tabIntPool = new ArrayList&lt;Integer>();&#xD;
+        if (couleur == 0) {&#xD;
+            //--on initialise le tableau de pool d'entier compris entre 0 et 9&#xD;
+            for (int k = 0; k &lt; 10; k++) this.tabIntPool.add(k);&#xD;
+        } else {&#xD;
+            //--on initialise le tableau de pool d'entier compris entre 0 et 7&#xD;
+            for (int k = 0; k &lt; 8; k++) this.tabIntPool.add(k);&#xD;
+        }&#xD;
+        //--l'ordi construit sa prop à partir du pool de nombre&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            //--on remplit le tableau de reponse de -1&#xD;
+            constrRepOrdi[i] = -1;&#xD;
+            //--on construit la prop de l'ordi a partir du pool de nombre : 0123&#xD;
+            constrPropOrdi[i] = tabIntPool.get(i);&#xD;
+            str += String.valueOf(constrPropOrdi[i]);&#xD;
+        }&#xD;
+    } else {&#xD;
+        //--on réinitialise la prop de l'ordi ainsi que le tableau contenant celle-ci&#xD;
+        this.constrPropOrdi = new Integer[this.lgueurCombo];&#xD;
+        propOrdi = 0;&#xD;
+        resultCompa = &quot;&quot;;&#xD;
+        str = &quot;&quot;;&#xD;
+        //--l'ordi construit sa prop à partir du pool de nombre s'il n'a pas trouvé le chiffre&#xD;
+        for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+            if (constrRepOrdi[i] != -1) {&#xD;
+                constrPropOrdi[i] = constrRepOrdi[i];&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            } else {&#xD;
+                tabIntPool = tabPool.get(i);&#xD;
+                logger.debug(&quot;taille pool : &quot; + tabIntPool.size());&#xD;
+                for (//--Controle&#xD;
+                int j = 0; //--Controle&#xD;
+                j &lt; tabIntPool.size(); //--Controle&#xD;
+                j++) {&#xD;
+                    //System.out.println(&quot;ctrl1 pool : &quot;+tabIntPool.get(j));//--Controle&#xD;
+                    logger.debug(&quot;ctrl1 pool : &quot; + tabIntPool.get(j));&#xD;
+                //--Controle&#xD;
+                }&#xD;
+                constrPropOrdi[i] = tabIntPool.get(0);&#xD;
+                str += String.valueOf(constrPropOrdi[i]);&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+    coupJoue = str;&#xD;
+    propOrdi = Integer.valueOf(str);&#xD;
+    //System.out.println(&quot;la proposition de l'odinateur : &quot;+propOrdi);//--Controle&#xD;
+    logger.info(&quot;la proposition de l'odinateur : &quot; + propOrdi);&#xD;
+    //--Il compare&#xD;
+    this.compare();&#xD;
+    tourDeJeu++;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TwW9oApeEeiRePfNqIKmQA" name="compare" specification="_TwWWkApeEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    int difference = 0;&#xD;
+    for (int i = 0; i &lt; lgueurCombo; i++) {&#xD;
+        //System.out.println(&quot;decompo de combo : &quot;+constrCombiSecret[i]);//--Controle&#xD;
+        logger.debug(&quot;decompo de combo : &quot; + constrCombiSecret[i]);&#xD;
+        difference = constrCombiSecret[i] - constrPropOrdi[i];&#xD;
+        //System.out.println(difference);//--Controle&#xD;
+        logger.debug(&quot;Ctrl difference :&quot; + difference);&#xD;
+        this.tabIntPool = new ArrayList&lt;Integer>();&#xD;
+        //--Si la diférence est nulle, le chiffre est dans la combinaison secrete et on l'affecte dans la reponse de l'ordi&#xD;
+        if (difference == 0) {&#xD;
+            resultCompa += &quot;=&quot;;&#xD;
+            constrRepOrdi[i] = constrPropOrdi[i];&#xD;
+        } else //--Si la différence est negative on restreint l'intervalle de choix de l'ordi&#xD;
+        if (difference &lt; 0) {&#xD;
+            resultCompa += &quot;-&quot;;&#xD;
+            for (int j = 0; j &lt; constrPropOrdi[i]; j++) {&#xD;
+                tabIntPool.add(j);&#xD;
+                //System.out.println(&quot;ctrl pool construit ap comparaison &lt;0: &quot;+tabIntPool.get(j));//--Controle&#xD;
+                logger.debug(&quot;ctrl pool construit ap comparaison &lt;0: &quot; + tabIntPool.get(j));&#xD;
+            }&#xD;
+            for (int k = 0; k &lt; tabIntPool.size(); k++) //System.out.println(&quot;ma var qui transporte le pool &quot;+tabIntPool.get(k));//--Controle&#xD;
+            logger.debug(&quot;ma var qui transporte le pool &quot; + tabIntPool.get(k));&#xD;
+            tabPool.put(i, tabIntPool);&#xD;
+            //System.out.println(&quot;un autre ctrl : &quot;+tabPool.toString());//--Controle&#xD;
+            logger.debug(&quot;un autre ctrl : &quot; + tabPool.toString() + &quot; - &quot; + tabPool.get(i).size());&#xD;
+        } else //--Si la différence est positive on restreint aussi l'intervalle de choix de l'ordi&#xD;
+        if (difference > 0) {&#xD;
+            resultCompa += &quot;+&quot;;&#xD;
+            for (int j = 0; j &lt; 10 - constrPropOrdi[i]; j++) {&#xD;
+                tabIntPool.add(j + constrPropOrdi[i] + 1);&#xD;
+                //System.out.println(&quot;ctrl pool construit ap comparaison >0: &quot;+tabIntPool.get(j));//--Controle&#xD;
+                logger.debug(&quot;ctrl pool construit ap comparaison >0: &quot; + tabIntPool.get(j));&#xD;
+            }&#xD;
+            for (int k = 0; k &lt; tabIntPool.size(); k++) //System.out.println(&quot;ma var qui transporte le pool &quot;+tabIntPool.get(k));//--Controle&#xD;
+            logger.debug(&quot;ma var qui transporte le pool &quot; + tabIntPool.get(k));&#xD;
+            tabPool.put(i, tabIntPool);&#xD;
+            //System.out.println(&quot;un autre ctrl : &quot;+tabPool.toString() + &quot; - &quot;+tabPool.get(i).size());//--Controle&#xD;
+            logger.debug(&quot;un autre ctrl : &quot; + tabPool.toString() + &quot; - &quot; + tabPool.get(i).size());&#xD;
+        }&#xD;
+    }&#xD;
+    int diff2 = propOrdi - combiSecret;&#xD;
+    if (diff2 == 0) {&#xD;
+        fin = true;&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwBmcApeEeiRePfNqIKmQA" name="JoueurElectronique" visibility="public" method="_TwEpwApeEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwF34ApeEeiRePfNqIKmQA" name="JoueurElectronique" visibility="public" method="_TwKJUApeEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwHtEApeEeiRePfNqIKmQA" name="pCombo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwIUIApeEeiRePfNqIKmQA" name="pJeu" type="_5VIcAApdEeiRePfNqIKmQA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwI7MApeEeiRePfNqIKmQA" name="pCouleur">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwKwYApeEeiRePfNqIKmQA" name="initCombiSecret" visibility="public" method="_TwLXcApeEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwL-gApeEeiRePfNqIKmQA" name="nbBase" visibility="public" method="_TwNzsApeEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwMlkApeEeiRePfNqIKmQA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwMlkQpeEeiRePfNqIKmQA" name="pNbre">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwNMoApeEeiRePfNqIKmQA" name="pBase">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwPB0ApeEeiRePfNqIKmQA" name="jeu" visibility="public" method="_TwQ3AApeEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwPo4ApeEeiRePfNqIKmQA" name="pCoupJoue" type="_5VIcAApdEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwReEApeEeiRePfNqIKmQA" name="calcScore" visibility="public" method="_TwT6UApeEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwSFIApeEeiRePfNqIKmQA" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwSFIQpeEeiRePfNqIKmQA" name="pconstrPropOrdi">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TwSsMApeEeiRePfNqIKmQA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TwSsMQpeEeiRePfNqIKmQA" value="*"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwTTQApeEeiRePfNqIKmQA" name="plistCompa">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_ILxaUPaLEeW5KOK8aDMdgA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TwTTQQpeEeiRePfNqIKmQA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TwTTQgpeEeiRePfNqIKmQA" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwUhYApeEeiRePfNqIKmQA" name="jeu1" visibility="public" method="_TwVvgApeEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TwVIcApeEeiRePfNqIKmQA" name="pCoupJoue" type="_5VIcAApdEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_TwWWkApeEeiRePfNqIKmQA" name="compare" visibility="public" method="_TwW9oApeEeiRePfNqIKmQA"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5T00cApdEeiRePfNqIKmQA" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_5T00cQpdEeiRePfNqIKmQA" name="pattern_observer">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_5T1bgApdEeiRePfNqIKmQA" name="Observable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5VXskApdEeiRePfNqIKmQA" name="Observateur"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5VAgMApdEeiRePfNqIKmQA" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_5VBHQApdEeiRePfNqIKmQA" name="apache">
+          <packagedElement xmi:type="uml:Package" xmi:id="_5VBuUApdEeiRePfNqIKmQA" name="log4j">
+            <packagedElement xmi:type="uml:Class" xmi:id="_5VBuUQpdEeiRePfNqIKmQA" name="Logger"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5VF_wApdEeiRePfNqIKmQA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_5VHN4ApdEeiRePfNqIKmQA" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_5VHN4QpdEeiRePfNqIKmQA" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_5VIcAApdEeiRePfNqIKmQA" name="String"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_TvurgApeEeiRePfNqIKmQA" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_TvurgQpeEeiRePfNqIKmQA" name="HashMap"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Tv9VAApeEeiRePfNqIKmQA" name="Random"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5Th5gApdEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5TigkApdEeiRePfNqIKmQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5Tp1UApdEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5TqcYApdEeiRePfNqIKmQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5TvU4ApdEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Tv78ApdEeiRePfNqIKmQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_5U-rAApdEeiRePfNqIKmQA" name="pattern_observer.Observable" base_Classifier="_5T1bgApdEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_5VC8cApdEeiRePfNqIKmQA" name="org.apache.log4j.Logger" base_Classifier="_5VBuUQpdEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_5VJqIApdEeiRePfNqIKmQA" name="java.lang.String" base_Classifier="_5VIcAApdEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_5VYToApdEeiRePfNqIKmQA" name="pattern_observer.Observateur" base_Classifier="_5VXskApdEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_5Vav4ApdEeiRePfNqIKmQA" base_BehavioralFeature="_5VZhwgpdEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_5VeaQApdEeiRePfNqIKmQA" base_BehavioralFeature="_5VdMIApdEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_PKMq0ApeEeiRePfNqIKmQA" name="Joueur" base_Classifier="_5T0NYApdEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_PKOgAApeEeiRePfNqIKmQA" base_BehavioralFeature="_PKNR4QpeEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_PKQVMApeEeiRePfNqIKmQA" base_BehavioralFeature="_PKPHEApeEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_Tvv5oApeEeiRePfNqIKmQA" name="java.util.HashMap" base_Classifier="_TvurgQpeEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_Tv_KMApeEeiRePfNqIKmQA" name="java.util.Random" base_Classifier="_Tv9VAApeEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_TwC0kApeEeiRePfNqIKmQA" base_BehavioralFeature="_TwBmcApeEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_TwHGAApeEeiRePfNqIKmQA" base_BehavioralFeature="_TwF34ApeEeiRePfNqIKmQA"/>
+</xmi:XMI>

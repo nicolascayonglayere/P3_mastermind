@@ -1,5 +1,6 @@
 package joueur;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -68,6 +69,7 @@ public class JoueurHumain extends Joueur {
 	 * Méthode jeu qui récupere la proposition du joueur et la compare
 	 */
 	public void jeu(String pCoupJoue) {
+		this.paramObs = new ArrayList<String>();
 		this.listPropJoueur = new Integer[this.lgueurCombo];
 		resultCompa = "";
 		coupJoue = "";
@@ -93,6 +95,10 @@ public class JoueurHumain extends Joueur {
 		if(diff2 == 0) {
 			fin = true;
 		}
+		this.paramObs.add(String.valueOf(tourDeJeu));//a essayer
+		this.paramObs.add(resultCompa);
+		this.paramObs.add(Boolean.toString(fin));
+		this.updateObservateur();
 		
 		tourDeJeu++;
 	}

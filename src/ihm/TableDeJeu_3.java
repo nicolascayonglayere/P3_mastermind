@@ -7,13 +7,13 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import Propriete.ModeJeu;
@@ -71,8 +71,6 @@ public class TableDeJeu_3 extends TableDeJeu {
 		JPanel[] panRef = new JPanel[this.nbCoupsConfig];
 		
 		JPanel[] panLblProp = new JPanel[this.nbCoupsConfig];//--Une liste de JPanel qui accueille les etiquettes affichant la prop
-		//this.lblProp = new JLabel[this.lgueurCombo];//--Une liste de JLabel qui affiche la prop
-		//this.listPropLbl = new HashMap<Integer, JLabel[]>();
 		this.listLblProp = new JLabel[this.nbCoupsConfig][this.lgueurCombo];
 		
 		JPanel[] panResult = new JPanel[this.nbCoupsConfig];
@@ -96,7 +94,6 @@ public class TableDeJeu_3 extends TableDeJeu {
 			panLblProp[i].setBorder(BorderFactory.createLineBorder(Color.BLACK));
 			panLblProp[i].setBackground(Color.WHITE);
 			panLblProp[i].setPreferredSize(new Dimension(300,50));
-			//panLblProp[i].setLayout(new BoxLayout(panLblProp[i], BoxLayout.LINE_AXIS));
 			GridLayout gl = new GridLayout(1,lgueurCombo);
 			gl.setHgap(7);
 			panLblProp[i].setLayout(gl);
@@ -149,39 +146,21 @@ public class TableDeJeu_3 extends TableDeJeu {
 			finDeTour.addActionListener(new ActionListener() {
 					@Override
 				public void actionPerformed(ActionEvent arg0) {
-						joueur.updateObservateur();
+						joueur1.jeu("");
+						logger.debug("TRACES Bton");
 				}
 			});
-			finDeTour.addKeyListener(new KeyListener() {
-
-				@Override
-				public void keyPressed(KeyEvent arg0) {
-					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
-						finDeTour.doClick();
-
-					
-				}
-
-				@Override
-				public void keyReleased(KeyEvent arg0) {
-
-					
-				}
-
-				@Override
-				public void keyTyped(KeyEvent arg0) {
-					
-					
-				}
-				
-			});
+			
 			panTbleJeu.add(finDeTour);
 		}
 		//--Si le mode de jeu est challenger, on ajoute un clavier de chiffre ou de couleur et un bouton
 		else if (this.modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
 			//--Un clavier de chiffre/couleur
 			Clavier clavier = new Clavier(couleur);
-			//clavier.addObservateur(new Observateur_Clavier() {
+			
+			//--Un bouton fin de tour
+			JButton finDeTour = new JButton("TOUR SUIVANT");
+			
 			clavier.addObservateur(new Observateur() {
 				
 				@Override
@@ -192,7 +171,10 @@ public class TableDeJeu_3 extends TableDeJeu {
 						logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));
 						
 						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
+						coupJoue += o.toString();
 						cpteurLettre ++;
+						if (cpteurLettre == lgueurCombo)
+							finDeTour.setEnabled(true);
 		
 					}
 					//--Clavier de couleur
@@ -206,46 +188,33 @@ public class TableDeJeu_3 extends TableDeJeu {
 						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(o.toString())]);
 						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(o.toString())]);
 						listLblProp[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
-												
+						coupJoue += o.toString();						
 						cpteurLettre ++;
+						if(cpteurLettre == lgueurCombo)
+							finDeTour.setEnabled(true);
 					}
 				}			
 			});
 			//--Un bouton fin de tour
-			JButton finDeTour = new JButton("TOUR SUIVANT");
 			finDeTour.setBackground(Color.LIGHT_GRAY);
 			finDeTour.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 			finDeTour.setPreferredSize(new Dimension (300, 100));
+			finDeTour.setEnabled(false);
 			finDeTour.addActionListener(new ActionListener() {
 					@Override
 				public void actionPerformed(ActionEvent arg0) {
-					joueur.updateObservateur();
+					joueur.jeu(coupJoue);
 					cpteurLettre = 0;
+					finDeTour.setEnabled(false);
+					coupJoue = "";
 				}
 			});
-			finDeTour.addKeyListener(new KeyListener() {
-
-				@Override
-				public void keyPressed(KeyEvent arg0) {
-					if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
-						finDeTour.doClick();	
-					
-				}
-
-				@Override
-				public void keyReleased(KeyEvent arg0) {
-			
-				}
-
-				@Override
-				public void keyTyped(KeyEvent arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-				
-			});
-			clavier.add(finDeTour);
-			panTbleJeu.add(clavier);
+		
+			JPanel panKey = new JPanel();
+			panKey.setBackground(Color.WHITE);
+			panKey.add(clavier);
+			panKey.add(finDeTour);
+			panTbleJeu.add(panKey);
 		}
 	}
 	
@@ -276,13 +245,112 @@ public class TableDeJeu_3 extends TableDeJeu {
 		panTbleJeu.revalidate();
 		panTbleJeu.repaint();
 		
+		if (modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
+			this.joueur.addObservateur(new Observateur() {
+				public void update(Object o) {
+					logger.debug("on update l'observateur");
+					ArrayList<String> paramObs = (ArrayList<String>)o;
+					tourDeJeu = Integer.valueOf(paramObs.get(0));
+					logger.debug("Ctrl TourDeJeu : "+tourDeJeu +" - compa : "+paramObs.get(1)+" - victoire : "+paramObs.get(2));
+					
+					for(int i = 0; i<lgueurCombo; i++) {
+						coupJoue += listLblProp[tourDeJeu][i].getText();
+					}
+
+					resultCompa = paramObs.get(1);
+					listResult[tourDeJeu].setText(resultCompa);
+					
+					//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
+					if(Boolean.parseBoolean(paramObs.get(2)) == false && tourDeJeu+1 < nbCoupsConfig) {
+						coupJoue = "";
+					}
+					//--si c'est la victoire
+					else if (Boolean.parseBoolean(paramObs.get(2)) == true) {
+						int option = JOptionPane.showConfirmDialog(null, "Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?",
+										"Victoire", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+						if (option == JOptionPane.OK_OPTION) {
+							nouvellePartie();
+						}
+					}
+					//--Si c'est la défaite
+					else if(Boolean.parseBoolean(paramObs.get(2)) == false && tourDeJeu+1 == nbCoupsConfig) {
+						int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur.getCombiSecret()+"\n Voulez-vous rejouer ?",
+										"Défaite", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+						if (option == JOptionPane.OK_OPTION) {
+							nouvellePartie();
+						}
+					}
+				}				
+			});
+		}
+		else if (modeJeu.equals(ModeJeu.DEFENSEUR.toString())) {
+			this.joueur1.addObservateur(new Observateur() {
+				public void update(Object o) {
+					logger.debug("on update l'observateur");
+					ArrayList<String> paramObs = (ArrayList<String>)o;
+					tourDeJeu = Integer.valueOf(paramObs.get(0));
+					logger.debug("Ctrl TourDeJeu : "+tourDeJeu +" - prop : "+paramObs.get(1)+" - compa : "+paramObs.get(2)+" - victoire : "+paramObs.get(3));
+					
+					if(couleur == 0) {
+						for (int k = 0; k<paramObs.get(1).toCharArray().length; k++) {
+							listLblProp[tourDeJeu][k].setText(String.valueOf(paramObs.get(1).charAt(k)));
+						}
+					}
+					else if (couleur == 1) {
+						//--on met ds la JLabel la couleur du bouton et le chiffre/lettre du bouton
+						Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
+						for (int k = 0; k<paramObs.get(1).toCharArray().length; k++) {                                                	
+							listLblProp[tourDeJeu][k].setBackground(listColor[Character.getNumericValue(paramObs.get(1).charAt(k))]); 	
+							listLblProp[tourDeJeu][k].setForeground(listColor[Character.getNumericValue(paramObs.get(1).charAt(k))]); 	
+							listLblProp[tourDeJeu][k].setText(String.valueOf(paramObs.get(1).charAt(k)));                             	
+							}
+					}
+					
+					logger.debug("tjs la victoire : "+Boolean.parseBoolean(paramObs.get(3)));
+					//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
+					if(Boolean.parseBoolean(paramObs.get(3)) == false && tourDeJeu+1 != nbCoupsConfig) {
+						listResult[tourDeJeu].setText(paramObs.get(2));
+					}
+					//--si c'est la victoire
+					else if (Boolean.parseBoolean(paramObs.get(3)) != false) {
+						listResult[tourDeJeu].setText(paramObs.get(2));
+						int option = JOptionPane.showConfirmDialog(null, "Félicitation, vous avez trouvé la combinaison secrète ! \n Voulez-vous rejouer ?",
+										"Victoire", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+						if (option == JOptionPane.OK_OPTION) {
+							nouvellePartie();
+						}
+					}
+					//--Si c'est la défaite
+					else if(Boolean.parseBoolean(paramObs.get(3)) == false && tourDeJeu+1 == nbCoupsConfig) {
+						listResult[tourDeJeu].setText(paramObs.get(2));
+						int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur.getCombiSecret()+"\n Voulez-vous rejouer ?",
+										"Défaite", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+						if (option == JOptionPane.OK_OPTION) {
+							nouvellePartie();
+						}
+					}
+				}				
+			});
+		}
+		
+			
 		this.setLayout(new BorderLayout());
 		this.add(panTbleJeu, BorderLayout.CENTER);
-		this.joueur.initCombiSecret();
-		modeDevLbl.setText("Combinaison secrete : "+String.valueOf(this.joueur.getCombiSecret()));
-		this.joueur.setTourDeJeu(0);
-		this.joueur.setVictoire(false);
-		this.inGame = true;
+		
+		//--on initialise le joueur selon le mode de jeu
+		if(modeJeu.equals(ModeJeu.CHALLENGER.toString())) {
+			this.joueur.initCombiSecret();
+			modeDevLbl.setText("Combinaison secrete : "+String.valueOf(this.joueur.getCombiSecret()));
+			this.joueur.setTourDeJeu(0);
+			this.joueur.setVictoire(false);
+		}
+		else if (modeJeu.equals(ModeJeu.DEFENSEUR.toString())) {
+			this.joueur1.initCombiSecret();
+			modeDevLbl.setText("Combinaison secrete : "+String.valueOf(this.joueur1.getCombiSecret()));
+			this.joueur1.setTourDeJeu(0);
+			this.joueur1.setVictoire(false);
+		}
+		
 	}
 
 }

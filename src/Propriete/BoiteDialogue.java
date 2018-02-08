@@ -45,6 +45,7 @@ public class BoiteDialogue extends JDialog implements Observable{
 	private JFormattedTextField saisiEssai;
 	private JComboBox<String> saisiLgueurCombi;
 	private JCheckBox modeDevBox;
+	private int ind_modeDev;
 	private Properties listProp = new Properties();
 	private ArrayList<Observateur> listObs = new ArrayList<Observateur>();
 	
@@ -57,11 +58,12 @@ public class BoiteDialogue extends JDialog implements Observable{
 	 * @param ptitre
 	 * @param modal
 	 */
-	public BoiteDialogue(JFrame parent, String ptitre, boolean modal) {
+	public BoiteDialogue(JFrame parent, String ptitre, boolean modal, int pModeDev) {
 		super(parent, ptitre, modal);
 		this.setSize(800,400);
 		this.setLocationRelativeTo(null);
 		this.setUndecorated(true);
+		this.ind_modeDev = pModeDev;
 				
 		//--Une etiquette de titre
 		JLabel lblTitre = new JLabel("Faites votre jeu !", JLabel.CENTER);
@@ -210,8 +212,10 @@ public class BoiteDialogue extends JDialog implements Observable{
 		panDev.setBorder(BorderFactory.createTitledBorder("MODE DEVELOPPEMENT"));
 		modeDevBox = new JCheckBox("Mode Developpement");
 		modeDevBox.setBackground(Color.WHITE);
+		modeDevBox.setEnabled(false);
 		panDev.add(modeDevBox);
-		
+		if(this.ind_modeDev == 1)
+			modeDevBox.setSelected(true);
 		
 		//--Le panel qui accueille les composants précédents
 		this.panContent = new JPanel();
@@ -254,9 +258,19 @@ public class BoiteDialogue extends JDialog implements Observable{
 				listProp.setProperty("mode", ModeJeu.DEFENSEUR.toString());
 			else if (duelBton.isSelected())
 				listProp.setProperty("mode", ModeJeu.DUEL.toString());
-
-			listProp.setProperty("nombres d'essai", String.valueOf(Integer.parseInt(saisiEssai.getText())));
-	
+			
+			//if(String.valueOf(Integer.parseInt(saisiEssai.getText())).equals(""))
+				//JOptionPane.showMessageDialog(null, "Veuillez saisir un nombre à deux chiffres entre 01 et 99", "Attention nombres essais", JOptionPane.WARNING_MESSAGE);
+			//else
+			
+			
+			try {
+				listProp.setProperty("nombres d'essai", String.valueOf(Integer.parseInt(saisiEssai.getText())));
+			}catch(NumberFormatException e) {
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Veuillez saisir un nombre d'essai à deux chiffres entre 01 et 99", "Attention nombres essais", JOptionPane.WARNING_MESSAGE);
+			}
+			
 			listProp.setProperty("longueur combinaison", saisiLgueurCombi.getSelectedItem().toString());
 			
 			if(modeDevBox.isSelected())
@@ -275,7 +289,7 @@ public class BoiteDialogue extends JDialog implements Observable{
 				updateObservateur();
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Veuillez saisir un nombre à deux chiffres entre 01 et 99", "Attention nombres essais", JOptionPane.WARNING_MESSAGE);
+				//JOptionPane.showMessageDialog(null, "Veuillez saisir un nombre à deux chiffres entre 01 et 99", "Attention nombres essais", JOptionPane.WARNING_MESSAGE);
 			}
 		}
 		
@@ -289,7 +303,7 @@ public class BoiteDialogue extends JDialog implements Observable{
 	@Override
 	public void updateObservateur() {
 		for(Observateur o : this.listObs)
-			o.update("");
+			o.update(this.listProp);
 		
 	}
 	@Override

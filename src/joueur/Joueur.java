@@ -25,6 +25,7 @@ public abstract class Joueur implements Observable {
 	protected Boolean fin;
 	
 	protected ArrayList<Observateur> listObs;
+	protected ArrayList<String> paramObs;
 	
 	/**
 	 * Constructeur sans parametre
@@ -34,6 +35,7 @@ public abstract class Joueur implements Observable {
 		this.combiSecret = 0;
 		this.tourDeJeu = 0;
 		this.listObs = new ArrayList<Observateur>();
+		this.paramObs = new ArrayList<String>();
 	}
 	
 	/**
@@ -49,6 +51,7 @@ public abstract class Joueur implements Observable {
 		this.jeu = pJeu;
 		this.fin = false;
 		this.listObs = new ArrayList<Observateur>();
+		this.paramObs = new ArrayList<String>();
 		this.couleur = pCouleur;
 	}
 	
@@ -148,7 +151,7 @@ public abstract class Joueur implements Observable {
 	 */
 	public void updateObservateur() {
 		for (Observateur o : this.listObs) {
-			o.update("");
+			o.update(this.paramObs);
 		}
 	}
 	

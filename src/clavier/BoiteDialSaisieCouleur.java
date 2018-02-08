@@ -1,4 +1,4 @@
-package joueur;
+package clavier;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -18,7 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import Propriete.GestionFichierProperties;
-import clavier.Clavier;
 import pattern_observer.Observateur;
 
 /**

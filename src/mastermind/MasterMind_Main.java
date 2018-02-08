@@ -54,18 +54,14 @@ public class MasterMind_Main extends JFrame {
 	
 	private Accueil accueil = new Accueil();
 	
-	private Properties propriete;
+	private Properties propriete = new Properties();
 	private String typeJeu, modeJeu;
 	private int nbCoupsConfig; 
 	private int lgueurCombo;
-	private int modeDev;
+	private static int modeDev;
 	private int couleur;
 	
 	private TableDeJeu tbleJeu;
-	private Boolean inGame = false;
-
-	
-	
 	
 	/**
 	 * Constructeur sans parametre
@@ -109,7 +105,7 @@ public class MasterMind_Main extends JFrame {
 		//--Le panneau d'accueil
 		this.afficher(accueil.getNom());
 	}
-	
+
 	/**
 	 * Initialisation de la barre des menus
 	 * @param args
@@ -125,27 +121,15 @@ public class MasterMind_Main extends JFrame {
 		nvelle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//if(tbleJeu.getInGame() == false) {
-				if (inGame == false) {
-					BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true);
-					bDialog.addObservateur(new Observateur() {
-						@Override
-						public void update(Object o) {
-							play.doClick();
-						}						
-					});
-					bDialog.setVisible(true);
-					
-			
-				}
-				else {
-					int jop = JOptionPane.showConfirmDialog(null, "Souhaitez-vous quitter la partie en cours ?", "Attention partie en cours",
-							JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-					if(jop == JOptionPane.YES_OPTION) {
-						inGame = false;
-						nvelle.doClick();
-					}
-				}
+				BoiteDialogue bDialog = new BoiteDialogue(null, "CONFIGURATION DU JEU", true, modeDev);
+				bDialog.addObservateur(new Observateur() {
+					@Override
+					public void update(Object o) {
+						propriete = (Properties)o;
+						play.doClick();
+					}						
+				});
+				bDialog.setVisible(true);
 			}
 		});
 		nvelle.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK ));
@@ -172,29 +156,7 @@ public class MasterMind_Main extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//--on récupère les proprietes du fichier 
-				GestionFichierProperties gfp = new GestionFichierProperties();
-				propriete = gfp.lireProp();
-				typeJeu = String.valueOf(propriete.getProperty("jeu"));
-				//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
-				logger.info("Ctrl jeu :"+typeJeu);
-				modeJeu = String.valueOf(propriete.getProperty("mode"));
-				//System.out.println("Ctrl mode : "+modeJeu);//--Controle
-				logger.info("Ctrl mode : "+modeJeu);
-				nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
-				//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
-				logger.info("Ctrl nb coup :"+nbCoupsConfig);
-				lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
-				//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
-				logger.info("Ctrl lgueur :"+lgueurCombo);
-				modeDev = Integer.valueOf(propriete.getProperty("developpement"));
-				logger.info("Ctrl mode dev : "+modeDev);
-				if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
-					couleur = Integer.valueOf(propriete.getProperty("couleur"));
-				else 
-					couleur = 0;
-				logger.info("Ctrl chiffre/couleur : "+couleur);
-				
+				initProperty();
 				accueil = new Accueil(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, couleur);
 				afficher(accueil.getNom());					
 			}			
@@ -215,6 +177,33 @@ public class MasterMind_Main extends JFrame {
 		barre.add(aPropos);
 		
 		this.setJMenuBar(barre);
+	}
+	
+	public void initProperty() {
+		if (propriete.isEmpty()) {
+			//--on récupère les proprietes du fichier 
+			GestionFichierProperties gfp = new GestionFichierProperties();
+			propriete = gfp.lireProp();
+		}
+
+		typeJeu = String.valueOf(propriete.getProperty("jeu"));
+		//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
+		logger.info("Ctrl jeu :"+typeJeu);
+		modeJeu = String.valueOf(propriete.getProperty("mode"));
+		//System.out.println("Ctrl mode : "+modeJeu);//--Controle
+		logger.info("Ctrl mode : "+modeJeu);
+		nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
+		//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
+		logger.info("Ctrl nb coup :"+nbCoupsConfig);
+		lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
+		//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
+		logger.info("Ctrl lgueur :"+lgueurCombo);
+		
+		if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
+			couleur = Integer.valueOf(propriete.getProperty("couleur"));
+		else 
+			couleur = 0;
+		logger.info("Ctrl chiffre/couleur : "+couleur);
 	}
 	
 	/**
@@ -239,60 +228,36 @@ public class MasterMind_Main extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			if (inGame == false) {
-				//--on récupère les proprietes du fichier 
-				GestionFichierProperties gfp = new GestionFichierProperties();
-				propriete = gfp.lireProp();
-				typeJeu = String.valueOf(propriete.getProperty("jeu"));
-				//System.out.println("Ctrl jeu :"+typeJeu);//--Controle
-				logger.info("Ctrl jeu :"+typeJeu);
-				modeJeu = String.valueOf(propriete.getProperty("mode"));
-				//System.out.println("Ctrl mode : "+modeJeu);//--Controle
-				logger.info("Ctrl mode : "+modeJeu);
-				nbCoupsConfig = Integer.valueOf(propriete.getProperty("nombres d'essai"));
-				//System.out.println("Ctrl nb coup :"+nbCoupsConfig);//--Controle
-				logger.info("Ctrl nb coup :"+nbCoupsConfig);
-				lgueurCombo = Integer.valueOf(propriete.getProperty("longueur combinaison"));
-				//System.out.println("Ctrl lgueur :"+lgueurCombo);//--Controle
-				logger.info("Ctrl lgueur :"+lgueurCombo);
-				modeDev = Integer.valueOf(propriete.getProperty("developpement"));
-				logger.info("Ctrl mode dev : "+modeDev);
+			initProperty();
 				
-				if(typeJeu.equals(TypeJeu.MASTERMIND.toString()))
-					couleur = Integer.valueOf(propriete.getProperty("couleur"));
-				else 
-					couleur = 0;
-				logger.info("Ctrl chiffre/couleur : "+couleur);
-				
-				if((modeJeu.equals(ModeJeu.DUEL.toString()))){
-					tbleJeu = new TableDeJeu_4(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
-					afficher(tbleJeu.getNom());
-					tbleJeu.nouvellePartie();
-					inGame = tbleJeu.getInGame();
-				}
-				else {
-					tbleJeu = new TableDeJeu_3(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
-					afficher(tbleJeu.getNom());
-					tbleJeu.nouvellePartie();
-					inGame = tbleJeu.getInGame();
-				}
+			if((modeJeu.equals(ModeJeu.DUEL.toString()))){
+				tbleJeu = new TableDeJeu_4(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
+				afficher(tbleJeu.getNom());
+				tbleJeu.nouvellePartie();
 			}
 			else {
-				int jop = JOptionPane.showConfirmDialog(null, "Souhaitez-vous quitter la partie en cours ?", "Attention partie en cours",
-						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-				if(jop == JOptionPane.YES_OPTION) {
-					inGame = false;
-					play.doClick();
-				}
-			}			
+				tbleJeu = new TableDeJeu_3(typeJeu, modeJeu, nbCoupsConfig, lgueurCombo, modeDev, couleur);
+				afficher(tbleJeu.getNom());
+				tbleJeu.nouvellePartie();
+			}
 		}
 	}
 		
 	
 
 	public static void main(String[] args) {
+	if (args[0].equals("DEVELOPPEMENT")) {
+		modeDev = 1;
 		MasterMind_Main f = new MasterMind_Main();
 		f.setVisible(true);
-
+	}
+	else {
+		modeDev = 0;
+		MasterMind_Main f = new MasterMind_Main();
+		f.setVisible(true);
+	}
+		
+	//MasterMind_Main f = new MasterMind_Main();
+	//f.setVisible(true);
 	}
 }

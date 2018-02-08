@@ -7,13 +7,13 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import clavier.Clavier;
@@ -50,6 +50,7 @@ public class TableDeJeu_4 extends TableDeJeu {
 	 */
 	public TableDeJeu_4(String pJeu, String pMode, int pEssai, int pCombo, int pDev, int pCouleur) {
 		super(pJeu, pMode, pEssai, pCombo, pDev, pCouleur);
+
 	}
 	
 	/**
@@ -77,7 +78,7 @@ public class TableDeJeu_4 extends TableDeJeu {
 		this.listResultJH = new JLabel[this.nbCoupsConfig];
 		this.listResultJE = new JLabel[this.nbCoupsConfig];
 		
-		
+
 		for(int i = 0; i<nbCoupsConfig; i++) {
 			//--Un panel primitif qui accueille le tour de chaque joueur
 			JPanel panJoueurHumain = new JPanel();
@@ -163,8 +164,10 @@ public class TableDeJeu_4 extends TableDeJeu {
 			panTbleJeu.add(panRef[i]);
 			
 		}
-		//--Un clavier de chiffre/couleur et un bouton tour suivant
+		//--Un clavier de chiffre/couleur et 2 boutons tour suivant
 		Clavier clavier = new Clavier(couleur);
+		JButton finDeTourJH = new JButton("TOUR SUIVANT");
+		JButton finDeTourJE = new JButton("TOUR SUIVANT");
 		clavier.addObservateur(new Observateur() {
 			
 			@Override
@@ -175,7 +178,10 @@ public class TableDeJeu_4 extends TableDeJeu {
 					logger.debug("la lettre transmise : "+o.toString()+" - "+Integer.valueOf(o.toString()));
 					
 					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
+					coupJoue += o.toString();
 					cpteurLettre ++;	
+					if(cpteurLettre == lgueurCombo)
+						finDeTourJH.setEnabled(true);
 				}
 				else if (couleur == 1) {
 					//--on met ds la JLabel le fichier couleur du bouton et le chiffre/lettre du bouton
@@ -187,49 +193,53 @@ public class TableDeJeu_4 extends TableDeJeu {
 					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setBackground(listColor[Integer.valueOf(o.toString())]);
 					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setForeground(listColor[Integer.valueOf(o.toString())]);
 					listLblPropJH[joueur.getTourDeJeu()][cpteurLettre].setText(o.toString());
-											
+					coupJoue += o.toString();						
 					cpteurLettre ++;
+					if(cpteurLettre == lgueurCombo)
+						finDeTourJH.setEnabled(true);
 				}
 			}			
 		});
-		//--Un bouton fin de tour
-		JButton finDeTour = new JButton("TOUR SUIVANT");
-		finDeTour.setBackground(Color.LIGHT_GRAY);
-		finDeTour.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		finDeTour.setPreferredSize(new Dimension (300, 100));
-		finDeTour.addActionListener(new ActionListener() {
+		//--Un bouton fin de tour pour le joueur humain
+		finDeTourJH.setBackground(Color.LIGHT_GRAY);
+		finDeTourJH.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		finDeTourJH.setPreferredSize(new Dimension (100, 100));
+		finDeTourJH.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				joueur.updateObservateur();
-				joueur1.updateObservateur();
+				logger.debug("Bton coupjoue : "+coupJoue);
+				joueur.jeu(coupJoue);
 				cpteurLettre = 0;
+				coupJoue = "";
+				finDeTourJE.setVisible(true);
+				finDeTourJH.setVisible(false);
 			}
 			
 		});
-		finDeTour.addKeyListener(new KeyListener() {
+		
+		//--Un bouton fin de tour pour le joueur electronique (invisible pour commencer)
+		finDeTourJE.setBackground(Color.LIGHT_GRAY);
+		finDeTourJE.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		finDeTourJE.setPreferredSize(new Dimension (100, 100));
+		finDeTourJE.setVisible(false);
+		finDeTourJE.addActionListener(new ActionListener() {
 
 			@Override
-			public void keyPressed(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void keyReleased(KeyEvent arg0) {
-				if(arg0.getKeyChar() == KeyEvent.VK_ENTER)
-					finDeTour.doClick();				
-			}
-
-			@Override
-			public void keyTyped(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
+			public void actionPerformed(ActionEvent arg0) {
+				joueur1.jeu("");
+				cpteurLettre = 0;
+				finDeTourJH.setVisible(true);
+				finDeTourJE.setVisible(false);
 			}
 			
 		});
-		clavier.add(finDeTour);
-		panTbleJeu.add(clavier);
+		JPanel panKey = new JPanel();
+		panKey.setBackground(Color.WHITE);
+		panKey.add(clavier);
+		panKey.add(finDeTourJH);
+		panKey.add(finDeTourJE);
+		panTbleJeu.add(panKey);
 	}
 	
 /**
@@ -259,8 +269,92 @@ public class TableDeJeu_4 extends TableDeJeu {
 		panTbleJeu.revalidate();
 		panTbleJeu.repaint();
 	
+		this.joueur.addObservateur(new Observateur() {
+			public void update(Object o) {
+				logger.debug("on update l'observateur");
+				ArrayList<String> paramObs = (ArrayList<String>)o;
+				tourDeJeu = Integer.valueOf(paramObs.get(0));
+				logger.debug("Ctrl TourDeJeu : "+tourDeJeu +" - compa : "+paramObs.get(1)+" - victoire : "+paramObs.get(2));
+				
+				resultCompa = paramObs.get(1);
+				listResultJH[tourDeJeu].setText(resultCompa);
+				
+				//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
+				if(Boolean.parseBoolean(paramObs.get(2)) == false && tourDeJeu+1 < nbCoupsConfig) {
+					coupJoue = "";
+				}
+				//--si c'est la victoire
+				else if (Boolean.parseBoolean(paramObs.get(2)) == true) {
+					int option = JOptionPane.showConfirmDialog(null, "Félicitation, "+joueur.getNom()+" a trouvé la combinaison secrète ! \n "
+							+ "La combinaison de votre adversaire était : "+joueur1.getCombiSecret()+" \n Voulez-vous rejouer ?",
+									"Victoire", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					if (option == JOptionPane.OK_OPTION) {
+						nouvellePartie();
+					}
+				}
+				//--Si c'est la défaite
+				else if(Boolean.parseBoolean(paramObs.get(2)) == false && tourDeJeu+1 == nbCoupsConfig) {
+					int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur.getCombiSecret()+"\n Voulez-vous rejouer ?",
+									"Défaite", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					if (option == JOptionPane.OK_OPTION) {
+						nouvellePartie();
+					}
+				}
+			}				
+		});
+
+		this.joueur1.addObservateur(new Observateur() {
+			public void update(Object o) {
+				ArrayList<String> paramObs = (ArrayList<String>)o;
+				tourDeJeu = Integer.valueOf(paramObs.get(0));
+				logger.debug("Ctrl TourDeJeu : "+tourDeJeu +" - prop : "+paramObs.get(1)+" - compa : "+paramObs.get(2)+" - victoire : "+paramObs.get(3));
+				
+				if(couleur == 0) {
+					for (int k = 0; k<paramObs.get(1).toCharArray().length; k++) {
+						listLblPropJE[tourDeJeu][k].setText(String.valueOf(paramObs.get(1).charAt(k)));
+					}
+				}
+				else if (couleur == 1) {
+					//--on met ds la JLabel la couleur du bouton et le chiffre/lettre du bouton
+					Color[]listColor = {Color.WHITE, Color.BLACK, Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ORANGE, Color.PINK};
+					for (int k = 0; k<paramObs.get(1).toCharArray().length; k++) {                                                	
+						listLblPropJE[tourDeJeu][k].setBackground(listColor[Character.getNumericValue(paramObs.get(1).charAt(k))]); 
+						listLblPropJE[tourDeJeu][k].setForeground(listColor[Character.getNumericValue(paramObs.get(1).charAt(k))]); 
+						listLblPropJE[tourDeJeu][k].setText(String.valueOf(paramObs.get(1).charAt(k)));                             
+						}
+				}
+				
+				logger.debug("tjs la victoire : "+Boolean.parseBoolean(paramObs.get(3)));
+				//--Si le joueur n'a pas gagné et qu'il reste des tours à jouer on active la zone de saisie suivante
+				if(Boolean.parseBoolean(paramObs.get(3)) == false && tourDeJeu+1 != nbCoupsConfig) {
+					listResultJE[tourDeJeu].setText(paramObs.get(2));
+				}
+				//--si c'est la victoire
+				else if (Boolean.parseBoolean(paramObs.get(3)) != false) {
+					listResultJE[tourDeJeu].setText(paramObs.get(2));
+					int option = JOptionPane.showConfirmDialog(null,"Félicitation, "+joueur1.getNom()+" a trouvé la combinaison secrète ! \n "
+							+ "La combinaison de votre adversaire était : "+joueur.getCombiSecret()+" \n Voulez-vous rejouer ?",
+									"Victoire", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					if (option == JOptionPane.OK_OPTION) {
+						nouvellePartie();
+					}
+				}
+				//--Si c'est la défaite
+				else if(Boolean.parseBoolean(paramObs.get(3)) == false && tourDeJeu+1 == nbCoupsConfig) {
+					listResultJE[tourDeJeu].setText(paramObs.get(2));
+					int option = JOptionPane.showConfirmDialog(null, "C'est perdu ! \n La combinaison gagnante est "+joueur1.getCombiSecret()+"\n Voulez-vous rejouer ?",
+									"Défaite", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					if (option == JOptionPane.OK_OPTION) {
+						nouvellePartie();
+					}
+				}
+			}
+		});
+		
 		this.setLayout(new BorderLayout());
 		this.add(panTbleJeu, BorderLayout.CENTER);
+
+		//--on initialise les joueurs
 		this.joueur.initCombiSecret();
 		modeDevLbl.setText("Combinaison secrete : "+String.valueOf(this.joueur.getCombiSecret()));
 		this.joueur1.initCombiSecret();
@@ -268,6 +362,5 @@ public class TableDeJeu_4 extends TableDeJeu {
 		this.joueur1.setTourDeJeu(0);
 		this.joueur.setVictoire(false);
 		this.joueur1.setVictoire(false);
-		this.inGame = true;
 	}
 }

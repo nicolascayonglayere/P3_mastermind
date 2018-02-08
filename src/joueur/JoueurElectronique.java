@@ -8,6 +8,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 import Propriete.TypeJeu;
+import clavier.BoiteDialSaisieCouleur;
 
 /**
  * Classe définissant le comportement du joueur electronique
@@ -27,15 +28,15 @@ public class JoueurElectronique extends Joueur {
 	private HashMap<Integer, ArrayList<Integer>> tabPool;
 	private ArrayList<Integer> tabIntPool;
 	
-	private ArrayList<Integer> poolNbPropOrdi = new ArrayList<Integer>();
+	private ArrayList<Integer> poolNbPropOrdi = new ArrayList<Integer>();;
 	
-	private ArrayList<Integer[]> ttePropPossible = new ArrayList<Integer[]>();
-	private ArrayList<Integer[]> ttePropPossible0 = new ArrayList<Integer[]>();
+	private ArrayList<Integer[]> ttePropPossible; 
 	
 	private Integer[] prop, prop0;
 	private Integer scProp0 = 0;
 	
 	private Random alea = new Random();
+	private int nbTotProp;
 	
 	/**
 	 * Constructeur sans parametre
@@ -53,6 +54,23 @@ public class JoueurElectronique extends Joueur {
 	public JoueurElectronique(int pCombo, String pJeu, int pCouleur) {
 		super(pCombo, pJeu, pCouleur);
 		this.nom = "mon PC";
+		
+		//--on initialise le pool de nombre autorisé
+		if(jeu.equals(TypeJeu.MASTERMIND.toString())) {
+				if(this.couleur == 0) {
+					//--on intialise le pool de nombre, ici de 0 à 9
+					for (int i = 0; i <10; i++)
+						this.poolNbPropOrdi.add(i);	
+				}
+				else {
+					//--on intialise le pool de nombre, ici de 0 à 7
+					for (int i = 0; i <8; i++) {
+						this.poolNbPropOrdi.add(i);
+					}
+				}
+				
+				nbTotProp = (int) Math.pow(this.poolNbPropOrdi.size(), this.lgueurCombo);
+		}
 	}
 	
 	/**
@@ -124,114 +142,142 @@ public class JoueurElectronique extends Joueur {
 	public void jeu(String pCoupJoue) {
 		Integer[] propPoss = new Integer[this.lgueurCombo];
 		ArrayList<Integer[]> supprTtePropPossible = new ArrayList<Integer[]>();
+		this.paramObs = new ArrayList<String>();
+		propOrdi = 0;
+		str = "";
+		int controle = 0;
+		controle ++;
+		logger.debug("on joue plein de fois : "+controle);
+		//this.poolNbPropOrdi = new ArrayList<Integer>();
 
 		this.resultCompa = "";
 		
 		if(jeu.equals(TypeJeu.MASTERMIND.toString())) {
 			//--Au premier tour il prend un nb au hasard dans la liste des prop possibles
 			if(tourDeJeu == 0) {
-				if(this.couleur == 0) {
-					//--on intialise le pool de nombre, ici de 0 à 9
-					for (int i = 0; i <10; i++)
-						this.poolNbPropOrdi.add(i);	
-				}
-				else {
-					//--on intialise le pool de nombre, ici de 0 à 7
-					for (int i = 0; i <8; i++) {
-						this.poolNbPropOrdi.add(i);
-					}
-				}
-				
-					
-				int nbTotProp = 1;
-				for(int i = 0; i < this.lgueurCombo; i ++) {
-					nbTotProp *= poolNbPropOrdi.size();
-				}
-				
+				//--on initialise les listes des possibles et des propositions
+				this.ttePropPossible= new ArrayList<Integer[]>();
 				this.prop = new Integer[this.lgueurCombo];
 				this.prop0 = new Integer[this.lgueurCombo];
-				
+			
 				//--on initialise la liste de toutes les combinaisons possibles qui sont chaque nombre entre 0 et le nb total de proposition
+				int k = 0;
 				//--on formate les nombres en ajoutant des 0 devant
 				String str0 = "0";
 				for(int i = 0; i<this.lgueurCombo - 1; i++) {
 					str0 +="0";
 				}
-				for (int i = 0; i<nbTotProp; i++) {
-					Integer[] propConstr = new Integer[this.lgueurCombo];
-					String str1 = String.valueOf(i);
-					//String str1 = String.valueOf(nbBase(i,8));
-					DecimalFormat nf = new DecimalFormat(str0);
+			
+				//--on cree la premiere prop possible 0000
+				DecimalFormat nf = new DecimalFormat(str0);
+				char[]tabInt2 = str0.toCharArray();
+				Integer[] possIni = new Integer[this.lgueurCombo];
+				for (int i =0; i<this.lgueurCombo; i++) {
+					possIni[i]=Character.getNumericValue(tabInt2[i]);
+				}
+				ttePropPossible.add(possIni);
+			
+				//--on remplit notre tableau de toutes les propositions possibles
+				while(ttePropPossible.size() < nbTotProp) {
+					//logger.debug("notre nb "+k);
+					String str1 = String.valueOf(k);
 					str1 = nf.format(Integer.valueOf(str1));
+					
+					//--on cree la prop à partir du nombre formate
+					Integer[] propConstr = new Integer[this.lgueurCombo];
 					for (int j = 0; j<this.lgueurCombo; j++) {
 						char [] tabint = str1.toCharArray();
 						propConstr[j] = Character.getNumericValue(tabint[j]);
-						logger.debug("val de liste possible : "+propConstr[j]);//--Controle
+						//logger.debug("val de liste possible : "+propConstr[j]);//--Controle
 					}
-					ttePropPossible0.add(propConstr);
-					ttePropPossible.add(propConstr);			
+					
+					//--on controle le nombre et on l'ajoute le cas echecant
+					boolean cont = false;
+					for(int x = 0; x<this.lgueurCombo; x ++) {
+						if(propConstr[x]<this.poolNbPropOrdi.size()) {
+							cont = true;					
+						}
+						else {
+							cont = false;
+							break;
+						}
+					}
+					//logger.debug(cont);
+					boolean ajout = false;
+					if(cont) {
+						for (Integer[] prop : ttePropPossible) {
+							if (propConstr == prop)
+								ajout = false;
+							else
+								ajout = true;
+						}
+					}
+					//logger.debug("on ajoute : "+ajout);
+					if(ajout == true)
+						ttePropPossible.add(propConstr);
+					
+					//--on incremente le nombre
+					k++;
 				}
 				logger.debug("taille de liste des possibles creee "+ttePropPossible.size());//--Controle
 				prop0 = ttePropPossible.get(alea.nextInt(ttePropPossible.size()));
-			}
-				
-				//prop0 = ttePropPossible.get(0);
-				//prop0 = meilleureProp(ttePropPossible0, ttePropPossible0);
-			
-			//--Les tours suivants, on se base sur le score relatif(score calc avec la prop précédente co liste de comparaison) pour determiner la proposition de l'ordi
-			//--on remove de la liste des possibles toutes les combinaisons qui ne tiennent pas la comparaison et on prend la première de la nouvelle liste des possibles comme proposition de l'ordi
-			else {
-				prop = prop0;
-	
-				for (int i = 0 ; i<ttePropPossible.size(); i++) {
-	
-					propPoss = ttePropPossible.get(i);
-					int scRelPropPoss = calcScore(propPoss, prop);
-					for(int k : propPoss)
-						logger.debug("detail prop comparee" + k);//--Controle
-					
-					logger.debug("comp score rel :"+ scProp0+ " - "+calcScore(propPoss, prop));//--Controle
-					
-					if(scRelPropPoss != scProp0) {
-						supprTtePropPossible.add(propPoss);	
-					}
-				}
-				logger.debug("taille liste suppr : "+supprTtePropPossible.size());//--Controle
-				
-				for(Integer[] i : supprTtePropPossible) {
-					ttePropPossible.remove(i);
-				}
-				logger.debug("taille des nvelles listes "+ttePropPossible.size());//--Controle
-				
-				prop0 = ttePropPossible.get(0);
-				//prop0 = meilleureProp(ttePropPossible, ttePropPossible0);
-			}
-			
-				
-			for(int i = 0; i<this.lgueurCombo; i++) {
-				
-				constrPropOrdi[i] = prop0[i];
-				str += String.valueOf(constrPropOrdi[i]);
-				
-			}
-			logger.debug("propo ordi : " +str);
-			coupJoue = str;
-			scProp0 = calcScore(prop0, constrCombiSecret);
-			//scoreRel.add(scProp0);
-			
-			propOrdi = Integer.valueOf(str);
-			//System.out.println("la proposition de l'odinateur : "+propOrdi);//--Controle
-			logger.info("la proposition de l'odinateur : "+propOrdi+" et son score "+scProp0);
-	
-			int diff2 = propOrdi - combiSecret;
-			if(diff2 == 0) {
-				fin = true;
-			}
-			tourDeJeu ++;
-			propOrdi = 0;
-			str = "";
 		}
-		else if(jeu.equals(TypeJeu.RECHERCHE_NUM.toString()))
+			
+		//--Les tours suivants, on se base sur le score relatif(score calc avec la prop précédente co liste de comparaison) pour determiner la proposition de l'ordi
+		//--on remove de la liste des possibles toutes les combinaisons qui ne tiennent pas la comparaison et on prend la première de la nouvelle liste des possibles comme proposition de l'ordi
+		else {
+			prop = prop0;
+		
+			for (int i = 0 ; i<ttePropPossible.size(); i++) {
+		
+				propPoss = ttePropPossible.get(i);
+				int scRelPropPoss = calcScore(propPoss, prop);
+				//for(int k : propPoss)
+					//logger.debug("detail prop comparee" + k);//--Controle
+				
+				//logger.debug("comp score rel :"+ scProp0+ " - "+calcScore(propPoss, prop));//--Controle
+				
+				if(scRelPropPoss != scProp0) {
+					supprTtePropPossible.add(propPoss);	
+				}
+			}
+			logger.debug("taille liste suppr : "+supprTtePropPossible.size());//--Controle
+			
+			for(Integer[] i : supprTtePropPossible) {
+				ttePropPossible.remove(i);
+			}
+			logger.debug("taille des nvelles listes "+ttePropPossible.size());//--Controle
+			
+			prop0 = ttePropPossible.get(0);
+		}
+			
+		//--on construit la proposition de l'ordi	
+		for(int i = 0; i<this.lgueurCombo; i++) {			
+			constrPropOrdi[i] = prop0[i];
+			str += String.valueOf(constrPropOrdi[i]);			
+		}
+		logger.debug("propo ordi : " +str);
+		coupJoue = str;
+		scProp0 = calcScore(prop0, constrCombiSecret);
+		
+		propOrdi = Integer.valueOf(str);
+		logger.info("la proposition de l'odinateur : "+propOrdi+" et son score "+scProp0);
+
+		//--on verifie si c gagne
+		int diff2 = propOrdi - combiSecret;
+		if(diff2 == 0) {
+			fin = true;
+		}
+		this.paramObs.add(String.valueOf(tourDeJeu));//a essayer
+		this.paramObs.add(str);
+		this.paramObs.add(resultCompa);
+		this.paramObs.add(Boolean.toString(fin));
+		this.updateObservateur();//a essayer updateObservateur();
+		tourDeJeu ++;
+		propOrdi = 0;
+		str = "";
+		}
+	else if(jeu.equals(TypeJeu.RECHERCHE_NUM.toString()))
 			jeu1(pCoupJoue);
 	}
 	
@@ -298,22 +344,12 @@ public class JoueurElectronique extends Joueur {
 			this.tabPool = new HashMap<Integer, ArrayList<Integer>>();
 			this.tabIntPool = new ArrayList<Integer>();
 			
-			if (couleur == 0) {
-				//--on initialise le tableau de pool d'entier compris entre 0 et 9
-				for(int k = 0; k<10; k++)
-					this.tabIntPool.add(k);
-			}
-			else {
-				//--on initialise le tableau de pool d'entier compris entre 0 et 7
-				for(int k = 0; k<8; k++)
-					this.tabIntPool.add(k);
-			}
-				
+			//--on initialise le tableau de pool d'entier compris entre 0 et 9
+			for(int k = 0; k<10; k++)
+				this.tabIntPool.add(k);
 
-			
 			//--l'ordi construit sa prop à partir du pool de nombre
 			for(int i = 0; i<lgueurCombo; i++) {
-				
 				//--on remplit le tableau de reponse de -1
 				constrRepOrdi[i] = -1;
 				//--on construit la prop de l'ordi a partir du pool de nombre : 0123
@@ -353,6 +389,13 @@ public class JoueurElectronique extends Joueur {
 		
 		//--Il compare
 		this.compare();
+		
+		this.paramObs.add(String.valueOf(tourDeJeu));//a essayer
+		this.paramObs.add(str);
+		this.paramObs.add(resultCompa);
+		this.paramObs.add(Boolean.toString(fin));
+		this.updateObservateur();//a essayer updateObservateur();
+		
 		tourDeJeu ++;
 	}
 	

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_ZjEK0ApYEeiRePfNqIKmQA" name="P3_Boite Dial_PropertiesFile">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_ZvD_cApYEeiRePfNqIKmQA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_k44MgApYEeiRePfNqIKmQA" name="P3_BoiteDial_PropertiesFile">
+      <packagedElement xmi:type="uml:Package" xmi:id="_k7FzAApYEeiRePfNqIKmQA" name="Propriete">
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_k7IPQApYEeiRePfNqIKmQA" name="ModeJeu" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_k9JogApYEeiRePfNqIKmQA" name="nom" visibility="private" type="_k7ZVAApYEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_k9NS4ApYEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>&quot;&quot;</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lnxdYgpZEeiRePfNqIKmQA" name="boitedialogue" type="_vKb74ApYEeiRePfNqIKmQA" association="_lnw2UApZEeiRePfNqIKmQA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lnxdYwpZEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lnxdZApZEeiRePfNqIKmQA" value="1"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_k9QWMApYEeiRePfNqIKmQA" name="ModeJeu" visibility="private">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_k9XD4ApYEeiRePfNqIKmQA" name="pNom" type="_k7ZVAApYEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_k9Y5EApYEeiRePfNqIKmQA" name="toString" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_k9bVUApYEeiRePfNqIKmQA" type="_k7ZVAApYEeiRePfNqIKmQA" direction="return"/>
+          </ownedOperation>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_k7KrgApYEeiRePfNqIKmQA" name="CHALLENGER">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_k7O88ApYEeiRePfNqIKmQA" name="specification">
+              <language>JAVA</language>
+              <body>&quot;mode CHALLENGER&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_k7QLEApYEeiRePfNqIKmQA" name="DEFENSEUR">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_k7RZMApYEeiRePfNqIKmQA" name="specification">
+              <language>JAVA</language>
+              <body>&quot;mode DEFENSEUR&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_k7TOYApYEeiRePfNqIKmQA" name="DUEL">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_k7VDkApYEeiRePfNqIKmQA" name="specification">
+              <language>JAVA</language>
+              <body>&quot;mode DUEL&quot;</body>
+            </specification>
+          </ownedLiteral>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_oQUpcApYEeiRePfNqIKmQA" name="TypeJeu" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oQclQApYEeiRePfNqIKmQA" name="nom" visibility="private" type="_k7ZVAApYEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_oQgPoApYEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>&quot;&quot;</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_kjze8gpZEeiRePfNqIKmQA" name="boitedialogue" type="_vKb74ApYEeiRePfNqIKmQA" association="_kjy34ApZEeiRePfNqIKmQA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kj0GAApZEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kj0GAQpZEeiRePfNqIKmQA" value="1"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oQhdwApYEeiRePfNqIKmQA" name="TypeJeu" visibility="private">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oQlvMApYEeiRePfNqIKmQA" name="pNom" type="_k7ZVAApYEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_oQm9UApYEeiRePfNqIKmQA" name="toString" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_oQoLcApYEeiRePfNqIKmQA" type="_k7ZVAApYEeiRePfNqIKmQA" direction="return"/>
+          </ownedOperation>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_oQXFsApYEeiRePfNqIKmQA" name="RECHERCHE_NUM">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_oQXswApYEeiRePfNqIKmQA" name="specification">
+              <language>JAVA</language>
+              <body>&quot;Jeu de recherche plus moins&quot;</body>
+            </specification>
+          </ownedLiteral>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_oQZh8ApYEeiRePfNqIKmQA" name="MASTERMIND">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_oQaJAApYEeiRePfNqIKmQA" name="specification">
+              <language>JAVA</language>
+              <body>&quot;Jeu du MasterMind&quot;</body>
+            </specification>
+          </ownedLiteral>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_vKb74ApYEeiRePfNqIKmQA" name="BoiteDialogue" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_vKiCgApYEeiRePfNqIKmQA" general="_vKeYIApYEeiRePfNqIKmQA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLS3gApYEeiRePfNqIKmQA" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_vLVTwApYEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLY-IApYEeiRePfNqIKmQA" name="panContent" visibility="private" type="_vLV60ApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLbaYApYEeiRePfNqIKmQA" name="panCouleur" visibility="private" type="_vLV60ApYEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_vLbaYQpYEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JPanel()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLfEwApYEeiRePfNqIKmQA" name="plusMoinsBton" visibility="private" type="_vLcBcApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLgS4ApYEeiRePfNqIKmQA" name="masterBton" visibility="private" type="_vLcBcApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLiIEApYEeiRePfNqIKmQA" name="challBton" visibility="private" type="_vLcBcApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLjWMApYEeiRePfNqIKmQA" name="defBton" visibility="private" type="_vLcBcApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLj9QApYEeiRePfNqIKmQA" name="duelBton" visibility="private" type="_vLcBcApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLmZgApYEeiRePfNqIKmQA" name="chiffreBton" visibility="private" type="_vLcBcApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLpc0ApYEeiRePfNqIKmQA" name="couleurBton" visibility="private" type="_vLcBcApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vLwKgApYEeiRePfNqIKmQA" name="saisiEssai" visibility="private" type="_vLrSAApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vL1qEApYEeiRePfNqIKmQA" name="saisiLgueurCombi" visibility="private" type="_vLx_sApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vL5UcApYEeiRePfNqIKmQA" name="modeDevBox" visibility="private" type="_vL2RIApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vL9l4ApYEeiRePfNqIKmQA" name="listProp" visibility="private" type="_vL6ikApYEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_vL-M8ApYEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Properties()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vMB3UApYEeiRePfNqIKmQA" name="listObs" visibility="private" type="_vL_bEApYEeiRePfNqIKmQA" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vMDFcApYEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vMDsgApYEeiRePfNqIKmQA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_vMETkApYEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;Observateur>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jGE8sApZEeiRePfNqIKmQA" name="gestionfichierproperties" type="__-2UQApYEeiRePfNqIKmQA" association="_jF7ywApZEeiRePfNqIKmQA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jGE8sQpZEeiRePfNqIKmQA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jGFjwApZEeiRePfNqIKmQA" value="1"/>
+          </ownedAttribute>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vKzIQApYEeiRePfNqIKmQA" name="BoiteDialogue implements Observable" client="_vKb74ApYEeiRePfNqIKmQA" supplier="_vKkewApYEeiRePfNqIKmQA" contract="_vKkewApYEeiRePfNqIKmQA"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vMX1kApYEeiRePfNqIKmQA" name="BoiteDialogue" specification="_vMIlAApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(parent, ptitre, modal);&#xD;
+    this.setSize(800, 400);&#xD;
+    this.setLocationRelativeTo(null);&#xD;
+    this.setUndecorated(true);&#xD;
+    //--Une etiquette de titre&#xD;
+    JLabel lblTitre = new JLabel(&quot;Faites votre jeu !&quot;, JLabel.CENTER);&#xD;
+    Font policetitre = new Font(&quot;Arial&quot;, Font.BOLD, 25);&#xD;
+    lblTitre.setFont(policetitre);&#xD;
+    lblTitre.setBorder(BorderFactory.createLineBorder(Color.BLACK));&#xD;
+    //--Les différents composants graphiques&#xD;
+    this.initComp();&#xD;
+    //--Le panneau qui recueille les boutons&#xD;
+    JPanel panBouton = new JPanel();&#xD;
+    panBouton.setLayout(new FlowLayout());&#xD;
+    panBouton.setBorder(BorderFactory.createLineBorder(Color.BLACK));&#xD;
+    //--Le bouton OK&#xD;
+    JButton okBton = new JButton(&quot;OK&quot;);&#xD;
+    okBton.addActionListener(new OKListener());&#xD;
+    //--Le bouton ANNULER&#xD;
+    JButton annulBton = new JButton(&quot;Annuler&quot;);&#xD;
+    annulBton.addActionListener(new ActionListener() {&#xD;
+&#xD;
+        public void actionPerformed(ActionEvent e) {&#xD;
+            setVisible(false);&#xD;
+        }&#xD;
+    });&#xD;
+    panBouton.add(okBton);&#xD;
+    panBouton.add(annulBton);&#xD;
+    this.getContentPane().add(lblTitre, BorderLayout.NORTH);&#xD;
+    this.getContentPane().add(panContent, BorderLayout.CENTER);&#xD;
+    this.getContentPane().add(panBouton, BorderLayout.SOUTH);&#xD;
+//this.setVisible(true);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vMbf8ApYEeiRePfNqIKmQA" name="initComp" specification="_vMZqwApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--Le choix du jeu&#xD;
+    JPanel panJeu = new JPanel();&#xD;
+    panJeu.setBackground(Color.WHITE);&#xD;
+    panJeu.setPreferredSize(new Dimension(350, 100));&#xD;
+    panJeu.setBorder(BorderFactory.createTitledBorder(&quot;CHOIX DU JEU&quot;));&#xD;
+    plusMoinsBton = new JRadioButton(TypeJeu.RECHERCHE_NUM.toString());&#xD;
+    plusMoinsBton.setBackground(Color.WHITE);&#xD;
+    plusMoinsBton.setSelected(true);&#xD;
+    masterBton = new JRadioButton(TypeJeu.MASTERMIND.toString());&#xD;
+    masterBton.setBackground(Color.WHITE);&#xD;
+    masterBton.addActionListener(new ActionListener() {&#xD;
+&#xD;
+        @Override&#xD;
+        public void actionPerformed(ActionEvent arg0) {&#xD;
+            //--Choix entre chiffre et couleur&#xD;
+            panCouleur.setBackground(Color.WHITE);&#xD;
+            panCouleur.setPreferredSize(new Dimension(350, 100));&#xD;
+            panCouleur.setBorder(BorderFactory.createTitledBorder(&quot;CHOIX DE LA NATURE DE LA COMBINAISON&quot;));&#xD;
+            chiffreBton = new JRadioButton(&quot;CHIFFRES&quot;);&#xD;
+            chiffreBton.setBackground(Color.WHITE);&#xD;
+            couleurBton = new JRadioButton(&quot;COULEURS&quot;);&#xD;
+            couleurBton.setBackground(Color.WHITE);&#xD;
+            ButtonGroup bgCouleur = new ButtonGroup();&#xD;
+            bgCouleur.add(chiffreBton);&#xD;
+            bgCouleur.add(couleurBton);&#xD;
+            panCouleur.add(chiffreBton);&#xD;
+            panCouleur.add(couleurBton);&#xD;
+            panContent.add(panCouleur);&#xD;
+        }&#xD;
+    });&#xD;
+    ButtonGroup bgJeu = new ButtonGroup();&#xD;
+    bgJeu.add(plusMoinsBton);&#xD;
+    bgJeu.add(masterBton);&#xD;
+    panJeu.add(plusMoinsBton);&#xD;
+    panJeu.add(masterBton);&#xD;
+    //--Le mode de jeu&#xD;
+    JPanel panMode = new JPanel();&#xD;
+    panMode.setBackground(Color.WHITE);&#xD;
+    panMode.setPreferredSize(new Dimension(350, 100));&#xD;
+    panMode.setBorder(BorderFactory.createTitledBorder(&quot;MODE DE JEU&quot;));&#xD;
+    challBton = new JRadioButton(ModeJeu.CHALLENGER.toString());&#xD;
+    challBton.setBackground(Color.WHITE);&#xD;
+    challBton.setSelected(true);&#xD;
+    defBton = new JRadioButton(ModeJeu.DEFENSEUR.toString());&#xD;
+    defBton.setBackground(Color.WHITE);&#xD;
+    duelBton = new JRadioButton(ModeJeu.DUEL.toString());&#xD;
+    duelBton.setBackground(Color.WHITE);&#xD;
+    ButtonGroup bgMode = new ButtonGroup();&#xD;
+    bgMode.add(challBton);&#xD;
+    bgMode.add(defBton);&#xD;
+    bgMode.add(duelBton);&#xD;
+    panMode.add(challBton);&#xD;
+    panMode.add(defBton);&#xD;
+    panMode.add(duelBton);&#xD;
+    //--Le nombre d'essai possible&#xD;
+    JPanel panEssai = new JPanel();&#xD;
+    panEssai.setBackground(Color.WHITE);&#xD;
+    panEssai.setPreferredSize(new Dimension(350, 100));&#xD;
+    panEssai.setBorder(BorderFactory.createTitledBorder(&quot;NOMBRE D'ESSAIS&quot;));&#xD;
+    JLabel lblEssai = new JLabel(&quot;Veuillez saisir le nombre d'essais possibles : &quot;);&#xD;
+    try {&#xD;
+        MaskFormatter mask1 = new MaskFormatter(&quot;##&quot;);&#xD;
+        saisiEssai = new JFormattedTextField(mask1);&#xD;
+        saisiEssai.setPreferredSize(new Dimension(30, 30));&#xD;
+        saisiEssai.setText(&quot;10&quot;);&#xD;
+        panEssai.add(lblEssai);&#xD;
+        panEssai.add(saisiEssai);&#xD;
+    } catch (ParseException e) {&#xD;
+        e.printStackTrace();&#xD;
+        JOptionPane.showMessageDialog(null, &quot;Veuillez saisir un nombre&quot;, &quot;Attention&quot;, JOptionPane.WARNING_MESSAGE);&#xD;
+    }&#xD;
+    //--La longueur de la combinaison secrete&#xD;
+    JPanel panCombi = new JPanel();&#xD;
+    panCombi.setBackground(Color.WHITE);&#xD;
+    panCombi.setPreferredSize(new Dimension(350, 100));&#xD;
+    panCombi.setBorder(BorderFactory.createTitledBorder(&quot;LONGUEUR DE LA COMBINAISON SECRETE&quot;));&#xD;
+    JLabel lblCombi = new JLabel(&quot;Veuillez saisir la longueur de la combinaison secrète : &quot;);&#xD;
+    //--Essai avec Integer mais je ne suis jamais arrive a afficher quoiquecesoit&#xD;
+    saisiLgueurCombi = new JComboBox&lt;String>();&#xD;
+    saisiLgueurCombi.addItem(&quot;4&quot;);&#xD;
+    saisiLgueurCombi.addItem(&quot;5&quot;);&#xD;
+    saisiLgueurCombi.addItem(&quot;6&quot;);&#xD;
+    saisiLgueurCombi.addItem(&quot;7&quot;);&#xD;
+    saisiLgueurCombi.addItem(&quot;8&quot;);&#xD;
+    saisiLgueurCombi.addItem(&quot;9&quot;);&#xD;
+    saisiLgueurCombi.addItem(&quot;10&quot;);&#xD;
+    panCombi.add(lblCombi);&#xD;
+    panCombi.add(saisiLgueurCombi);&#xD;
+    //--Le mode développement&#xD;
+    JPanel panDev = new JPanel();&#xD;
+    panDev.setBackground(Color.WHITE);&#xD;
+    panDev.setBorder(BorderFactory.createTitledBorder(&quot;MODE DEVELOPPEMENT&quot;));&#xD;
+    modeDevBox = new JCheckBox(&quot;Mode Developpement&quot;);&#xD;
+    modeDevBox.setBackground(Color.WHITE);&#xD;
+    panDev.add(modeDevBox);&#xD;
+    //--Le panel qui accueille les composants précédents&#xD;
+    this.panContent = new JPanel();&#xD;
+    panContent.setLayout(new FlowLayout());&#xD;
+    panContent.setBackground(Color.WHITE);&#xD;
+    panContent.setBorder(BorderFactory.createLineBorder(Color.BLACK));&#xD;
+    panContent.add(panJeu);&#xD;
+    panContent.add(panMode);&#xD;
+    panContent.add(panEssai);&#xD;
+    panContent.add(panCombi);&#xD;
+    panContent.add(panCouleur);&#xD;
+    panContent.add(panDev);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vMoUQApYEeiRePfNqIKmQA" name="addObservateur" specification="_vMnGIApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.listObs.add(o);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vMqJcApYEeiRePfNqIKmQA" name="updateObservateur" specification="_vMo7UApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    for (Observateur o : this.listObs) o.update(&quot;&quot;);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vMrXkApYEeiRePfNqIKmQA" name="delObservateur" specification="_vMqwgApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.listObs = new ArrayList&lt;Observateur>();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_vMIlAApYEeiRePfNqIKmQA" name="BoiteDialogue" visibility="public" method="_vMX1kApYEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_vMLoUApYEeiRePfNqIKmQA" name="parent" type="_vME6oApYEeiRePfNqIKmQA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_vMOEkApYEeiRePfNqIKmQA" name="ptitre" type="_k7ZVAApYEeiRePfNqIKmQA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_vMQg0ApYEeiRePfNqIKmQA" name="modal">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_vMZqwApYEeiRePfNqIKmQA" name="initComp" visibility="public" method="_vMbf8ApYEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_vMnGIApYEeiRePfNqIKmQA" name="addObservateur" visibility="public" method="_vMoUQApYEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_vMntMApYEeiRePfNqIKmQA" name="o" type="_vL_bEApYEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_vMo7UApYEeiRePfNqIKmQA" name="updateObservateur" visibility="public" method="_vMqJcApYEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_vMqwgApYEeiRePfNqIKmQA" name="delObservateur" visibility="public" method="_vMrXkApYEeiRePfNqIKmQA"/>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_vMcuEApYEeiRePfNqIKmQA" name="OKListener">
+            <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vMgYcApYEeiRePfNqIKmQA" name="OKListener implements ActionListener" client="_vMcuEApYEeiRePfNqIKmQA" supplier="_vMd8MQpYEeiRePfNqIKmQA" contract="_vMd8MQpYEeiRePfNqIKmQA"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vMl4AApYEeiRePfNqIKmQA" name="actionPerformed" specification="_vMjbwApYEeiRePfNqIKmQA">
+              <language>JAVA</language>
+              <body>&#xD;
+    //--On définit les propriétés&#xD;
+    if (plusMoinsBton.isSelected())&#xD;
+        listProp.setProperty(&quot;jeu&quot;, TypeJeu.RECHERCHE_NUM.toString());&#xD;
+    else if (masterBton.isSelected()) {&#xD;
+        listProp.setProperty(&quot;jeu&quot;, TypeJeu.MASTERMIND.toString());&#xD;
+        if (chiffreBton.isSelected() || (!chiffreBton.isSelected() &amp;&amp; !couleurBton.isSelected()))&#xD;
+            listProp.setProperty(&quot;couleur&quot;, &quot;0&quot;);&#xD;
+        else if (couleurBton.isSelected())&#xD;
+            listProp.setProperty(&quot;couleur&quot;, &quot;1&quot;);&#xD;
+    }&#xD;
+    if (challBton.isSelected())&#xD;
+        listProp.setProperty(&quot;mode&quot;, ModeJeu.CHALLENGER.toString());&#xD;
+    else if (defBton.isSelected())&#xD;
+        listProp.setProperty(&quot;mode&quot;, ModeJeu.DEFENSEUR.toString());&#xD;
+    else if (duelBton.isSelected())&#xD;
+        listProp.setProperty(&quot;mode&quot;, ModeJeu.DUEL.toString());&#xD;
+    listProp.setProperty(&quot;nombres d'essai&quot;, String.valueOf(Integer.parseInt(saisiEssai.getText())));&#xD;
+    listProp.setProperty(&quot;longueur combinaison&quot;, saisiLgueurCombi.getSelectedItem().toString());&#xD;
+    if (modeDevBox.isSelected())&#xD;
+        listProp.setProperty(&quot;developpement&quot;, &quot;1&quot;);&#xD;
+    else&#xD;
+        listProp.setProperty(&quot;developpement&quot;, &quot;0&quot;);&#xD;
+    //--On écrit dans le fichier&#xD;
+    GestionFichierProperties gfp = new GestionFichierProperties();&#xD;
+    gfp.ecrireProp(listProp);&#xD;
+    if (String.valueOf(Integer.parseInt(saisiEssai.getText())) != null) {&#xD;
+        setVisible(false);&#xD;
+        updateObservateur();&#xD;
+    } else {&#xD;
+        JOptionPane.showMessageDialog(null, &quot;Veuillez saisir un nombre à deux chiffres entre 01 et 99&quot;, &quot;Attention nombres essais&quot;, JOptionPane.WARNING_MESSAGE);&#xD;
+    }&#xD;
+</body>
+            </ownedBehavior>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_vMjbwApYEeiRePfNqIKmQA" name="actionPerformed" visibility="public" method="_vMl4AApYEeiRePfNqIKmQA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_vMkp4ApYEeiRePfNqIKmQA" name="arg0" type="_vMg_gApYEeiRePfNqIKmQA"/>
+            </ownedOperation>
+          </nestedClassifier>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="__-2UQApYEeiRePfNqIKmQA" name="GestionFichierProperties" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="__-4wgApYEeiRePfNqIKmQA" name="logger" visibility="private" isStatic="true" type="__-27UwpYEeiRePfNqIKmQA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="__-5XkApYEeiRePfNqIKmQA" name="defaultValue">
+              <language>JAVA</language>
+              <body>Logger.getLogger(&quot;ihm&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="__-7MwApYEeiRePfNqIKmQA" name="configFile" visibility="private" type="__-5XkgpYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="__-7z0ApYEeiRePfNqIKmQA" name="defautConfigFile" visibility="private" type="__-5XkgpYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="__-9pAApYEeiRePfNqIKmQA" name="prop" visibility="private" type="_vL6ikApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="___AsUApYEeiRePfNqIKmQA" name="oos" visibility="private" type="__--QEApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="___DvoApYEeiRePfNqIKmQA" name="ois" visibility="private" type="___BTYApYEeiRePfNqIKmQA" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="___HaAApYEeiRePfNqIKmQA" name="GestionFichierProperties" specification="___EWsApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.configFile = new File(&quot;Ressources/Fichiers/config.properties&quot;);&#xD;
+    this.defautConfigFile = new File(&quot;Ressources/Fichiers/defaut_config.properties&quot;);&#xD;
+    this.prop = new Properties();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="___J2QApYEeiRePfNqIKmQA" name="ecrireProp" specification="___IoIApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--si le fichier defaut_config n'existe pas, on le crée avec les les valeurs de la boite de dialogue comme propriétés par défaut&#xD;
+    if (!defautConfigFile.exists()) {&#xD;
+        try {&#xD;
+            defautConfigFile.createNewFile();&#xD;
+            this.prop = pListProp;&#xD;
+            oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(defautConfigFile)));&#xD;
+            prop.store(oos, null);&#xD;
+            //System.out.println(&quot;Taille du fichier = &quot; + defautConfigFile.length()); //Controle&#xD;
+            logger.info(&quot;Taille du fichier = &quot; + defautConfigFile.length());&#xD;
+        } catch (FileNotFoundException e) {&#xD;
+            e.printStackTrace();&#xD;
+        } catch (IOException e) {&#xD;
+            e.printStackTrace();&#xD;
+        }&#xD;
+    } else //--sinon, on crée (s'il n'existe pas deja) un fichier config vide et on écrit les valeurs de la boite de dialogue&#xD;
+    {&#xD;
+        try {&#xD;
+            if (!configFile.exists()) {&#xD;
+                try {&#xD;
+                    configFile.createNewFile();&#xD;
+                    this.prop = pListProp;&#xD;
+                    oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(configFile)));&#xD;
+                    prop.store(oos, null);&#xD;
+                    //System.out.println(&quot;Taille du fichier = &quot; + configFile.length()); //Controle&#xD;
+                    logger.info(&quot;Taille du fichier = &quot; + configFile.length());&#xD;
+                } catch (FileNotFoundException e) {&#xD;
+                    e.printStackTrace();&#xD;
+                } catch (IOException e) {&#xD;
+                    e.printStackTrace();&#xD;
+                }&#xD;
+            } else //--si le fichier existe deja on ecrit les valeurs de la boite de dialogue&#xD;
+            {&#xD;
+                this.prop = pListProp;&#xD;
+                oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(configFile)));&#xD;
+                prop.store(oos, null);&#xD;
+                //System.out.println(&quot;Taille du fichier = &quot; + configFile.length()); //Controle&#xD;
+                logger.info(&quot;Taille du fichier = &quot; + configFile.length());&#xD;
+                oos.close();&#xD;
+            }&#xD;
+        } catch (FileNotFoundException e) {&#xD;
+            e.printStackTrace();&#xD;
+        } catch (IOException e) {&#xD;
+            e.printStackTrace();&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="___M5kApYEeiRePfNqIKmQA" name="lireProp" specification="___LrcApYEeiRePfNqIKmQA">
+            <language>JAVA</language>
+            <body>&#xD;
+    //--Si le fichier existe, on verifie s'il n'est pas vide auquel cas on le lit et on cree le contenu de notre listJoueur&#xD;
+    try {&#xD;
+        if (configFile.exists()) {&#xD;
+            if (configFile.length() != 0) {&#xD;
+                ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(configFile)));&#xD;
+                this.prop.load(ois);&#xD;
+                //System.out.println(&quot;list proprietes recup sur le fichier lors de lecture : \n&quot;+this.prop.toString());//Controle&#xD;
+                logger.info(&quot;list proprietes recup sur le fichier lors de lecture : \n&quot; + this.prop.toString());&#xD;
+                ois.close();&#xD;
+            }&#xD;
+        } else //--Sinon, on recupere les prop par defaut&#xD;
+        {&#xD;
+            ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(defautConfigFile)));&#xD;
+            this.prop.load(ois);&#xD;
+            //System.out.println(&quot;list proprietes recup sur le fichier lors de lecture : \n&quot;+this.prop.toString());//Controle&#xD;
+            logger.info(&quot;list proprietes recup sur le fichier lors de lecture : \n&quot; + this.prop.toString());&#xD;
+            ois.close();&#xD;
+        }&#xD;
+    } catch (FileNotFoundException e) {&#xD;
+        e.printStackTrace();&#xD;
+    } catch (IOException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    return this.prop;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="___EWsApYEeiRePfNqIKmQA" name="GestionFichierProperties" visibility="public" method="___HaAApYEeiRePfNqIKmQA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="___IoIApYEeiRePfNqIKmQA" name="ecrireProp" visibility="public" method="___J2QApYEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="___JPMApYEeiRePfNqIKmQA" name="pListProp" type="_vL6ikApYEeiRePfNqIKmQA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="___LrcApYEeiRePfNqIKmQA" name="lireProp" visibility="public" method="___M5kApYEeiRePfNqIKmQA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="___MSgApYEeiRePfNqIKmQA" type="_vL6ikApYEeiRePfNqIKmQA" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_k7W4wApYEeiRePfNqIKmQA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_k7Xf0ApYEeiRePfNqIKmQA" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_k7YG4ApYEeiRePfNqIKmQA" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_k7ZVAApYEeiRePfNqIKmQA" name="String"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_vL57gApYEeiRePfNqIKmQA" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_vL6ikApYEeiRePfNqIKmQA" name="Properties"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_vMdVIApYEeiRePfNqIKmQA" name="awt">
+          <packagedElement xmi:type="uml:Package" xmi:id="_vMd8MApYEeiRePfNqIKmQA" name="event">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_vMd8MQpYEeiRePfNqIKmQA" name="ActionListener"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_vMg_gApYEeiRePfNqIKmQA" name="ActionEvent"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="__-5XkQpYEeiRePfNqIKmQA" name="io">
+          <packagedElement xmi:type="uml:Class" xmi:id="__-5XkgpYEeiRePfNqIKmQA" name="File"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="__--QEApYEeiRePfNqIKmQA" name="ObjectOutputStream"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="___BTYApYEeiRePfNqIKmQA" name="ObjectInputStream"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_vKci8ApYEeiRePfNqIKmQA" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_vKdKAApYEeiRePfNqIKmQA" name="javax">
+        <packagedElement xmi:type="uml:Package" xmi:id="_vKdxEApYEeiRePfNqIKmQA" name="swing">
+          <packagedElement xmi:type="uml:Class" xmi:id="_vKeYIApYEeiRePfNqIKmQA" name="JDialog"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_vLV60ApYEeiRePfNqIKmQA" name="JPanel"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_vLcBcApYEeiRePfNqIKmQA" name="JRadioButton"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_vLrSAApYEeiRePfNqIKmQA" name="JFormattedTextField"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_vLx_sApYEeiRePfNqIKmQA" name="JComboBox"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_vL2RIApYEeiRePfNqIKmQA" name="JCheckBox"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_vME6oApYEeiRePfNqIKmQA" name="JFrame"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_vKjQoApYEeiRePfNqIKmQA" name="pattern_observer">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_vKkewApYEeiRePfNqIKmQA" name="Observable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_vL_bEApYEeiRePfNqIKmQA" name="Observateur"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="__-27UApYEeiRePfNqIKmQA" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="__-27UQpYEeiRePfNqIKmQA" name="apache">
+          <packagedElement xmi:type="uml:Package" xmi:id="__-27UgpYEeiRePfNqIKmQA" name="log4j">
+            <packagedElement xmi:type="uml:Class" xmi:id="__-27UwpYEeiRePfNqIKmQA" name="Logger"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_jF7ywApZEeiRePfNqIKmQA" memberEnd="_jGE8sApZEeiRePfNqIKmQA _jGFjwQpZEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jGDukApZEeiRePfNqIKmQA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jGDukQpZEeiRePfNqIKmQA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_jGFjwQpZEeiRePfNqIKmQA" name="boitedialogue" type="_vKb74ApYEeiRePfNqIKmQA" association="_jF7ywApZEeiRePfNqIKmQA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_kjy34ApZEeiRePfNqIKmQA" memberEnd="_kjze8gpZEeiRePfNqIKmQA _kj0GAgpZEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kjze8ApZEeiRePfNqIKmQA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kjze8QpZEeiRePfNqIKmQA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_kj0GAgpZEeiRePfNqIKmQA" name="typejeu" type="_oQUpcApYEeiRePfNqIKmQA" association="_kjy34ApZEeiRePfNqIKmQA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lnw2UApZEeiRePfNqIKmQA" memberEnd="_lnxdYgpZEeiRePfNqIKmQA _lnxdZQpZEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lnxdYApZEeiRePfNqIKmQA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lnxdYQpZEeiRePfNqIKmQA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_lnxdZQpZEeiRePfNqIKmQA" name="modejeu" type="_k7IPQApYEeiRePfNqIKmQA" association="_lnw2UApZEeiRePfNqIKmQA"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_k56uUApYEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k59KkApYEeiRePfNqIKmQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_k6c50ApYEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k6dg4ApYEeiRePfNqIKmQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_k6lcsApYEeiRePfNqIKmQA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k6mDwApYEeiRePfNqIKmQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_k9HMQApYEeiRePfNqIKmQA" name="java.lang.String" base_Classifier="_k7ZVAApYEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_k9UnoApYEeiRePfNqIKmQA" base_BehavioralFeature="_k9QWMApYEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_oQj6AApYEeiRePfNqIKmQA" base_BehavioralFeature="_oQhdwApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vKgNUApYEeiRePfNqIKmQA" name="javax.swing.JDialog" base_Classifier="_vKeYIApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vKoJIApYEeiRePfNqIKmQA" name="pattern_observer.Observable" base_Classifier="_vKkewApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vLXwAApYEeiRePfNqIKmQA" name="javax.swing.JPanel" base_Classifier="_vLV60ApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vLedsApYEeiRePfNqIKmQA" name="javax.swing.JRadioButton" base_Classifier="_vLcBcApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vLtuQApYEeiRePfNqIKmQA" name="javax.swing.JFormattedTextField" base_Classifier="_vLrSAApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vL0b8ApYEeiRePfNqIKmQA" name="javax.swing.JComboBox" base_Classifier="_vLx_sApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vL4GUApYEeiRePfNqIKmQA" name="javax.swing.JCheckBox" base_Classifier="_vL2RIApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vL8XwApYEeiRePfNqIKmQA" name="java.util.Properties" base_Classifier="_vL6ikApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vMApMApYEeiRePfNqIKmQA" name="pattern_observer.Observateur" base_Classifier="_vL_bEApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vMGIwApYEeiRePfNqIKmQA" name="javax.swing.JFrame" base_Classifier="_vME6oApYEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="_vMJzIApYEeiRePfNqIKmQA" base_BehavioralFeature="_vMIlAApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vMfKUApYEeiRePfNqIKmQA" name="java.awt.event.ActionListener" base_Classifier="_vMd8MQpYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="_vMi0sApYEeiRePfNqIKmQA" name="java.awt.event.ActionEvent" base_Classifier="_vMg_gApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="__-4JcApYEeiRePfNqIKmQA" name="org.apache.log4j.Logger" base_Classifier="__-27UwpYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="__-6lsApYEeiRePfNqIKmQA" name="java.io.File" base_Classifier="__-5XkgpYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="___AFQApYEeiRePfNqIKmQA" name="java.io.ObjectOutputStream" base_Classifier="__--QEApYEeiRePfNqIKmQA"/>
+  <PapyrusJava:External xmi:id="___ChgApYEeiRePfNqIKmQA" name="java.io.ObjectInputStream" base_Classifier="___BTYApYEeiRePfNqIKmQA"/>
+  <standard:Create xmi:id="___GL4ApYEeiRePfNqIKmQA" base_BehavioralFeature="___EWsApYEeiRePfNqIKmQA"/>
+</xmi:XMI>
